@@ -26,7 +26,8 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/index.ejs')
+      template: path.resolve(__dirname, './src/index.ejs'),
+      favicon: path.resolve(__dirname, './src/favicon.ico')
     })
   ],
   devServer: {
