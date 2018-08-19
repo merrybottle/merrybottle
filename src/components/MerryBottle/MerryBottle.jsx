@@ -9,7 +9,7 @@ type State = {
   torchLit: boolean
 };
 
-class MerryBottle extends PureComponent {
+class MerryBottle extends PureComponent<State> {
   state = {
     torchLit: true
   };

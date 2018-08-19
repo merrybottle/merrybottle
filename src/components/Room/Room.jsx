@@ -1,5 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
+import Phone from '../Phone';
 import {
   LightSwitchStyled,
   RoomStyled
@@ -19,6 +20,7 @@ class Room extends PureComponent<Props> {
 
     return (
       <RoomStyled>
+        <Phone />
         <LightSwitchStyled
           onClick={handleSwitch}
           switchOn={switchOn}

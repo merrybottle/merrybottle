@@ -7,7 +7,7 @@ type State = {
   circleY: number
 };
 
-class Torch extends PureComponent {
+class Torch extends PureComponent<State> {
   state = {
     circleX: 400,
     circleY: 300,
