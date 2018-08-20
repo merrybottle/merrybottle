@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TorchStyled = styled.span`
+export const TorchStyled = styled.svg`
   display: inline-block;
   margin: 0;
   min-height: 100vh;

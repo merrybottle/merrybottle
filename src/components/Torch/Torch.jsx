@@ -9,8 +9,10 @@ type State = {
 
 class Torch extends PureComponent<State> {
   state = {
-    circleX: 400,
+    circleX: 300,
     circleY: 300,
+    radiusX: 75,
+    radiusY: 75,
     svgHeight: null,
     svgWidth: null
   };
@@ -19,13 +21,13 @@ class Torch extends PureComponent<State> {
 
   componentDidMount() {
     document.body.addEventListener('mousemove', this.handleMouseMove);
-    document.body.addEventListener('resize', this.handleResize);
+    global.addEventListener('resize', this.handleResize);
     this.handleResize();
   }
 
   componentWillUnmount() {
     document.body.removeEventListener('mousemove', this.handleMouseMove);
-    document.body.removeEventListener('resize', this.handleResize);
+    global.removeEventListener('resize', this.handleResize);
   }
 
   handleMouseMove = (e) => {
@@ -35,8 +37,10 @@ class Torch extends PureComponent<State> {
     } = this.state;
 
     this.setState({
-      circleX: e.clientX / svgWidth * 800,
-      circleY: e.clientY / svgHeight * 600
+      circleX: e.clientX / svgWidth * 600,
+      circleY: e.clientY / svgHeight * 600,
+      radiusX: (600 / svgWidth) * 75,
+      radiusY: (600 / svgHeight) * 75
     });
   }
 
@@ -50,17 +54,23 @@ class Torch extends PureComponent<State> {
   render() {
     const {
       circleX,
-      circleY
+      circleY,
+      radiusX,
+      radiusY
     } = this.state;
 
     return (
-      <TorchStyled>
-        <svg height="100%" width="100%" viewBox="0 0 800 600" ref={(svg) => { this.svgRef = svg; }}>
-          <path
-            d={`M 0,0 800,0 800,600 0,600 0,0 M ${circleX},${circleY} m -50,0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0 Z`}
-            fill="black"
-          />
-        </svg>
+      <TorchStyled
+        height="100%"
+        width="100%"
+        viewBox="0 0 600 600"
+        preserveAspectRatio="none"
+        innerRef={(svg) => { this.svgRef = svg; }}
+      >
+        <path
+          d={`M 0,0 600,0 600,600 0,600 0,0 M ${circleX},${circleY} m -${radiusX},0 a ${radiusX},${radiusY} 0 1,0 ${radiusX * 2},0 a ${radiusX},${radiusY} 0 1,0 -${radiusX * 2},0 Z`}
+          fill="black"
+        />
       </TorchStyled>
     );
   }
