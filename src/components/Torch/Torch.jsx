@@ -20,9 +20,22 @@ class Torch extends PureComponent<State> {
   svgRef: ?SVGElement;
 
   componentDidMount() {
+    const {
+      clientHeight: height,
+      clientWidth: width
+    } = this.svgRef;
+
     document.body.addEventListener('mousemove', this.handleMouseMove);
     global.addEventListener('resize', this.handleResize);
-    this.handleResize();
+
+    this.setState({
+      circleX: width / 2 / width * 600,
+      circleY: height / 2 / height * 600,
+      radiusX: (600 / width) * 75,
+      radiusY: (600 / height) * 75,
+      svgHeight: height,
+      svgWidth: width
+    });
   }
 
   componentWillUnmount() {

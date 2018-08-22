@@ -48,4 +48,8 @@ export const LightSwitchStyled = styled.button`
 export const RoomStyled = styled.div`
   height: 100%;
   position: relative;
+
+  ${({ focused }) => (!focused ? `
+    filter: blur(4px);
+  ` : '')}
 `;

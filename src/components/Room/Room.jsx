@@ -7,6 +7,8 @@ import {
 } from './styled/Room';
 
 type Props = {
+  focused: boolean,
+  handlePhone: Function,
   handleSwitch: Function,
   switchOn: boolean
 };
@@ -14,13 +16,16 @@ type Props = {
 class Room extends PureComponent<Props> {
   render() {
     const {
+      focused,
+      handlePhone,
       handleSwitch,
       switchOn
     } = this.props;
 
     return (
-      <RoomStyled>
-        <Phone />
+      <RoomStyled focused={focused}>
+        <Phone handleAnswerPhone={handlePhone} />
+
         <LightSwitchStyled
           onClick={handleSwitch}
           switchOn={switchOn}

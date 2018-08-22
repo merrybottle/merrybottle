@@ -3,6 +3,7 @@ import React from 'react';
 import {
   DialNumberStyled,
   DialStyled,
+  PhoneHandlePathStyled,
   PhonePathStyled,
   PhoneStyled
 } from './styled/Phone';
@@ -24,7 +25,7 @@ const Phone = ({ handleAnswerPhone }: Props) => (
       <DialNumberStyled cx="171" cy="194" r="5" />
       <DialNumberStyled cx="129" cy="194" r="5" />
       <DialNumberStyled cx="129" cy="236" r="5" />
-      <PhonePathStyled d="M 100,115 a 50,50 0 0,1 -50,40 a 40,40 0 0,1 50,-60 Q 150,80 200,95 a 40,40 0 0,1 50,60 a 50,50 0 0,1 -50,-40 Q 150,90 100,115 z" />
+      <PhoneHandlePathStyled d="M 100,115 a 50,50 0 0,1 -50,40 a 40,40 0 0,1 50,-60 Q 150,80 200,95 a 40,40 0 0,1 50,60 a 50,50 0 0,1 -50,-40 Q 150,90 100,115 z" />
     </svg>
   </PhoneStyled>
 );
