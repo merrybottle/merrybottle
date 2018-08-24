@@ -8,8 +8,9 @@ export const CloseButtonStyled = styled.button`
   box-sizing: border-box;
   color: transparent;
   cursor: pointer;
-  font-family: 'BenchNine', sans-serif;
-  font-size: 18px;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
   line-height: ${buttonSize}px;
   margin: 0;
   outline: none;

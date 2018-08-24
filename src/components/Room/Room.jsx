@@ -1,6 +1,10 @@
 // @flow
 import React, { PureComponent } from 'react';
+import Artwork from '../Artwork';
+import Award from '../Award';
+import Myself from '../Myself';
 import Phone from '../Phone';
+import Window from '../Window';
 import {
   LightSwitchStyled,
   RoomStyled
@@ -17,6 +21,7 @@ class Room extends PureComponent<Props> {
   render() {
     const {
       focused,
+      handleAward,
       handlePhone,
       handleSwitch,
       switchOn
@@ -24,6 +29,10 @@ class Room extends PureComponent<Props> {
 
     return (
       <RoomStyled focused={focused}>
+        <Award handleSeeSkills={handleAward} />
+        <Artwork handleSeeSkills={handleAward} />
+        <Window />
+        <Myself handleSeeSkills={handleAward} />
         <Phone handleAnswerPhone={handlePhone} />
 
         <LightSwitchStyled

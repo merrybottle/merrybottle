@@ -33,20 +33,20 @@ export const TitleStyled = styled.h1`
   @media (min-width: 700px) {
     background-color: #21618c;
     color: #ebf5fb;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 50px;
-    letter-spacing: 10px;
-    line-height: 50px;
+    font-family: 'Nixie One', sans-serif;
+    font-size: 26px;
+    letter-spacing: 7px;
+    line-height: 46px;
     margin: 0 70px 0 0;
-    padding-left: 10px;
+    padding: 4px 0 0 10px;
     text-transform: uppercase;
   }
 `;
 
 export const BodyStyled = styled.div`
   color: #2c3e50;
-  font-family: 'BenchNine', sans-serif;
-  font-size: 24px;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
   letter-spacing: 1px;
 
   @media (min-width: 700px) {

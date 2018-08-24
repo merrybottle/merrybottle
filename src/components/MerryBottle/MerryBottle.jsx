@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import ContentContainer from 'shared/components/ContentContainer';
 import Contact from '../Contact';
 import Room from '../Room';
+import Skills from '../Skills';
 import Torch from '../Torch';
 import { MerryBottleStyled } from './styled/MerryBottle';
 
@@ -13,6 +14,7 @@ type State = {
 class MerryBottle extends PureComponent<State> {
   state = {
     contact: false,
+    skills: false,
     torchLit: true
   };
 
@@ -26,20 +28,27 @@ class MerryBottle extends PureComponent<State> {
     this.setState({ contact: !this.state.contact });
   }
 
+  toggleSkills = () => {
+    this.setState({ skills: !this.state.skills });
+  }
+
   render() {
     const {
       contact,
+      skills,
       torchLit
     } = this.state;
     const {
       handleSwitch,
-      toggleContact
+      toggleContact,
+      toggleSkills
     } = this;
 
     return (
       <MerryBottleStyled>
         <Room
           focused={!contact}
+          handleAward={toggleSkills}
           handlePhone={toggleContact}
           handleSwitch={handleSwitch}
           switchOn={!torchLit}
@@ -50,6 +59,10 @@ class MerryBottle extends PureComponent<State> {
         <Contact
           handleClose={toggleContact}
           show={contact}
+        />
+        <Skills
+          handleClose={toggleSkills}
+          show={skills}
         />
       </MerryBottleStyled>
     );

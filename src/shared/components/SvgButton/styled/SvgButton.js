@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const SvgButtonStyled = styled.button`
+  box-shadow: none;
   cursor: pointer;
 
   &,
@@ -10,7 +11,6 @@ export const SvgButtonStyled = styled.button`
   &:visited {
     background: none;
     border: 0;
-    box-shadow: none;
     display: inline-block;
     margin: 0;
     outline: 0;

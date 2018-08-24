@@ -57,7 +57,6 @@ export const PhoneStyled = styled(SvgButton)`
 
   &:hover {
     ${PhoneHandlePathStyled} {
-      color: red;
       animation: ${ring} 1s linear infinite;
       transform-origin: center center;
     }
