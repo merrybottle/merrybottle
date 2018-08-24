@@ -16,7 +16,7 @@ const ring = keyframes`
   }
 
   49.99% {
-    transform: scale(1.35, 1.35) rotate(30deg);
+    transform: scale(1.3, 1.35) rotate(30deg);
   }
 
   66.66% {
