@@ -13,7 +13,7 @@ export const LightSwitchStyled = styled.button`
   outline: 0;
   padding: 0;
   position: absolute;
-  right: 70px;
+  right: 80px;
   top: 50%;
   width: 40px;
 
@@ -45,6 +45,21 @@ export const LightSwitchStyled = styled.button`
   }
 `;
 
+export const NameStyled = styled.div`
+  border: 8px solid #f6ddcc;
+  border-radius: 50%;
+  bottom: 430px;
+  color: #f6ddcc;
+  font-family: 'Roboto Slab', serif;
+  font-size: 90px;
+  height: 150px;
+  left: calc(50% + 300px);
+  line-height: 150px
+  position: absolute;
+  text-align: center;
+  width: 150px;
+`;
+
 export const RoomStyled = styled.div`
   height: 100%;
   background-color: #f6ddcc;
@@ -60,11 +75,13 @@ export const RoomStyled = styled.div`
     34px 6px;
   background-size: 58px 58px;
   height: 100vh;
+  min-height: 720px;
   overflow: hidden;
   position: relative;
 
   ::before {
     background-color: #eaeded;
+    border-top: 15px solid #873600;
     bottom: 0;
     content: '';
     display: block;
@@ -77,4 +94,8 @@ export const RoomStyled = styled.div`
   ${({ focused }) => (!focused ? `
     filter: blur(4px);
   ` : '')}
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+    display: none;
+  }
 `;

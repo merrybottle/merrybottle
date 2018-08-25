@@ -8,4 +8,8 @@ export const TorchStyled = styled.svg`
   pointer-events: none;
   position: fixed;
   top: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+    display: none;
+  }
 `;

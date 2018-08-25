@@ -29,30 +29,30 @@ const ring = keyframes`
 `;
 
 export const PhonePathStyled = styled.path`
-  fill: #cb4335;
+  fill: #282222;
   stroke: none;
 `;
 
 export const PhoneHandlePathStyled = styled.path`
-  fill: #cb4335;
+  fill: #282222;
   stroke: none;
 `;
 
 export const DialStyled = styled.circle`
   fill: #b2babb;
-  stroke: #2c3e50;
+  stroke: #e50606;
   stroke-width: 25;
 `;
 
 export const DialNumberStyled = styled.circle`
-  fill: #f2f3f4;
+  fill: white;
 `;
 
 export const PhoneStyled = styled(SvgButton)`
-  bottom: 5px;
+  bottom: 210px;
   height: 150px;
   position: absolute;
-  right: 150px;
+  left: calc(50% + 265px);
   width: 150px;
 
   &:hover {

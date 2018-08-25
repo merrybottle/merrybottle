@@ -39,7 +39,7 @@ export const MyselfStyled = styled(SvgButton)`
   bottom: 0;
   height: 520px;
   position: absolute;
-  left: calc(50% + 30px);
+  left: 50%;
   width: 274px;
 
   &:hover {

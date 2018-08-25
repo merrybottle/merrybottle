@@ -9,11 +9,11 @@ import {
 } from './styled/Artwork';
 
 type Props = {
-  handleSeeSkills: Function
+  handleArtwork: Function
 };
 
-const Artwork = ({ handleSeeSkills }: Props) => (
-  <ArtworkStyled onClick={handleSeeSkills}>
+const Artwork = ({ handleArtwork }: Props) => (
+  <ArtworkStyled onClick={handleArtwork}>
     <svg viewBox="0 0 500 380"  height="100%" width="100%">
       <rect x="0" y="0" height="380" width="500" fill="#7a5432" rx="2" ry="2" />
       <rect x="64" y="64" height="252" width="372" fill="#aed6f1" rx="2" ry="2" />

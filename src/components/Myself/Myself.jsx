@@ -7,22 +7,22 @@ import {
 } from './styled/Myself';
 
 type Props = {
-  handleSeeSkills: Function
+  handleTalkToMe: Function
 };
 
-const Myself = ({ handleSeeSkills }: Props) => (
-  <MyselfStyled onClick={handleSeeSkills}>
+const Myself = ({ handleTalkToMe }: Props) => (
+  <MyselfStyled onClick={handleTalkToMe}>
     <svg viewBox="0 0 200 380" height="100%" width="100%">
       <ellipse cx="100" cy="80" rx="62" ry="77" fill="black" />
-      <circle cx="100" cy="180" r="50" fill="#ffe9c6" />
-      <ellipse cx="100" cy="280" rx="33" ry="100" fill="#ffe9c6" />
+      <circle cx="100" cy="180" r="50" fill="#ffe2b3" />
+      <ellipse cx="100" cy="280" rx="33" ry="100" fill="#ffe2b3" />
       <path d="M 75,358 125,358 117,380 83,380" fill="#f3a92e" />
       <circle cx="90" cy="375" r="15" fill="#f3a92e" />
       <circle cx="110" cy="375" r="15" fill="#f3a92e" />
       <line x1="100" x2="100" y1="280" y2="380" stroke="#fedda7" />
       <path d="M 85,115 Q 45,140 45,180 L 60,185 Q 65,190 45,280 Q 100,300 155,280 Q 135,190 140,185 L 155,180 Q 155,140 115,115" fill="#5499c7" />
-      <circle cx="100" cy="115" r="15" fill="#ffe9c6" />
-      <circle cx="100" cy="70" r="50" fill="#ffe9c6" />
+      <circle cx="100" cy="115" r="15" fill="#ffe2b3" />
+      <circle cx="100" cy="70" r="50" fill="#ffe2b3" />
 
       <OpenEyesStyled>
         <ellipse cx="72" cy="75" rx="8" ry="10" fill="black" />
