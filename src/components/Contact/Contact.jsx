@@ -13,6 +13,7 @@ type Props = {
 
 const Contact = ({ handleClose, show }: Props) => (
   <ContentContainer
+    center
     handleClose={handleClose}
     icon={<Phone />}
     show={show}

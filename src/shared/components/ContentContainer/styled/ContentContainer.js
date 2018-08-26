@@ -98,9 +98,19 @@ export const BodyStyled = styled.div`
 
   p {
     margin: 16px 0 0;
+    text-align: ${({ center }) => (center ? 'center' : 'left')};
   }
 
   p:first-child {
     margin-top: 0;
+  }
+
+  a {
+    color: #29554c;
+    text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;

@@ -10,6 +10,7 @@ import {
 } from './styled/ContentContainer';
 
 type Props = {
+  center: boolean,
   children: Node,
   handleClose: Function,
   icon: Node,
@@ -18,8 +19,13 @@ type Props = {
 };
 
 class ContentContainer extends PureComponent<Props> {
+  static defaultProps = {
+    center: false
+  };
+
   render() {
     const {
+      center,
       children,
       handleClose,
       icon,
@@ -36,7 +42,7 @@ class ContentContainer extends PureComponent<Props> {
           </IconStyled>
           <TitleStyled>{title}</TitleStyled>
 
-          <BodyStyled>
+          <BodyStyled center={center}>
             {children}
           </BodyStyled>
         </ContentStyled>

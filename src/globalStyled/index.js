@@ -15,14 +15,4 @@ injectGlobal`
   strong {
     font-weight: bold;
   }
-
-  a,
-  a:hover {
-    color: #154360;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
 `;
