@@ -41,6 +41,7 @@ export default {
   },
   font: {
     body: `'Muli', sans-serif`,
+    button: `'Open Sans Condensed', sans-serif`,
     title: `'Nixie One', sans-serif`
   }
 };

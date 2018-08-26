@@ -7,6 +7,7 @@ import Phone from '../Phone';
 import SideTable from '../SideTable';
 import Window from '../Window';
 import {
+  IntroductionStyled,
   LightSwitchStyled,
   NameStyled,
   RoomStyled
@@ -36,7 +37,10 @@ class Room extends PureComponent<Props> {
     } = this.props;
 
     return (
-      <RoomStyled focused={focused}>
+      <RoomStyled
+        focused={focused}
+        switchOn={switchOn}
+      >
         <NameStyled>
           M.
         </NameStyled>
@@ -44,6 +48,9 @@ class Room extends PureComponent<Props> {
         <Artwork handleArtwork={handleArtwork} />
         <Window />
         <Myself handleTalkToMe={handleMyself} />
+        <IntroductionStyled>
+          WELCOME!<br />Take a look around my room to find out more about me!
+        </IntroductionStyled>
         <SideTable />
         <Phone handleAnswerPhone={handlePhone} />
 

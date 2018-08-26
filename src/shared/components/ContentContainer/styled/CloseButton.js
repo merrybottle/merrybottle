@@ -9,7 +9,7 @@ export const CloseButtonStyled = styled.button`
   box-sizing: border-box;
   color: transparent;
   cursor: pointer;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: ${({ theme }) => theme.font.button};
   font-size: 12px;
   letter-spacing: 2px;
   line-height: ${buttonSize}px;

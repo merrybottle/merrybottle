@@ -1,6 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const switchColor = '#ddd';
+const closeIntroduction = keyframes`
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+`;
 
 export const LightSwitchStyled = styled.button`
   background-color: ${switchColor};
@@ -18,7 +24,7 @@ export const LightSwitchStyled = styled.button`
   width: 40px;
 
   ::before {
-    background-color: #${({ switchOn }) => (switchOn ? '58d68d' : 'ec7063')};
+    background-color: #${({ switchOn }) => (switchOn ? '58d68d' : 'e31a1a')};
     border-radius: 3px;
     box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.2);
     content: '';
@@ -34,14 +40,23 @@ export const LightSwitchStyled = styled.button`
     border-radius: 3px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    content: '';
+    color: #666;
     display: block;
-    height: 10px;
-    left: 10px;
+    font-family: ${({ theme }) => theme.font.body};
+    font-size: 9px;
+    height: 12px;
+    left: 9px;
     position: absolute;
+    text-align: center;
     transition: top 0.1s linear;
-    top: ${({ switchOn }) => (switchOn ? 27 : 13)}px;
-    width: 20px;
+    top: ${({ switchOn }) => (switchOn ? 28 : 12)}px;
+    width: 22px;
+
+    ${({ switchOn }) => (switchOn ? `
+      content: 'ON';
+    ` : `
+      content: 'OFF';
+    `)};
   }
 
   @media (min-width: ${({ theme }) => theme.breakpoint.medium.min}) {
@@ -76,6 +91,39 @@ export const NameStyled = styled.div`
   }
 `;
 
+export const IntroductionStyled = styled.div`
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  bottom: 345px;
+  box-sizing: border-box;
+  color: white;
+  font-family: ${({ theme }) => theme.font.title};
+  font-size: 22px;
+  left: calc(50% - 330px);
+  letter-spacing: 2px;
+  line-height: 36px;
+  opacity: 1;
+  padding: 15px 30px;
+  position: absolute;
+  transform: opacity 0.2s linear;
+  width: 350px;
+
+  ::after {
+    border: 20px solid transparent;
+    border-left: 20px solid rgba(0, 0, 0, 0.7);
+    border-right: 0;
+    bottom: 30px;
+    content: '';
+    display: block;
+    left: 100%;
+    position: absolute;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    left: calc(50% - 290px);
+  }
+`;
+
 export const RoomStyled = styled.div`
   ${({ theme }) => theme.brickwall}
 
@@ -103,9 +151,14 @@ export const RoomStyled = styled.div`
     display: none;
   }
 
-  @media (min-height: 720px) {
+  @media (min-height: 790px) {
     border-bottom: 50px solid #873600;
     border-top: 20px solid #641e16;
     margin-top: calc((100vh - 720px) / 2);
+  }
+
+  ${IntroductionStyled} {
+    animation: ${closeIntroduction} 1s linear 5s forwards;
+    display: ${({ switchOn }) => (switchOn ? 'block' : 'none' )};
   }
 `;
