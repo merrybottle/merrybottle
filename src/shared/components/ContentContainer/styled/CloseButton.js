@@ -26,7 +26,7 @@ export const CloseButtonStyled = styled.button`
 
   ::before,
   ::after {
-    background-color: #1a1a1a;
+    background-color: ${({ theme }) => theme.color.dark};
     content: '';
     display: block;
     height: 1px;

@@ -15,7 +15,7 @@ export const IconStyled = styled.span`
   width: 32px;
 
   svg path {
-    fill: #1a1a1a;
+    fill: ${({ theme }) => theme.color.dark};
   }
 `;
 
@@ -25,9 +25,9 @@ export const SkillsList = styled.ul`
   text-align: center;
 
   li {
-    border: 1px solid #1a1a1a;
+    border: 1px solid ${({ theme }) => theme.color.dark};
     border-radius: 3px;
-    color: #1a1a1a;
+    color: ${({ theme }) => theme.color.dark};
     display: inline-block;
     padding: 3px 10px;
     margin: 0 0 10px;

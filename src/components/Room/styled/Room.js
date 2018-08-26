@@ -13,7 +13,7 @@ export const LightSwitchStyled = styled.button`
   outline: 0;
   padding: 0;
   position: absolute;
-  right: 80px;
+  right: 25px;
   top: 50%;
   width: 40px;
 
@@ -43,6 +43,10 @@ export const LightSwitchStyled = styled.button`
     top: ${({ switchOn }) => (switchOn ? 27 : 13)}px;
     width: 20px;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.medium.min}) {
+    right: 80px;
+  }
 `;
 
 export const NameStyled = styled.div`
@@ -53,27 +57,20 @@ export const NameStyled = styled.div`
   font-family: 'Roboto Slab', serif;
   font-size: 90px;
   height: 150px;
-  left: calc(50% + 300px);
+  left: calc(50% + 250px);
   line-height: 150px
   position: absolute;
   text-align: center;
   width: 150px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.medium.min}) {
+    left: calc(50% + 300px);
+  }
 `;
 
 export const RoomStyled = styled.div`
-  height: 100%;
-  background-color: #f6ddcc;
-  background-image:
-    linear-gradient(335deg, #cd5c5c 23px, transparent 23px),
-    linear-gradient(155deg, #cd5c5c 23px, transparent 23px),
-    linear-gradient(335deg, #cd5c5c 23px, transparent 23px),
-    linear-gradient(155deg, #cd5c5c 23px, transparent 23px);
-  background-position:
-    0 2px,
-    4px 35px,
-    29px 31px,
-    34px 6px;
-  background-size: 58px 58px;
+  ${({ theme }) => theme.brickwall}
+
   height: 100vh;
   min-height: 720px;
   overflow: hidden;

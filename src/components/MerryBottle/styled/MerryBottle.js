@@ -7,9 +7,14 @@ const showHint = keyframes`
 `;
 
 export const MerryBottleStyled = styled.div`
-  height: 100vh;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+    ${({ theme }) => theme.brickwall}
+
+    padding: 70px 0 40px;
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
+    height: 100vh;
     overflow: hidden;
   }
 `;
@@ -17,7 +22,7 @@ export const MerryBottleStyled = styled.div`
 export const InstructionsStyled = styled.span`
   color: white;
   display: inline-block;
-  font-family: 'Nixie One', sans-serif;
+  font-family: ${({ theme }) => theme.font.title};
   font-size: 26px;
   letter-spacing: 7px;
   line-height: 32px;

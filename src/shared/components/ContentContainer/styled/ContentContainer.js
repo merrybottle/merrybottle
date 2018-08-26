@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const IconStyled = styled.span`
   background-color: white;
-  border: 10px solid #48c9b0;
+  border: 10px solid ${({ theme }) => theme.color.primary};
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
   height: 100px;
   left: calc(50% - 50px);
+  margin: 0 auto;
   position: absolute;
   text-align: center;
   top: -50px;
@@ -19,15 +20,21 @@ export const IconStyled = styled.span`
     width: 50px;
 
     path {
-      fill: #1a1a1a;
+      fill: ${({ theme }) => theme.color.dark};
     }
   }
 `;
 
 export const ContentStyled = styled.div`
+  background-color: ${({ theme }) => theme.color.primary};
+  border-radius: 10px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+    padding: 20px;
+    position: relative;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
-    background-color: #48c9b0;
-    border-radius: 10px;
     box-sizing: border-box;
     height: 600px;
     left: 50%;
@@ -41,6 +48,14 @@ export const ContentStyled = styled.div`
 `;
 
 export const ContentContainerStyled = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+    margin: 0 20px 20px;
+
+    & + & {
+      margin-top: 90px;
+    }
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     background-color: rgba(0, 0, 0, 0.4);
     content: '';
@@ -54,16 +69,22 @@ export const ContentContainerStyled = styled.div`
 `;
 
 export const TitleStyled = styled.h1`
+  color: ${({ theme }) => theme.color.dark};
+  font-family: ${({ theme }) => theme.font.title};
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 20px;
+  margin: 30px 0 0;
+  padding: 10px 20px 20px;
+  text-align: center;
+  text-transform: uppercase;
+
   @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
-    color: #1a1a1a;
-    font-family: 'Nixie One', sans-serif;
     font-size: 26px;
     letter-spacing: 7px;
     line-height: 26px;
     margin: 50px 0 0;
     padding: 20px 40px 40px;
-    text-align: center;
-    text-transform: uppercase;
   }
 `;
 
@@ -71,16 +92,17 @@ export const BodyStyled = styled.div`
   background-color: white;
   border-radius: 0 0 10px 10px;
   box-sizing: border-box;
-  color: #1a1a1a;
-  font-family: 'Muli', sans-serif;
+  color: ${({ theme }) => theme.color.dark};
+  font-family: ${({ theme }) => theme.font.body};
   font-size: 16px;
   letter-spacing: 1px;
   line-height: 24px;
-  padding: 40px;
+  padding: 20px;
 
   @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     height: calc(100% - 136px);
     overflow: auto;
+    padding: 40px;
   }
 
   h2 {
