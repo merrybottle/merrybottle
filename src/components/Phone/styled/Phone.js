@@ -61,4 +61,8 @@ export const PhoneStyled = styled(SvgButton)`
       transform-origin: center center;
     }
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    left: calc(50% + 335px);
+  }
 `;

@@ -1,6 +1,7 @@
 const breakpoint = {
   mobile: 960,
-  small: 1100
+  small: 1100,
+  medium: 1700
 };
 
 export default {
@@ -27,7 +28,11 @@ export default {
       max: `${breakpoint.small}px`
     },
     medium: {
-      min: `${breakpoint.small + 1}px`
+      min: `${breakpoint.small + 1}px`,
+      max: `${breakpoint.medium}px`
+    },
+    large: {
+      min: `${breakpoint.medium + 1}px`
     }
   },
   color: {

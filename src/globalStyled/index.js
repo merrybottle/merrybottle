@@ -9,6 +9,7 @@ injectGlobal`
   }
 
   body {
+    background-color: #212f3c;
     margin: 0;
   }
 

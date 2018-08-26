@@ -54,4 +54,8 @@ export const ArtworkStyled = styled(SvgButton)`
       animation: ${dash} 0.8s linear 0.6s forwards;
     }
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    right: calc(50% + 320px);
+  }
 `;

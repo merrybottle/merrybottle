@@ -6,4 +6,8 @@ export const SideTableStyled = styled.div`
   position: absolute;
   left: calc(50% + 250px);
   width: 180px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    left: calc(50% + 320px);
+  }
 `;

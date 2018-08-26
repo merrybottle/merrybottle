@@ -7,15 +7,12 @@ const showHint = keyframes`
 `;
 
 export const MerryBottleStyled = styled.div`
+  background-color: #873600;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     ${({ theme }) => theme.brickwall}
 
     padding: 70px 0 40px;
-  }
-
-  @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
-    height: 100vh;
-    overflow: hidden;
   }
 `;
 

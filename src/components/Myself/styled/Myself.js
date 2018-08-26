@@ -51,4 +51,8 @@ export const MyselfStyled = styled(SvgButton)`
       animation: ${blinkClose} 1s linear infinite;
     }
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    left: calc(50% + 40px);
+  }
 `;

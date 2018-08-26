@@ -47,6 +47,10 @@ export const LightSwitchStyled = styled.button`
   @media (min-width: ${({ theme }) => theme.breakpoint.medium.min}) {
     right: 80px;
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    right: 150px;
+  }
 `;
 
 export const NameStyled = styled.div`
@@ -66,13 +70,16 @@ export const NameStyled = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoint.medium.min}) {
     left: calc(50% + 300px);
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    left: calc(50% + 400px);
+  }
 `;
 
 export const RoomStyled = styled.div`
   ${({ theme }) => theme.brickwall}
 
-  height: 100vh;
-  min-height: 720px;
+  height: 720px;
   overflow: hidden;
   position: relative;
 
@@ -94,5 +101,11 @@ export const RoomStyled = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     display: none;
+  }
+
+  @media (min-height: 720px) {
+    border-bottom: 50px solid #873600;
+    border-top: 20px solid #641e16;
+    margin-top: calc((100vh - 720px) / 2);
   }
 `;

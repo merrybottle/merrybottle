@@ -36,4 +36,8 @@ export const AwardStyled = styled(SvgButton)`
       opacity: 1;
     }
   }
+
+  @media (min-width: ${({ theme }) => theme.breakpoint.large.min}) {
+    right: calc(50% + 250px);
+  }
 `;
