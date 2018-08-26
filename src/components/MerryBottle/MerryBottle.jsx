@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import ContentContainer from 'shared/components/ContentContainer';
 import Contact from '../Contact';
 import Profile from '../Profile';
@@ -7,7 +7,11 @@ import RecentWork from '../RecentWork';
 import Room from '../Room';
 import Skills from '../Skills';
 import Torch from '../Torch';
-import { MerryBottleStyled } from './styled/MerryBottle';
+import {
+  HintStyled,
+  InstructionsStyled,
+  MerryBottleStyled
+} from './styled/MerryBottle';
 
 type State = {
   contact: boolean,
@@ -76,7 +80,13 @@ class MerryBottle extends PureComponent<State> {
           switchOn={!torchLit}
         />
         {torchLit &&
-          <Torch />
+          <Fragment>
+            <Torch />
+            <InstructionsStyled>
+              It&apos;s too dark!<br />Find the light switch<br />
+              <HintStyled>(Hint: it&apos;s on the right!)</HintStyled>
+            </InstructionsStyled>
+          </Fragment>
         }
         <Profile
           handleClose={toggleProfile}

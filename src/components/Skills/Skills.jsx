@@ -47,6 +47,7 @@ const Skills = ({ handleClose, show }: Props) => (
     </IconWrapperStyled>
 
     <SkillsList>
+      <li>Redux</li>
       <li>JQuery</li>
       <li>Knockout</li>
       <li>Webpack</li>

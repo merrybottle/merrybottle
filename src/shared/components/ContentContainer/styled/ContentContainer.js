@@ -25,7 +25,7 @@ export const IconStyled = styled.span`
 `;
 
 export const ContentStyled = styled.div`
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     background-color: #48c9b0;
     border-radius: 10px;
     box-sizing: border-box;
@@ -41,7 +41,7 @@ export const ContentStyled = styled.div`
 `;
 
 export const ContentContainerStyled = styled.div`
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     background-color: rgba(0, 0, 0, 0.4);
     content: '';
     display: ${({ show }) => (show ? 'block' : 'none')};
@@ -54,7 +54,7 @@ export const ContentContainerStyled = styled.div`
 `;
 
 export const TitleStyled = styled.h1`
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     color: #1a1a1a;
     font-family: 'Nixie One', sans-serif;
     font-size: 26px;
@@ -78,7 +78,7 @@ export const BodyStyled = styled.div`
   line-height: 24px;
   padding: 40px;
 
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.small.min}) {
     height: calc(100% - 136px);
     overflow: auto;
   }

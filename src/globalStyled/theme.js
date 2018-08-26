@@ -1,8 +1,19 @@
+const breakpoint = {
+  mobile: 700,
+  small: 1100
+};
+
 export default {
   breakpoint: {
     mobile: {
-      max: '700px'
+      max: `${breakpoint.mobile}px`
     },
-    medium: '1100px'
+    small: {
+      min: `${breakpoint.mobile + 1}px`,
+      max: `${breakpoint.small}px`
+    },
+    medium: {
+      min: `${breakpoint.small + 1}px`
+    }
   }
 };

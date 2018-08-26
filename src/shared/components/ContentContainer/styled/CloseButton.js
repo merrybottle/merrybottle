@@ -59,7 +59,7 @@ export const CloseButtonStyled = styled.button`
     }
   }
 
-   @media (max-width: 699px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     display: none;
-   }
+  }
 `;
