@@ -4,6 +4,7 @@ import ContentContainer from 'shared/components/ContentContainer';
 import Facebook from 'shared/logos/Facebook';
 import Instagram from 'shared/logos/Instagram';
 import LinkedIn from 'shared/logos/LinkedIn';
+import Phone from './Phone';
 
 type Props = {
   handleClose: Function,
@@ -13,6 +14,7 @@ type Props = {
 const Contact = ({ handleClose, show }: Props) => (
   <ContentContainer
     handleClose={handleClose}
+    icon={<Phone />}
     show={show}
     title="Contact me"
   >

@@ -5,12 +5,14 @@ import {
   BodyStyled,
   ContentContainerStyled,
   ContentStyled,
+  IconStyled,
   TitleStyled
 } from './styled/ContentContainer';
 
 type Props = {
   children: Node,
   handleClose: Function,
+  icon: Node,
   show: boolean,
   title: string
 };
@@ -20,6 +22,7 @@ class ContentContainer extends PureComponent<Props> {
     const {
       children,
       handleClose,
+      icon,
       show,
       title
     } = this.props;
@@ -28,6 +31,9 @@ class ContentContainer extends PureComponent<Props> {
       <ContentContainerStyled show={show}>
         <ContentStyled>
           <CloseButton handleClick={handleClose} />
+          <IconStyled>
+            {icon}
+          </IconStyled>
           <TitleStyled>{title}</TitleStyled>
 
           <BodyStyled>

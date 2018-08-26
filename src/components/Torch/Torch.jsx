@@ -11,8 +11,8 @@ class Torch extends PureComponent<State> {
   state = {
     circleX: 300,
     circleY: 300,
-    radiusX: 75,
-    radiusY: 75,
+    radiusX: 100,
+    radiusY: 100,
     svgHeight: null,
     svgWidth: null
   };
@@ -31,8 +31,8 @@ class Torch extends PureComponent<State> {
     this.setState({
       circleX: width / 2 / width * 600,
       circleY: height / 2 / height * 600,
-      radiusX: (600 / width) * 75,
-      radiusY: (600 / height) * 75,
+      radiusX: (600 / width) * 100,
+      radiusY: (600 / height) * 100,
       svgHeight: height,
       svgWidth: width
     });
@@ -52,8 +52,8 @@ class Torch extends PureComponent<State> {
     this.setState({
       circleX: e.clientX / svgWidth * 600,
       circleY: e.clientY / svgHeight * 600,
-      radiusX: (600 / svgWidth) * 75,
-      radiusY: (600 / svgHeight) * 75
+      radiusX: (600 / svgWidth) * 100,
+      radiusY: (600 / svgHeight) * 100
     });
   }
 

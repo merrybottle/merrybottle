@@ -9,8 +9,8 @@ const dash = keyframes`
 
 const rainboxPathStyles = `
   opacity: 0.8;
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
 `;
 
 export const RedRainbowPathStyled = styled.path``;

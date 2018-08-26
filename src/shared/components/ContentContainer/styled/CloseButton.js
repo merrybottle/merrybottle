@@ -5,6 +5,7 @@ const buttonSize = 50;
 export const CloseButtonStyled = styled.button`
   background: none;
   border: 0;
+  border-radius: 0;
   box-sizing: border-box;
   color: transparent;
   cursor: pointer;
@@ -25,7 +26,7 @@ export const CloseButtonStyled = styled.button`
 
   ::before,
   ::after {
-    background-color: #21618c;
+    background-color: #1a1a1a;
     content: '';
     display: block;
     height: 1px;
@@ -48,7 +49,8 @@ export const CloseButtonStyled = styled.button`
   }
 
   :hover {
-    color: #ebf5fb;
+    border-radius: 7px;
+    color: white;
 
     ::before,
     ::after {
