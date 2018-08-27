@@ -29,7 +29,8 @@ export const ContentStyled = styled.div`
   background-color: ${({ theme }) => theme.color.primary};
   border-radius: 10px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
+  (-webkit-device-pixel-ratio:3) {
     padding: 20px;
     position: relative;
   }
@@ -48,7 +49,8 @@ export const ContentStyled = styled.div`
 `;
 
 export const ContentContainerStyled = styled.div`
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
+  (-webkit-device-pixel-ratio:3) {
     margin: 0 20px 20px;
 
     & + & {

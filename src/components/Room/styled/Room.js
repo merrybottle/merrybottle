@@ -147,7 +147,8 @@ export const RoomStyled = styled.div`
     filter: blur(4px);
   ` : '')}
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
+  (-webkit-device-pixel-ratio:3) {
     display: none;
   }
 
