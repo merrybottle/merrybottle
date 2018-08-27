@@ -9,8 +9,7 @@ const showHint = keyframes`
 export const MerryBottleStyled = styled.div`
   background-color: #873600;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
-  (-webkit-device-pixel-ratio:3) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     ${({ theme }) => theme.brickwall}
 
     padding: 70px 0 40px;
@@ -31,8 +30,7 @@ export const InstructionsStyled = styled.span`
   text-transform: uppercase;
   transform: translateX(-50%);
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
-  (-webkit-device-pixel-ratio:3) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     display: none;
   }
 `;

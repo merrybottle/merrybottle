@@ -9,8 +9,7 @@ export const TorchStyled = styled.svg`
   position: fixed;
   top: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}),
-  (-webkit-device-pixel-ratio:3) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile.max}) {
     display: none;
   }
 `;
