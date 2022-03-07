@@ -60,6 +60,8 @@ const StyledWindow = styled.div`
   ${backgroundColor('white')}
   ${borderRadius('xs')}
   overflow: hidden;
+  height: ${getSpace('xs')};
+  width: 0;
 `;
 
 const StyledPresenter = styled.div`
