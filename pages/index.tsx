@@ -1,9 +1,12 @@
-import { Controls } from '@components/controls';
+import { Box } from '@components/box';
+import { Controls, CONTROLS_HEIGHT } from '@components/controls';
+import { MeetingTitle } from '@components/meeting-title';
 import { Presenter } from '@components/presenter';
-import { paddingX, paddingY } from '@styles/space';
+import { mediaMatch } from '@styles/media';
+import { paddingTop, paddingX } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +16,30 @@ const Home: NextPage = () => {
       </Head>
 
       <StyledContainer>
-        <StyledScreen>
-          <StyledPresenterContainer>
+        <Box
+          display={{ xs: 'flex', md: 'none' }}
+          height={MEETING_TITLE_HEIGHT_XS}
+          paddingX="sm"
+          alignItems="center"
+        >
+          <MeetingTitle />
+        </Box>
+
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          height={{
+            xs: `calc(100% - ${MEETING_TITLE_HEIGHT_XS}px)`,
+            md: '100%',
+          }}
+          paddingX={{ xs: 'sm', lg: 'md' }}
+          paddingTop={{ lg: 'md' }}
+        >
+          <StyledPresenterContainerBox>
             <Presenter />
-          </StyledPresenterContainer>
-        </StyledScreen>
+          </StyledPresenterContainerBox>
+        </Box>
 
         <Controls />
       </StyledContainer>
@@ -25,24 +47,28 @@ const Home: NextPage = () => {
   );
 };
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-`;
+const MEETING_TITLE_HEIGHT_XS = 64;
 
-const StyledScreen = styled.div`
-  ${paddingX({ xs: 'sm', lg: 'xl' })}
-  ${paddingY({ xs: 'sm', lg: 'md' })}
-  box-sizing: border-box;
-  flex: 1;
-`;
-
-const StyledPresenterContainer = styled.div`
+const StyledPresenterContainerBox = styled(Box).attrs({
+  width: '100%',
+  maxHeight: '100%',
+})`
   position: relative;
   height: 100%;
-  width: 100%;
+
+  ${mediaMatch({
+    md: css`
+      aspect-ratio: 1;
+      height: unset;
+    `,
+  })}
+`;
+
+const StyledContainer = styled(Box).attrs({
+  height: '100vh',
+  width: '100vw',
+})`
+  padding-bottom: ${CONTROLS_HEIGHT}px;
 `;
 
 export default Home;

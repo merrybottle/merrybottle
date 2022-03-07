@@ -1,4 +1,4 @@
-import styled, { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
 import Document, {
   DocumentContext,
   Html,
@@ -40,6 +40,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="description" content="Online presentation" />
           <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@800&family=Fredoka:wght@300;400;500&family=Open+Sans:wght@400;600&display=swap"
+            rel="stylesheet"
+          />
         </Head>
 
         <body>

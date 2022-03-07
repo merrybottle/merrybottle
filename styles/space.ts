@@ -1,5 +1,5 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { mediaMatch, Query } from './media';
+import { mediaMatch, Query, responsiveStyle } from './media';
 
 export type Space = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 
@@ -14,112 +14,65 @@ export const spaces: Record<Space, string> = {
   xxl: '64px',
 };
 
-export const getSpace = (type: Space): string => spaces[type];
+export const getSpace = (type: Space | string | number): string =>
+  spaces[type as Space];
 
-const spacingStyle = (
-  property: string,
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  if (typeof space === 'string') {
-    return css`
-      ${property}: ${getSpace(space)};
-    `;
-  }
+export type SpaceProps = Space | Partial<Record<Query, Space>>;
 
-  const spacingCss: Partial<Record<Query, FlattenSimpleInterpolation>> = {};
-
-  Object.keys(space).forEach((media) => {
-    const mediaSpace = space[media as Query];
-    if (mediaSpace) {
-      spacingCss[media as Query] = css`
-        ${property}: ${getSpace(mediaSpace)};
-      `;
-    }
-  });
-
-  return mediaMatch(spacingCss);
+export const padding = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('padding', space, getSpace);
 };
-
-export const padding = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('padding', space);
-};
-export const paddingTop = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('padding-top', space);
+export const paddingTop = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('padding-top', space, getSpace);
 };
 export const paddingBottom = (
-  space: Space | Partial<Record<Query, Space>>
+  space: SpaceProps
 ): FlattenSimpleInterpolation => {
-  return spacingStyle('padding-bottom', space);
+  return responsiveStyle('padding-bottom', space, getSpace);
 };
-export const paddingLeft = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('padding-left', space);
+export const paddingLeft = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('padding-left', space, getSpace);
 };
-export const paddingRight = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('padding-right', space);
+export const paddingRight = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('padding-right', space, getSpace);
 };
-export const paddingX = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
+export const paddingX = (space: SpaceProps): FlattenSimpleInterpolation => {
   return css`
-    ${spacingStyle('padding-left', space)}
-    ${spacingStyle('padding-right', space)}
+    ${responsiveStyle('padding-left', space, getSpace)}
+    ${responsiveStyle('padding-right', space, getSpace)}
   `;
 };
-export const paddingY = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
+export const paddingY = (space: SpaceProps): FlattenSimpleInterpolation => {
   return css`
-    ${spacingStyle('padding-top', space)}
-    ${spacingStyle('padding-bottom', space)}
+    ${responsiveStyle('padding-top', space, getSpace)}
+    ${responsiveStyle('padding-bottom', space, getSpace)}
   `;
 };
 
-export const margin = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('margin', space);
+export const margin = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('margin', space, getSpace);
 };
-export const marginTop = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('margin-top', space);
+export const marginTop = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('margin-top', space, getSpace);
 };
-export const marginBottom = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('margin-bottom', space);
+export const marginBottom = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('margin-bottom', space, getSpace);
 };
-export const marginLeft = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('margin-left', space);
+export const marginLeft = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('margin-left', space, getSpace);
 };
-export const marginRight = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
-  return spacingStyle('margin-right', space);
+export const marginRight = (space: SpaceProps): FlattenSimpleInterpolation => {
+  return responsiveStyle('margin-right', space, getSpace);
 };
-export const marginX = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
+export const marginX = (space: SpaceProps): FlattenSimpleInterpolation => {
   return css`
-    ${spacingStyle('margin-left', space)}
-    ${spacingStyle('margin-right', space)}
+    ${responsiveStyle('margin-left', space, getSpace)}
+    ${responsiveStyle('margin-right', space, getSpace)}
   `;
 };
-export const marginY = (
-  space: Space | Partial<Record<Query, Space>>
-): FlattenSimpleInterpolation => {
+export const marginY = (space: SpaceProps): FlattenSimpleInterpolation => {
   return css`
-    ${spacingStyle('margin-top', space)}
-    ${spacingStyle('margin-bottom', space)}
+    ${responsiveStyle('margin-top', space, getSpace)}
+    ${responsiveStyle('margin-bottom', space, getSpace)}
   `;
 };

@@ -1,4 +1,8 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import {
+  css,
+  CSSProperties,
+  FlattenSimpleInterpolation,
+} from 'styled-components';
 
 export type Query = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -30,4 +34,29 @@ export const mediaMatch = (
   });
 
   return style;
+};
+
+export const responsiveStyle = (
+  property: string,
+  value: string | number | Partial<Record<Query, string | number>>,
+  fn?: (value: string | number) => FlattenSimpleInterpolation | string
+): FlattenSimpleInterpolation => {
+  if (typeof value === 'string' || typeof value === 'number') {
+    return css`
+      ${property}: ${fn ? fn(value) : value};
+    `;
+  }
+
+  const responsiveCss: Partial<Record<Query, FlattenSimpleInterpolation>> = {};
+
+  Object.keys(value).forEach((media) => {
+    const mediaStyle = value[media as Query];
+    if (mediaStyle) {
+      responsiveCss[media as Query] = css`
+        ${property}: ${fn ? fn(mediaStyle) : mediaStyle};
+      `;
+    }
+  });
+
+  return mediaMatch(responsiveCss);
 };
