@@ -1,7 +1,14 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 import { mediaMatch, Query } from './media';
 
-export type Color = 'black' | 'white' | 'dark' | 'pink' | 'yellow' | 'blue';
+export type Color =
+  | 'black'
+  | 'white'
+  | 'dark'
+  | 'pink'
+  | 'yellow'
+  | 'blue'
+  | 'red';
 
 export const colors: Record<Color, string> = {
   black: '#000000',
@@ -9,7 +16,8 @@ export const colors: Record<Color, string> = {
   dark: '#373b43',
   pink: '#efa9ae',
   yellow: '#ffb400',
-  blue: '7ebdc3',
+  blue: '#7ebdc3',
+  red: '#f25f5c',
 };
 
 export const getColor = (type: Color): string => colors[type];

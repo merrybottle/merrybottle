@@ -1,14 +1,18 @@
 import { Box } from '@components/box';
-import { Controls, CONTROLS_HEIGHT } from '@components/controls';
+import { Footer, FOOTER_HEIGHT, Logout } from '@components/footer';
 import { MeetingTitle } from '@components/meeting-title';
 import { Presenter } from '@components/presenter';
+import { Step, steps } from '@helpers/step';
 import { mediaMatch } from '@styles/media';
 import { paddingTop, paddingX } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 const Home: NextPage = () => {
+  const [stepIndex, setStepIndex] = useState<number>(0);
+
   return (
     <>
       <Head>
@@ -21,8 +25,10 @@ const Home: NextPage = () => {
           height={MEETING_TITLE_HEIGHT_XS}
           paddingX="sm"
           alignItems="center"
+          justifyContent="space-between"
         >
           <MeetingTitle />
+          <Logout />
         </Box>
 
         <Box
@@ -37,11 +43,11 @@ const Home: NextPage = () => {
           paddingTop={{ lg: 'md' }}
         >
           <StyledPresenterContainerBox>
-            <Presenter />
+            <Presenter step={steps[stepIndex]} />
           </StyledPresenterContainerBox>
         </Box>
 
-        <Controls />
+        <Footer currentStepIndex={stepIndex} onStepIndexChange={setStepIndex} />
       </StyledContainer>
     </>
   );
@@ -68,7 +74,7 @@ const StyledContainer = styled(Box).attrs({
   height: '100vh',
   width: '100vw',
 })`
-  padding-bottom: ${CONTROLS_HEIGHT}px;
+  padding-bottom: ${FOOTER_HEIGHT}px;
 `;
 
 export default Home;
