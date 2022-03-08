@@ -14,7 +14,7 @@ export const Presenter: React.FC = () => {
     <StyledContainer>
       <StyledWindow>
         <StyledPresenter>
-          <Box height={{ md: '90%' }}>
+          <Box height={{ md: '80%' }}>
             <Me />
           </Box>
 
