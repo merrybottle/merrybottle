@@ -2,7 +2,7 @@ export type Font = 'meeting' | 'heading' | 'text';
 
 export const fonts: Record<Font, string> = {
   meeting: `'Open Sans', sans-serif`,
-  heading: `'Bodoni Moda', serif`,
+  heading: `'Merriweather', serif`,
   text: `'Fredoka', sans-serif`,
 };
 

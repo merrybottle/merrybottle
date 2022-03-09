@@ -9,6 +9,7 @@ interface InlineProps {
 
 export const Inline = styled.div<InlineProps>`
   display: inline-flex;
+  flex-wrap: wrap;
   ${({ alignY = 'center' }) => alignItems(alignY)}
 
   > *:not(:first-child) {

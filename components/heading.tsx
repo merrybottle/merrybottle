@@ -4,36 +4,33 @@ import { Query, responsiveStyle } from '@styles/media';
 import { textAlign } from '@styles/mixins';
 import styled, { css } from 'styled-components';
 
-type Size = 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+type Size = 'lg' | 'md' | 'sm';
 type SizeProps = Size | Partial<Record<Query, Size>>;
-type Variant = Omit<Font, 'heading'>;
-type FontWeight = 'light' | 'regular' | 'bold';
+type Variant = Omit<Font, 'text'>;
 
-interface TextProps {
+interface HeadingProps {
+  as: 'h1' | 'h2' | 'h3';
   size: SizeProps;
   variant: Variant;
   color?: Color;
-  fontWeight?: FontWeight;
   opacity?: number;
   align?: Parameters<typeof textAlign>[0];
 }
 
-export const Text: React.FC<TextProps> = ({
+export const Heading: React.FC<HeadingProps> = ({
   color: textColor,
   size,
   variant,
-  fontWeight,
   opacity,
   align,
   ...props
 }) => {
   return (
-    <StyledP
+    <StyledHeading
       $color={textColor}
       $opacity={opacity}
       $size={size}
       $variant={variant}
-      $fontWeight={fontWeight}
       $align={align}
       {...props}
     />
@@ -41,19 +38,15 @@ export const Text: React.FC<TextProps> = ({
 };
 
 const fontSizes: Record<Size, string> = {
-  xl: '48px',
-  lg: '20px',
-  md: '16px',
-  sm: '14px',
-  xs: '12px',
+  lg: '64px',
+  md: '32px',
+  sm: '28px',
 };
 
 const lineHeights: Record<Size, string> = {
-  xl: '64px',
-  lg: '30px',
-  md: '26px',
-  sm: '22px',
-  xs: '18px',
+  lg: '86px',
+  md: '46px',
+  sm: '42px',
 };
 
 const getFontSize = (type: Size | string | number): string =>
@@ -61,11 +54,10 @@ const getFontSize = (type: Size | string | number): string =>
 const getLineHeight = (type: Size | string | number): string =>
   lineHeights[type as Size];
 
-const StyledP = styled.p<{
+const StyledHeading = styled.h1<{
   $size: SizeProps;
   $variant: Variant;
   $color?: Color;
-  $fontWeight?: FontWeight;
   $opacity?: number;
   $align?: Parameters<typeof textAlign>[0];
 }>`
@@ -83,42 +75,22 @@ const StyledP = styled.p<{
   }}
 
   ${({ $size: size }) => responsiveStyle('font-size', size, getFontSize)}
-  ${({ $size: size }) => responsiveStyle('line-height', size, getLineHeight)}
+  ${({ $size: size }) => responsiveStyle('lineHeights', size, getLineHeight)}
 
   ${({ $variant: variant }) => fontFamily(variant as Font)}
 
   ${({ $align: align = 'left' }) => textAlign(align)}
 
-  ${({ $variant: variant, $fontWeight: fontWeight }) => {
+  ${({ $variant: variant }) => {
     if (variant === 'meeting') {
-      switch (fontWeight) {
-        case 'bold':
-          return `font-weight: 600;`;
-        case 'light':
-        case 'regular':
-        default:
-          return `font-weight: 400;`;
-      }
+      return css`
+        font-weight: 600;
+      `;
     }
 
-    switch (fontWeight) {
-      case 'light':
-        return `font-weight: 300;`;
-      case 'bold':
-        return `font-weight: 500;`;
-      case 'regular':
-      default:
-        return `font-weight: 400;`;
-    }
+    return css`
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    `;
   }}
-
-  strong {
-    ${({ $variant: variant, $fontWeight: fontWeight }) => {
-      if (variant === 'meeting') {
-        return `font-weight: 600;`;
-      }
-
-      return `font-weight: 500;`;
-    }}
-  }
 `;

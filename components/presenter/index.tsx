@@ -1,15 +1,16 @@
 import { Box } from '@components/box';
-import { Step } from '@helpers/step';
+import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
-import { backgroundColor } from '@styles/color';
+import { backgroundColor, getColor, rgba } from '@styles/color';
 import { mediaMatch } from '@styles/media';
-import { borderRadius } from '@styles/mixins';
+import { borderRadius, minHeight, minWidth } from '@styles/mixins';
 import { getSpace } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { ClosedCaption } from './closed-caption';
 import { Me } from './me';
 import skyscrapersImg from './skyscrapers.jpg';
+import { Slides } from './slides';
 
 interface PresenterProps {
   step: Step;
@@ -19,16 +20,20 @@ export const Presenter: React.FC<PresenterProps> = ({ step }) => {
   return (
     <StyledContainer>
       <StyledWindow>
+        {steps.indexOf(step) >= steps.indexOf('INTRO_8') && (
+          <Slides step={step} />
+        )}
+
         <StyledPresenter step={step}>
-          <Box height={{ md: '90%' }}>
+          <Box height="90%">
             <Me />
           </Box>
-
-          <StyledClosedCaptionContainer>
-            <ClosedCaption step={step} />
-          </StyledClosedCaptionContainer>
         </StyledPresenter>
       </StyledWindow>
+
+      <StyledClosedCaptionContainer>
+        <ClosedCaption step={step} />
+      </StyledClosedCaptionContainer>
     </StyledContainer>
   );
 };
@@ -74,7 +79,7 @@ const StyledPresenter = styled.div<{
   step: Step;
 }>`
   ${borderRadius('xs')}
-  animation: ${fadeInAnimation} 0.5s linear 1.9s forwards;
+  animation: ${fadeInAnimation} 0.5s linear 2.1s forwards;
   opacity: 0;
   position: absolute;
   height: 100%;
@@ -83,7 +88,8 @@ const StyledPresenter = styled.div<{
   align-items: flex-end;
   justify-content: center;
   transition: 0.5s ease-in;
-  bottom: 0;
+  top: 100%;
+  transform: translateY(-100%);
   left: 0;
   overflow: hidden;
 
@@ -105,11 +111,24 @@ const StyledPresenter = styled.div<{
     if (step.includes('SLIDES')) {
       return css`
         border-radius: 50%;
-        height: 200px;
-        width: 200px;
+        height: 15vw;
+        width: 15vw;
+        ${minHeight({ xs: 120, md: 150, lg: 200 })}
+        ${minWidth({ xs: 120, md: 150, lg: 200 })}
         overflow: hidden;
-        bottom: ${getSpace('xs')};
-        left: ${getSpace('xs')};
+
+        ${mediaMatch({
+          xs: css`
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(-70%);
+          `,
+          md: css`
+            top: calc(100% - ${getSpace('xs')});
+            left: ${getSpace('xs')};
+            transform: translateY(-100%);
+          `,
+        })}
       `;
     }
 
@@ -124,7 +143,7 @@ const StyledClosedCaptionContainer = styled.div`
     xs: css`
       top: ${getSpace('md')};
     `,
-    md: css`
+    lg: css`
       top: auto;
       bottom: ${getSpace('md')};
     `,

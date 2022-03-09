@@ -5,6 +5,7 @@ import {
   display,
   flex,
   flexDirection,
+  flexWrap,
   height,
   justifyContent,
   maxHeight,
@@ -12,6 +13,7 @@ import {
   minHeight,
   minWidth,
   opacity,
+  overflow,
   width,
 } from '@styles/mixins';
 import {
@@ -40,6 +42,7 @@ export const Box = styled.div<{
   display?: Parameters<typeof display>[0];
   flex?: Parameters<typeof flex>[0];
   flexDirection?: Parameters<typeof flexDirection>[0];
+  flexWrap?: Parameters<typeof flexWrap>[0];
   alignItems?: Parameters<typeof alignItems>[0];
   justifyContent?: Parameters<typeof justifyContent>[0];
   width?: Parameters<typeof width>[0];
@@ -63,6 +66,7 @@ export const Box = styled.div<{
   paddingX?: SpaceProps;
   paddingY?: SpaceProps;
   opacity?: Parameters<typeof opacity>[0];
+  overflow?: Parameters<typeof overflow>[0];
 }>`
   box-sizing: border-box;
 
@@ -100,6 +104,11 @@ export const Box = styled.div<{
     if (props.flexDirection) {
       styles = css`
         ${styles}${flexDirection(props.flexDirection)}
+      `;
+    }
+    if (props.flexWrap) {
+      styles = css`
+        ${styles}${flexWrap(props.flexWrap)}
       `;
     }
     if (props.alignItems) {
@@ -218,6 +227,12 @@ export const Box = styled.div<{
     if (props.opacity) {
       styles = css`
         ${styles}${opacity(props.opacity)}
+      `;
+    }
+
+    if (props.overflow) {
+      styles = css`
+        ${styles}${overflow(props.overflow)}
       `;
     }
 

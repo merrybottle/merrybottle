@@ -3,7 +3,6 @@ import { Footer, FOOTER_HEIGHT, Logout } from '@components/footer';
 import { MeetingTitle } from '@components/meeting-title';
 import { Presenter } from '@components/presenter';
 import { Step, steps } from '@helpers/step';
-import { mediaMatch } from '@styles/media';
 import { paddingTop, paddingX } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -21,7 +20,7 @@ const Home: NextPage = () => {
 
       <StyledContainer>
         <Box
-          display={{ xs: 'flex', md: 'none' }}
+          display={{ xs: 'flex', lg: 'none' }}
           height={MEETING_TITLE_HEIGHT_XS}
           paddingX="sm"
           alignItems="center"
@@ -37,7 +36,7 @@ const Home: NextPage = () => {
           justifyContent="center"
           height={{
             xs: `calc(100% - ${MEETING_TITLE_HEIGHT_XS}px)`,
-            md: '100%',
+            lg: '100%',
           }}
           paddingX={{ xs: 'sm', lg: 'md' }}
           paddingTop={{ lg: 'md' }}
@@ -53,7 +52,7 @@ const Home: NextPage = () => {
   );
 };
 
-const MEETING_TITLE_HEIGHT_XS = 64;
+const MEETING_TITLE_HEIGHT_XS = 96;
 
 const StyledPresenterContainerBox = styled(Box).attrs({
   width: '100%',
@@ -61,13 +60,6 @@ const StyledPresenterContainerBox = styled(Box).attrs({
 })`
   position: relative;
   height: 100%;
-
-  ${mediaMatch({
-    md: css`
-      aspect-ratio: 1;
-      height: unset;
-    `,
-  })}
 `;
 
 const StyledContainer = styled(Box).attrs({

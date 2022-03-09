@@ -8,7 +8,9 @@ export type Color =
   | 'pink'
   | 'yellow'
   | 'blue'
-  | 'red';
+  | 'red'
+  | 'spaceship'
+  | 'oneflare';
 
 export const colors: Record<Color, string> = {
   black: '#000000',
@@ -18,6 +20,8 @@ export const colors: Record<Color, string> = {
   yellow: '#ffb400',
   blue: '#7ebdc3',
   red: '#f25f5c',
+  spaceship: '#600ce8',
+  oneflare: '#0c8688',
 };
 
 export const getColor = (type: Color): string => colors[type];

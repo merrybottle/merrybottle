@@ -37,6 +37,22 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({ step }) => {
     case 'INTRO_8':
       copy = <>If you&apos;re ready, shall we start?</>;
       break;
+    case 'END_1':
+      copy = <>And that&apos;s it!</>;
+      break;
+    case 'END_2':
+      copy = 'If you have any questions';
+      break;
+    case 'END_3':
+      copy = 'feel free to drop me a message 《⤵️》';
+      break;
+    case 'END_4':
+      copy = 'Otherwise, see you next time! 👋';
+      break;
+  }
+
+  if (!copy) {
+    return null;
   }
 
   return (

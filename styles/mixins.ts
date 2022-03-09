@@ -20,6 +20,13 @@ export const flex = (
 ) => {
   return responsiveStyle('flex', value);
 };
+export const flexWrap = (
+  value:
+    | Omit<CSSProperties['flexWrap'], 'undefined'>
+    | Partial<Record<Query, CSSProperties['flexWrap']>>
+) => {
+  return responsiveStyle('flex-wrap', value);
+};
 export const flexDirection = (
   value:
     | Omit<CSSProperties['flexDirection'], 'undefined'>
@@ -94,6 +101,14 @@ export const opacity = (
     | Partial<Record<Query, CSSProperties['opacity']>>
 ) => {
   return responsiveStyle('opacity', value);
+};
+
+export const overflow = (
+  value:
+    | Omit<CSSProperties['overflow'], 'undefined'>
+    | Partial<Record<Query, CSSProperties['overflow']>>
+) => {
+  return responsiveStyle('overflow', value);
 };
 
 export const textAlign = (

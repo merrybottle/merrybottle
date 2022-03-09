@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <StyledContainer>
       <Box display="flex" alignItems="center" width="100%">
-        <Box display={{ xs: 'none', md: 'block' }} flex={1 / 3}>
+        <Box display={{ xs: 'none', lg: 'block' }} flex={1 / 3}>
           <Inline space="sm">
             <Clock />
             <Text variant="meeting" color="white" size="md" opacity={0.6}>
@@ -43,7 +43,7 @@ export const Footer: React.FC<FooterProps> = ({
           </Inline>
         </Box>
 
-        <Box flex={{ xs: 1, md: 1 / 3 }} display="flex" justifyContent="center">
+        <Box flex={{ xs: 1, lg: 1 / 3 }} display="flex" justifyContent="center">
           <Controls
             onBack={
               currentStepIndex > 0
@@ -59,7 +59,7 @@ export const Footer: React.FC<FooterProps> = ({
         </Box>
 
         <Box
-          display={{ xs: 'none', md: 'flex' }}
+          display={{ xs: 'none', lg: 'flex' }}
           flex={1 / 3}
           justifyContent="flex-end"
         >
@@ -187,7 +187,7 @@ const StyledControlButton = styled.button<{
 
   ::after {
     content: '';
-    ${backgroundColor('white')}
+    ${backgroundColor('black')}
     border-radius: 50%;
     position: absolute;
     height: 100%;
@@ -204,7 +204,7 @@ const StyledControlButton = styled.button<{
   }
 
   :not(:disabled):hover::after {
-    opacity: 0.1;
-    transform: scale(1.2);
+    opacity: 0.3;
+    transform: scale(2);
   }
 `;
