@@ -1,5 +1,6 @@
 # Todo list
 
+- Favicon
 - Start button
 - Exit button
 - Chat window
@@ -10,4 +11,5 @@
 - Add Restart button on the last slide
 - Safari
 - Firefox
+- Cleanup
 - Music?
