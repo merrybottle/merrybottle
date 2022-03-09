@@ -7,7 +7,7 @@ import { Text } from '@components/text';
 import { Step, steps } from '@helpers/step';
 import { backgroundColor, rgba } from '@styles/color';
 import { borderRadius } from '@styles/mixins';
-import { paddingTop, paddingX, paddingY } from '@styles/space';
+import { getSpace, paddingTop, paddingX, paddingY } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
           minHeight="100vh"
         >
           <StyledStartButton onClick={() => setStepIndex(stepIndex + 1)}>
-            <Text variant="meeting" size="lg" color="black" fontWeight="bold">
+            <Text variant="meeting" size="xl" color="white" fontWeight="bold">
               Ready to join?
             </Text>
           </StyledStartButton>
@@ -103,14 +103,36 @@ const StyledContainer = styled(Box).attrs({
 `;
 
 const StyledStartButton = styled.button`
-  ${borderRadius('xs')}
+  ${borderRadius('sm')}
   ${backgroundColor('red')}
-  ${paddingX('md')}
-  ${paddingY('xs')}
-  box-shadow: 0 0 12px 4px ${rgba('black', 0.2)};
+  ${paddingX('lg')}
+  ${paddingY('sm')}
   cursor: pointer;
   outline: none;
   border: none;
+  position: relative;
+
+  ::after {
+    content: '';
+    ${backgroundColor('black')}
+    ${borderRadius('lg')}
+    position: absolute;
+    opacity: 0;
+    transition: 0.25s ease-in;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  :hover::after {
+    opacity: 0.3;
+    top: -${getSpace('md')};
+    bottom: -${getSpace('md')};
+    left: -${getSpace('md')};
+    right: -${getSpace('md')};
+  }
 `;
 
 export default Home;
