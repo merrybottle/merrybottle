@@ -117,7 +117,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="pink" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -126,7 +126,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 React Native
               </Text>
             </Highlight>
@@ -134,7 +134,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="yellow" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -145,7 +145,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="blue" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -154,19 +154,19 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 JavaScript
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 CSS animations
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 SASS
               </Text>
             </Highlight>
@@ -174,7 +174,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="pink" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -183,7 +183,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 SVG
               </Text>
             </Highlight>
@@ -191,7 +191,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="blue" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -200,19 +200,19 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 NextJS
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 GatsbyJS
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 prismic.io
               </Text>
             </Highlight>
@@ -220,7 +220,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="yellow" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -229,19 +229,19 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 Jest
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 NodeJS
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 JQuery
               </Text>
             </Highlight>
@@ -253,7 +253,13 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
         <Slide heading="Portfolio">
           <Stack space="xxl" alignX="center">
             <Stack space="md" alignX="center">
-              <Heading variant="heading" size="md" as="h2" color="dark">
+              <Heading
+                variant="heading"
+                size={{ xs: 'sm', lg: 'md' }}
+                as="h2"
+                color="dark"
+                align="center"
+              >
                 Personal work
               </Heading>
 
@@ -346,7 +352,13 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Stack>
 
             <Stack space="md" alignX="center">
-              <Heading variant="heading" size="md" as="h2" color="dark">
+              <Heading
+                variant="heading"
+                size={{ xs: 'sm', lg: 'md' }}
+                as="h2"
+                color="dark"
+                align="center"
+              >
                 Most recent professonal work
               </Heading>
 
@@ -420,12 +432,12 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             flexWrap="wrap"
             alignItems="center"
             justifyContent="center"
-            maxWidth={{ lg: 900 }}
+            maxWidth={{ lg: 400 }}
           >
             <Highlight backgroundColor="pink" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -436,7 +448,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="blue" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -447,7 +459,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Highlight backgroundColor="yellow" margin="xs">
               <Text
                 variant="text"
-                size={{ xs: 'lg', lg: 'xl' }}
+                size={{ xs: 'lg', xl: 'xl' }}
                 color="dark"
                 fontWeight="bold"
               >
@@ -456,13 +468,13 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 Sudoku
               </Text>
             </Highlight>
 
             <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', lg: 'xl' }} color="dark">
+              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
                 Eating heaps of desserts
               </Text>
             </Highlight>
@@ -524,16 +536,16 @@ const Slide: React.FC<SlideProps> = ({ children, heading }) => {
         marginY="xs"
       />
 
-      <Box
-        flex={1}
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent={{ lg: 'center' }}
-        overflow="auto"
-        paddingY="md"
-      >
-        {children}
+      <Box flex={1} overflow="auto" paddingY="md">
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent={{ lg: 'center' }}
+          minHeight="100%"
+        >
+          {children}
+        </Box>
       </Box>
     </>
   );

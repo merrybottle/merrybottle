@@ -38,13 +38,13 @@ export const Heading: React.FC<HeadingProps> = ({
 };
 
 const fontSizes: Record<Size, string> = {
-  lg: '64px',
+  lg: '48px',
   md: '32px',
   sm: '28px',
 };
 
 const lineHeights: Record<Size, string> = {
-  lg: '86px',
+  lg: '64px',
   md: '46px',
   sm: '42px',
 };

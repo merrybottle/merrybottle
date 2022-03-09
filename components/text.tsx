@@ -4,7 +4,7 @@ import { Query, responsiveStyle } from '@styles/media';
 import { textAlign } from '@styles/mixins';
 import styled, { css } from 'styled-components';
 
-type Size = 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+type Size = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
 type SizeProps = Size | Partial<Record<Query, Size>>;
 type Variant = Omit<Font, 'heading'>;
 type FontWeight = 'light' | 'regular' | 'bold';
@@ -41,7 +41,8 @@ export const Text: React.FC<TextProps> = ({
 };
 
 const fontSizes: Record<Size, string> = {
-  xl: '48px',
+  xxl: '48px',
+  xl: '28px',
   lg: '20px',
   md: '16px',
   sm: '14px',
@@ -49,7 +50,8 @@ const fontSizes: Record<Size, string> = {
 };
 
 const lineHeights: Record<Size, string> = {
-  xl: '64px',
+  xxl: '64px',
+  xl: '36px',
   lg: '30px',
   md: '26px',
   sm: '22px',

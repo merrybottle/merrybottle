@@ -59,7 +59,7 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({ step }) => {
     <StyledBackgroundBox>
       <Text
         variant="meeting"
-        size={{ xs: 'lg', lg: 'xl' }}
+        size={{ xs: 'lg', lg: 'xxl' }}
         color="white"
         align="center"
       >
