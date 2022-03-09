@@ -4,14 +4,14 @@ import { Footer, FOOTER_HEIGHT, Logout } from '@components/footer';
 import { MeetingTitle } from '@components/meeting-title';
 import { Presenter } from '@components/presenter';
 import { Text } from '@components/text';
-import { Step, steps } from '@helpers/step';
-import { backgroundColor, rgba } from '@styles/color';
+import { steps } from '@helpers/step';
+import { backgroundColor } from '@styles/color';
 import { borderRadius } from '@styles/mixins';
-import { getSpace, paddingTop, paddingX, paddingY } from '@styles/space';
+import { getSpace, paddingX, paddingY } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Home: NextPage = () => {
   const [stepIndex, setStepIndex] = useState<number>(0);

@@ -7,7 +7,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Box } from './box';
 import { Heading } from './heading';
-import { Inline } from './inline';
 import { Stack } from './stack';
 import { Text } from './text';
 

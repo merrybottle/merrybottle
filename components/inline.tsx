@@ -1,5 +1,5 @@
 import { alignItems } from '@styles/mixins';
-import { getSpace, marginLeft, SpaceProps } from '@styles/space';
+import { marginLeft, SpaceProps } from '@styles/space';
 import styled from 'styled-components';
 
 interface InlineProps {

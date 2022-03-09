@@ -1,7 +1,7 @@
 import { Box } from '@components/box';
 import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
-import { backgroundColor, getColor, rgba } from '@styles/color';
+import { backgroundColor } from '@styles/color';
 import { mediaMatch } from '@styles/media';
 import { borderRadius, minHeight, minWidth } from '@styles/mixins';
 import { getSpace } from '@styles/space';

@@ -1,9 +1,5 @@
 import { formatMinDigits } from '@helpers/format';
 import { steps } from '@helpers/step';
-import { backgroundColor, color, rgba } from '@styles/color';
-import { fontFamily } from '@styles/font';
-import { borderRadius, height, width } from '@styles/mixins';
-import { getSpace, paddingX, paddingY } from '@styles/space';
 import React, { useEffect, useState } from 'react';
 import {
   CameraOff,
@@ -13,7 +9,7 @@ import {
   Play,
   SkipBack,
 } from 'react-feather';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Box } from './box';
 import { ControlButton } from './control-button';
 import { Inline } from './inline';

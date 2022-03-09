@@ -115,7 +115,7 @@ const StyledP = styled.p<{
   }}
 
   strong {
-    ${({ $variant: variant, $fontWeight: fontWeight }) => {
+    ${({ $variant: variant }) => {
       if (variant === 'meeting') {
         return `font-weight: 600;`;
       }

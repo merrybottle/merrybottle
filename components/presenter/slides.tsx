@@ -25,6 +25,7 @@ import { Highlight } from '@components/highlight';
 import { borderRadius } from '@styles/mixins';
 import spaceshipSvg from './spaceship.svg';
 import oneflareSvg from './oneflare.svg';
+import Image from 'next/image';
 
 interface SlidesProps {
   step: Step;
@@ -47,9 +48,14 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             </Stack>
 
             <Stack space="xs" alignX="center">
-              <Box height={56} width={56}>
-                <img src={sydneySvg.src} />
-              </Box>
+              <div>
+                <Image
+                  src={sydneySvg.src}
+                  alt="Sydney"
+                  height={56}
+                  width={56}
+                />
+              </div>
 
               <Text variant="text" size="lg" color="dark" align="center">
                 Based in{' '}
@@ -86,15 +92,25 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
 
             <Stack space="xs" alignX="center">
               <Inline space="sm">
-                <Box height={48} width={48}>
-                  <img src={hkSvg.src} />
-                </Box>
-                <Box height={48} width={48}>
-                  <img src={krSvg.src} />
-                </Box>
-                <Box height={48} width={48}>
-                  <img src={jpSvg.src} />
-                </Box>
+                <div>
+                  <Image
+                    src={hkSvg.src}
+                    alt="Hong Kong"
+                    height={48}
+                    width={48}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={krSvg.src}
+                    alt="South Korea"
+                    height={48}
+                    width={48}
+                  />
+                </div>
+                <div>
+                  <Image src={jpSvg.src} alt="Japan" height={48} width={48} />
+                </div>
               </Inline>
 
               <Text variant="text" size="lg" color="dark" align="center">
@@ -377,9 +393,14 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                   >
                     <Inline space="md" alignY="flex-start">
                       <Inline space="xs">
-                        <Box height={32} width={32}>
-                          <img src={spaceshipSvg.src} />
-                        </Box>
+                        <div>
+                          <Image
+                            src={spaceshipSvg.src}
+                            alt="Spaceship"
+                            height={32}
+                            width={32}
+                          />
+                        </div>
                         <Text size="lg" variant="text" color="dark">
                           Spaceship
                         </Text>
@@ -403,9 +424,14 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                   >
                     <Inline space="md" alignY="flex-start">
                       <Inline space="xs">
-                        <Box height={32} width={32}>
-                          <img src={oneflareSvg.src} />
-                        </Box>
+                        <div>
+                          <Image
+                            src={oneflareSvg.src}
+                            alt="Oneflare"
+                            height={32}
+                            width={32}
+                          />
+                        </div>
                         <Text size="lg" variant="text" color="dark">
                           Oneflare
                         </Text>
