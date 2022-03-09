@@ -10,7 +10,7 @@ interface StackProps {
 export const Stack = styled.div<StackProps>`
   display: flex;
   flex-direction: column;
-  ${({ alignX = 'flex-start' }) => alignItems(alignX)}
+  ${({ alignX }) => (alignX ? alignItems(alignX) : '')}
 
   > *:not(:first-child) {
     ${({ space }) => marginTop(space)}

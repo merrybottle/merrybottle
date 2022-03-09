@@ -13,18 +13,22 @@ import skyscrapersImg from './skyscrapers.jpg';
 import { Slides } from './slides';
 
 interface PresenterProps {
-  step: Step;
+  currentStepIndex: number;
+  onStepIndexChange: (stepIndex: number) => void;
 }
 
-export const Presenter: React.FC<PresenterProps> = ({ step }) => {
+export const Presenter: React.FC<PresenterProps> = ({
+  currentStepIndex,
+  onStepIndexChange,
+}) => {
   return (
     <StyledContainer>
       <StyledWindow>
-        {steps.indexOf(step) >= steps.indexOf('INTRO_8') && (
-          <Slides step={step} />
+        {currentStepIndex >= steps.indexOf('INTRO_8') && (
+          <Slides step={steps[currentStepIndex]} />
         )}
 
-        <StyledPresenter step={step}>
+        <StyledPresenter step={steps[currentStepIndex]}>
           <Box height="90%">
             <Me />
           </Box>
@@ -32,7 +36,10 @@ export const Presenter: React.FC<PresenterProps> = ({ step }) => {
       </StyledWindow>
 
       <StyledClosedCaptionContainer>
-        <ClosedCaption step={step} />
+        <ClosedCaption
+          step={steps[currentStepIndex]}
+          onRestart={() => onStepIndexChange(0)}
+        />
       </StyledClosedCaptionContainer>
     </StyledContainer>
   );
@@ -67,7 +74,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledWindow = styled.div`
-  animation: ${expandWindowAnimation} 1s linear 1s forwards;
+  animation: ${expandWindowAnimation} 1s linear 0.3s forwards;
   ${backgroundColor('white')}
   ${borderRadius('xs')}
   overflow: hidden;
@@ -79,7 +86,7 @@ const StyledPresenter = styled.div<{
   step: Step;
 }>`
   ${borderRadius('xs')}
-  animation: ${fadeInAnimation} 0.5s linear 2.1s forwards;
+  animation: ${fadeInAnimation} 0.5s linear 1.5s forwards;
   opacity: 0;
   position: absolute;
   height: 100%;
@@ -137,6 +144,8 @@ const StyledPresenter = styled.div<{
 `;
 
 const StyledClosedCaptionContainer = styled.div`
+  animation: ${fadeInAnimation} 0.2s linear 2.5s forwards;
+  opacity: 0;
   position: absolute;
 
   ${mediaMatch({
@@ -145,7 +154,7 @@ const StyledClosedCaptionContainer = styled.div`
     `,
     lg: css`
       top: auto;
-      bottom: ${getSpace('md')};
+      bottom: ${getSpace('sm')};
     `,
   })}
 `;

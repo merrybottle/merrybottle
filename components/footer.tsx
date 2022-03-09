@@ -15,6 +15,7 @@ import {
 } from 'react-feather';
 import styled, { css } from 'styled-components';
 import { Box } from './box';
+import { ControlButton } from './control-button';
 import { Inline } from './inline';
 import { MeetingTitle } from './meeting-title';
 import { Text } from './text';
@@ -24,11 +25,13 @@ export const FOOTER_HEIGHT = 120;
 interface FooterProps {
   currentStepIndex: number;
   onStepIndexChange: (stepIndex: number) => void;
+  onOpenChatWindow: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   currentStepIndex,
   onStepIndexChange,
+  onOpenChatWindow,
 }) => {
   return (
     <StyledContainer>
@@ -46,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
         <Box flex={{ xs: 1, lg: 1 / 3 }} display="flex" justifyContent="center">
           <Controls
             onBack={
-              currentStepIndex > 0
+              currentStepIndex > 1
                 ? () => onStepIndexChange(currentStepIndex - 1)
                 : undefined
             }
@@ -55,6 +58,7 @@ export const Footer: React.FC<FooterProps> = ({
                 ? () => onStepIndexChange(currentStepIndex + 1)
                 : undefined
             }
+            onOpenChatWindow={onOpenChatWindow}
           />
         </Box>
 
@@ -63,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({
           flex={1 / 3}
           justifyContent="flex-end"
         >
-          <Logout />
+          <Logout onStepIndexChange={onStepIndexChange} />
         </Box>
       </Box>
     </StyledContainer>
@@ -94,45 +98,52 @@ const Clock: React.FC = () => {
 interface ControlsProps {
   onBack?: () => void;
   onNext?: () => void;
+  onOpenChatWindow: () => void;
 }
 
-const Controls: React.FC<ControlsProps> = ({ onBack, onNext }) => {
+const Controls: React.FC<ControlsProps> = ({
+  onBack,
+  onNext,
+  onOpenChatWindow,
+}) => {
   return (
     <Inline space="sm">
-      <StyledControlButton isImportantAction={true} disabled={true}>
+      <ControlButton isImportantAction={true} disabled={true} label="Nope">
         <MicOff />
-        <StyledControlButtonLabel>Nope</StyledControlButtonLabel>
-      </StyledControlButton>
+      </ControlButton>
 
-      <StyledControlButton isImportantAction={true} disabled={true}>
+      <ControlButton isImportantAction={true} disabled={true} label="Nope">
         <CameraOff />
-        <StyledControlButtonLabel>Nope</StyledControlButtonLabel>
-      </StyledControlButton>
+      </ControlButton>
 
-      <StyledControlButton onClick={onBack} disabled={!onBack}>
+      <ControlButton onClick={onBack} disabled={!onBack} label="Back">
         <SkipBack />
-        <StyledControlButtonLabel>Back</StyledControlButtonLabel>
-      </StyledControlButton>
+      </ControlButton>
 
-      <StyledControlButton onClick={onNext} disabled={!onNext}>
+      <ControlButton onClick={onNext} disabled={!onNext} label="Next">
         <Play />
-        <StyledControlButtonLabel>Next</StyledControlButtonLabel>
-      </StyledControlButton>
+      </ControlButton>
 
-      <StyledControlButton>
+      <ControlButton onClick={onOpenChatWindow} label="Chat">
         <MessageCircle />
-        <StyledControlButtonLabel>Chat</StyledControlButtonLabel>
-      </StyledControlButton>
+      </ControlButton>
     </Inline>
   );
 };
 
-export const Logout: React.FC = () => {
+interface LogoutProps {
+  onStepIndexChange: (stepIndex: number) => void;
+}
+
+export const Logout: React.FC<LogoutProps> = ({ onStepIndexChange }) => {
   return (
-    <StyledControlButton isImportantAction={true}>
+    <ControlButton
+      isImportantAction={true}
+      onClick={() => onStepIndexChange(0)}
+      label="Exit"
+    >
       <LogOut />
-      <StyledControlButtonLabel>Exit</StyledControlButtonLabel>
-    </StyledControlButton>
+    </ControlButton>
   );
 };
 
@@ -146,65 +157,4 @@ const StyledContainer = styled(Box).attrs({
   position: fixed;
   left: 0;
   bottom: 0;
-`;
-
-const StyledControlButtonLabel = styled(Text).attrs({
-  variant: 'meeting',
-  size: 'xs',
-  color: 'white',
-  fontWeight: 'bold',
-})`
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  position: absolute;
-  top: calc(100% + ${getSpace('xxs')});
-  opacity: 0;
-  transition: 0.25s ease-in;
-`;
-
-const StyledControlButton = styled.button<{
-  isImportantAction?: boolean;
-}>`
-  ${({ isImportantAction }) =>
-    isImportantAction
-      ? backgroundColor('red')
-      : `background-color: ${rgba('white', 0.1)};`}
-  ${color('white')}
-  ${borderRadius('md')}
-  ${height(getSpace('xl'))}
-  ${width(getSpace('xl'))}
-  border: none;
-  outline: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  :disabled {
-    cursor: not-allowed;
-  }
-
-  ::after {
-    content: '';
-    ${backgroundColor('black')}
-    border-radius: 50%;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.25s ease-in;
-    transform-origin: center;
-    transform: scale(0);
-    z-index: -1;
-  }
-
-  :hover ${StyledControlButtonLabel} {
-    opacity: 1;
-  }
-
-  :not(:disabled):hover::after {
-    opacity: 0.3;
-    transform: scale(2);
-  }
 `;

@@ -1,15 +1,22 @@
 import { Box } from '@components/box';
+import { ControlButton } from '@components/control-button';
 import { Text } from '@components/text';
-import { Step } from '@helpers/step';
-import { rgba } from '@styles/color';
+import { Step, steps } from '@helpers/step';
+import { backgroundColor, color, rgba } from '@styles/color';
+import { getSpace } from '@styles/space';
 import React from 'react';
+import { RefreshCw } from 'react-feather';
 import styled from 'styled-components';
 
 interface ClosedCaptionProps {
   step: Step;
+  onRestart: () => void;
 }
 
-export const ClosedCaption: React.FC<ClosedCaptionProps> = ({ step }) => {
+export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
+  step,
+  onRestart,
+}) => {
   let copy: React.ReactNode = '';
 
   switch (step) {
@@ -56,16 +63,30 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({ step }) => {
   }
 
   return (
-    <StyledBackgroundBox>
-      <Text
-        variant="meeting"
-        size={{ xs: 'lg', lg: 'xxl' }}
-        color="white"
-        align="center"
-      >
-        {copy}
-      </Text>
-    </StyledBackgroundBox>
+    <Box display="flex" flexDirection="column" alignItems="center">
+      <StyledBackgroundBox>
+        <Text
+          variant="meeting"
+          size={{ xs: 'lg', lg: 'xxl' }}
+          color="white"
+          align="center"
+        >
+          {copy}
+        </Text>
+      </StyledBackgroundBox>
+
+      {steps.indexOf(step) === steps.length - 1 && (
+        <Box marginTop="xs">
+          <ControlButton
+            isImportantAction={true}
+            label="Again"
+            onClick={onRestart}
+          >
+            <RefreshCw />
+          </ControlButton>
+        </Box>
+      )}
+    </Box>
   );
 };
 
