@@ -1,6 +1,5 @@
 # Todo list
 
-- Chat window
 - Animate lip movement
 - Animate blinking
 - Animate pulse on buttons
