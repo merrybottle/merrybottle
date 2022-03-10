@@ -219,10 +219,9 @@ const StyledChatWindowBox = styled(Box).attrs({
 
   ${mediaMatch({
     xs: css`
-      left: ${getSpace('sm')};
+      width: calc(100% - ${getSpace('sm')} * 2);
     `,
     md: css`
-      left: auto;
       width: 400px;
     `,
   })}

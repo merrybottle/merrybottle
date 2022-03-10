@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type Step =
   | 'START'
   | 'INTRO_1'
@@ -38,3 +40,18 @@ export const steps: Array<Step> = [
   'END_3',
   'END_4',
 ];
+
+export const stepClosedCaptions: Partial<Record<Step, string>> = {
+  INTRO_1: 'Hi there! 👋 《⤵️》',
+  INTRO_2: 'Thanks for joining me here today.',
+  INTRO_3: 'My name is Mary',
+  INTRO_4: `and I'm a front-end developer.`,
+  INTRO_5: `I'll only take a few minutes of your time`,
+  INTRO_6: 'to showcase a few things that',
+  INTRO_7: `I've been up to until today.`,
+  INTRO_8: `If you're ready, shall we start?`,
+  END_1: `And that's it!`,
+  END_2: 'If you have any questions',
+  END_3: 'feel free to drop me a message 《⤵️》',
+  END_4: 'Otherwise, see you next time! 👋',
+};

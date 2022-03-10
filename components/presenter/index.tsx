@@ -1,5 +1,5 @@
 import { Box } from '@components/box';
-import { Step, steps } from '@helpers/step';
+import { Step, stepClosedCaptions, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
 import { backgroundColor } from '@styles/color';
 import { mediaMatch } from '@styles/media';
@@ -32,7 +32,7 @@ export const Presenter: React.FC<PresenterProps> = ({
 
         <StyledPresenter step={currentStep}>
           <Box height="90%">
-            <Me />
+            <Me step={currentStep} />
           </Box>
         </StyledPresenter>
       </StyledWindow>

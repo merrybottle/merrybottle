@@ -1,6 +1,26 @@
-import React from 'react';
+import { Step, stepClosedCaptions } from '@helpers/step';
+import React, { useEffect, useRef } from 'react';
 
-export const Me: React.FC = () => {
+interface MeProps {
+  step: Step;
+}
+
+const SPEAK_DUR = 0.3;
+const SPEAK_START_END = 0.1;
+const SMILE_DUR = 0.2;
+const DELAY = 4;
+
+export const Me: React.FC<MeProps> = ({ step }) => {
+  const startAnimateRef = useRef<SVGAnimationElement>(null);
+  const mouthMovement = stepClosedCaptions[step]?.split(' ').length ?? 0;
+  const delay = step === 'INTRO_1' || step === 'END_1' ? DELAY : 0;
+
+  useEffect(() => {
+    if (step && mouthMovement > 0) {
+      startAnimateRef.current?.beginElement();
+    }
+  }, [step, mouthMovement]);
+
   return (
     <svg
       height="100%"
@@ -57,11 +77,65 @@ export const Me: React.FC = () => {
         />
       </g>
       <path
-        d="M122 149C122 153.532 118.759 157 115 157C111.241 157 108 153.532 108 149C108 144.468 111.241 141 115 141C118.759 141 122 144.468 122 149Z"
+        d="M108.5 149.283C110.487 150.796 112.309 151.5 115 151.5C117.468 151.5 119.626 150.724 121.5 149.283"
+        stroke="#FF8C73"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <ellipse
+        cx="115"
+        cy="150"
+        rx="8"
+        ry="1"
         fill="#646464"
         stroke="#FF8C73"
         strokeWidth="2"
-      />
+        opacity={0}
+      >
+        <animate
+          id="startAnimate"
+          attributeName="opacity"
+          values="0;1;"
+          dur={`${SMILE_DUR}s`}
+          begin={`${delay}s`}
+          repeatCount={1}
+          ref={startAnimateRef}
+          fill="freeze"
+        />
+        <animate
+          id="initSpeakAnimate"
+          attributeName="ry"
+          values="1;3;"
+          dur={`${SPEAK_START_END}s`}
+          begin="startAnimate.end"
+          repeatCount={1}
+        />
+        <animate
+          id="speakAnimate"
+          attributeName="ry"
+          values="3;7;3;"
+          dur={`${SPEAK_DUR}s`}
+          begin="initSpeakAnimate.end"
+          repeatCount={mouthMovement}
+        />
+        <animate
+          id="endSpeakAnimate"
+          attributeName="ry"
+          values="3;1;"
+          dur={`${SPEAK_START_END}s`}
+          begin="speakAnimate.end"
+          repeatCount={1}
+        />
+        <animate
+          id="endAnimate"
+          attributeName="opacity"
+          values="1;0;"
+          dur={`${SMILE_DUR}s`}
+          begin="endSpeakAnimate.end"
+          repeatCount={1}
+          fill="freeze"
+        />
+      </ellipse>
       <g filter="url(#filter2_d_1_3)">
         <path
           fillRule="evenodd"
