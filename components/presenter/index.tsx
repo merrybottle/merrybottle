@@ -21,14 +21,16 @@ export const Presenter: React.FC<PresenterProps> = ({
   currentStepIndex,
   onStepIndexChange,
 }) => {
+  const currentStep = steps[currentStepIndex]!;
+
   return (
     <StyledContainer>
       <StyledWindow>
         {currentStepIndex >= steps.indexOf('INTRO_8') && (
-          <Slides step={steps[currentStepIndex]} />
+          <Slides step={currentStep} />
         )}
 
-        <StyledPresenter step={steps[currentStepIndex]}>
+        <StyledPresenter step={currentStep}>
           <Box height="90%">
             <Me />
           </Box>
@@ -37,7 +39,7 @@ export const Presenter: React.FC<PresenterProps> = ({
 
       <StyledClosedCaptionContainer>
         <ClosedCaption
-          step={steps[currentStepIndex]}
+          step={currentStep}
           onRestart={() => onStepIndexChange(0)}
         />
       </StyledClosedCaptionContainer>

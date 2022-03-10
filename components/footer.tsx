@@ -44,6 +44,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         <Box flex={{ xs: 1, lg: 1 / 3 }} display="flex" justifyContent="center">
           <Controls
+            currentStepIndex={currentStepIndex}
             onBack={
               currentStepIndex > 1
                 ? () => onStepIndexChange(currentStepIndex - 1)
@@ -92,16 +93,19 @@ const Clock: React.FC = () => {
 };
 
 interface ControlsProps {
+  currentStepIndex: number;
   onBack?: () => void;
   onNext?: () => void;
   onOpenChatWindow: () => void;
 }
 
 const Controls: React.FC<ControlsProps> = ({
+  currentStepIndex,
   onBack,
   onNext,
   onOpenChatWindow,
 }) => {
+  const currentStep = steps[currentStepIndex];
   return (
     <Inline space="sm">
       <ControlButton isImportantAction={true} disabled={true} label="Nope">
@@ -116,11 +120,20 @@ const Controls: React.FC<ControlsProps> = ({
         <SkipBack />
       </ControlButton>
 
-      <ControlButton onClick={onNext} disabled={!onNext} label="Next">
+      <ControlButton
+        onClick={onNext}
+        disabled={!onNext}
+        label="Next"
+        needsAttention={currentStep === 'INTRO_1'}
+      >
         <Play />
       </ControlButton>
 
-      <ControlButton onClick={onOpenChatWindow} label="Chat">
+      <ControlButton
+        onClick={onOpenChatWindow}
+        label="Chat"
+        needsAttention={currentStep === 'END_3'}
+      >
         <MessageCircle />
       </ControlButton>
     </Inline>

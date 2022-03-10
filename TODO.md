@@ -2,7 +2,6 @@
 
 - Animate lip movement
 - Animate blinking
-- Animate pulse on buttons
 - Animate closed captions
 - Safari
 - Firefox

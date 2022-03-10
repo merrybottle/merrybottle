@@ -2,23 +2,29 @@ import { backgroundColor, color, rgba } from '@styles/color';
 import { borderRadius, height, width } from '@styles/mixins';
 import { getSpace } from '@styles/space';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Text } from './text';
 
 interface ControlButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: React.ReactNode;
   isImportantAction?: boolean;
+  needsAttention?: boolean;
 }
 
 export const ControlButton: React.FC<ControlButtonProps> = ({
   label,
   isImportantAction,
+  needsAttention,
   children,
   ...props
 }) => {
   return (
-    <StyledControlButton $isImportantAction={isImportantAction} {...props}>
+    <StyledControlButton
+      $isImportantAction={isImportantAction}
+      $needsAttention={needsAttention}
+      {...props}
+    >
       {children}
       <StyledControlButtonLabel>{label}</StyledControlButtonLabel>
     </StyledControlButton>
@@ -39,8 +45,24 @@ const StyledControlButtonLabel = styled(Text).attrs({
   transition: 0.25s ease-in;
 `;
 
+const pulseAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 0.3;
+    transform: scale(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+`;
+
 const StyledControlButton = styled.button<{
   $isImportantAction?: boolean;
+  $needsAttention?: boolean;
 }>`
   ${({ $isImportantAction: isImportantAction }) =>
     isImportantAction
@@ -74,6 +96,12 @@ const StyledControlButton = styled.button<{
     transform-origin: center;
     transform: scale(0);
     z-index: -1;
+    ${({ $needsAttention: needsAttention }) =>
+      needsAttention
+        ? css`
+            animation: ${pulseAnimation} 1s ease-in infinite;
+          `
+        : ''}
   }
 
   :hover ${StyledControlButtonLabel} {
