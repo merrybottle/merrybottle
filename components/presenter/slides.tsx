@@ -375,7 +375,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 color="dark"
                 align="center"
               >
-                Most recent professonal work
+                Most recent professional work
               </Heading>
 
               <Box

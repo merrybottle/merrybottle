@@ -7,8 +7,8 @@ interface MeProps {
 
 const SPEAK_DUR = 0.3;
 const SPEAK_START_END = 0.1;
-const SMILE_DUR = 0.2;
-const DELAY = 4;
+const SMILE_DUR = 0.1;
+const DELAY = 3;
 
 export const Me: React.FC<MeProps> = ({ step }) => {
   const startAnimateRef = useRef<SVGAnimationElement>(null);
