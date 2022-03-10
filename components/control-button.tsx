@@ -99,7 +99,7 @@ const StyledControlButton = styled.button<{
     ${({ $needsAttention: needsAttention }) =>
       needsAttention
         ? css`
-            animation: ${pulseAnimation} 1s ease-in infinite;
+            animation: ${pulseAnimation} 1.2s ease-in 10;
           `
         : ''}
   }
@@ -107,6 +107,15 @@ const StyledControlButton = styled.button<{
   :hover ${StyledControlButtonLabel} {
     opacity: 1;
   }
+
+  ${({ $needsAttention: needsAttention }) =>
+    needsAttention
+      ? css`
+          ${StyledControlButtonLabel} {
+            opacity: 1;
+          }
+        `
+      : ''}
 
   :not(:disabled):hover::after {
     opacity: 0.3;
