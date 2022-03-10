@@ -3,9 +3,10 @@ import { ControlButton } from '@components/control-button';
 import { Text } from '@components/text';
 import { Step, steps } from '@helpers/step';
 import { rgba } from '@styles/color';
+import { mediaMatch } from '@styles/media';
 import React from 'react';
 import { RefreshCw } from 'react-feather';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 interface ClosedCaptionProps {
   step: Step;
@@ -63,15 +64,17 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <StyledBackgroundBox>
-        <Text
-          variant="meeting"
-          size={{ xs: 'lg', lg: 'xxl' }}
-          color="white"
-          align="center"
-        >
-          {copy}
-        </Text>
+      <StyledBackgroundBox key={step}>
+        <Box paddingX="xs" paddingY="xxs">
+          <Text
+            variant="meeting"
+            size={{ xs: 'lg', lg: 'xxl' }}
+            color="white"
+            align="center"
+          >
+            {copy}
+          </Text>
+        </Box>
       </StyledBackgroundBox>
 
       {steps.indexOf(step) === steps.length - 1 && (
@@ -89,10 +92,28 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
   );
 };
 
+const scrollAnimation = keyframes`
+  0% {
+    max-width: 0px;
+  }
+  100% {
+    max-width: 3000px;
+  }
+`;
+
 const StyledBackgroundBox = styled(Box).attrs({
   borderRadius: 'xs',
-  paddingX: 'xs',
-  paddingY: 'xxs',
-})`
+})<{
+  $step?: Step;
+  $prevStep?: Step;
+}>`
   background-color: ${rgba('dark', 0.7)};
+
+  ${mediaMatch({
+    lg: css`
+      white-space: nowrap;
+      overflow: hidden;
+      animation: ${scrollAnimation} 4s ease-in forwards;
+    `,
+  })}
 `;

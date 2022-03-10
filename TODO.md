@@ -2,7 +2,6 @@
 
 - Animate lip movement
 - Animate blinking
-- Animate closed captions
 - Safari
 - Firefox
 - Cleanup
