@@ -35,7 +35,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
         try {
           setIsSending(true);
 
-          await fetch('https://submit-form.com/dwcOtJ8Q', {
+          await fetch('https://submit-form.com/7BohDCMn', {
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
             },
