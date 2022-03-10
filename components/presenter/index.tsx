@@ -31,9 +31,9 @@ export const Presenter: React.FC<PresenterProps> = ({
         )}
 
         <StyledPresenter step={currentStep}>
-          <Box height="90%">
+          <StyledMeContainer>
             <Me step={currentStep} />
-          </Box>
+          </StyledMeContainer>
         </StyledPresenter>
       </StyledWindow>
 
@@ -143,6 +143,13 @@ const StyledPresenter = styled.div<{
 
     return '';
   }}
+`;
+
+const StyledMeContainer = styled(Box).attrs({
+  height: { md: '50%', lg: '85%' },
+})`
+  line-height: 0;
+  aspect-ratio: 1 / 1;
 `;
 
 const StyledClosedCaptionContainer = styled.div`
