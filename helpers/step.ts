@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type Step =
   | 'START'
   | 'INTRO_1'

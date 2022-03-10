@@ -1,5 +1,7 @@
 import { Box } from '@components/box';
-import { Step, stepClosedCaptions, steps } from '@helpers/step';
+import { ClosedCaption } from '@components/closed-caption';
+import { Slides } from '@components/slides';
+import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
 import { backgroundColor } from '@styles/color';
 import { mediaMatch } from '@styles/media';
@@ -7,10 +9,8 @@ import { borderRadius, minHeight, minWidth } from '@styles/mixins';
 import { getSpace } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { ClosedCaption } from './closed-caption';
 import { Me } from './me';
-import skyscrapersImg from './skyscrapers.jpg';
-import { Slides } from './slides';
+import skyscrapersImg from './assets/skyscrapers.jpg';
 
 interface PresenterProps {
   currentStepIndex: number;

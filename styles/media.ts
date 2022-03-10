@@ -1,8 +1,4 @@
-import {
-  css,
-  CSSProperties,
-  FlattenSimpleInterpolation,
-} from 'styled-components';
+import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 export type Query = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 

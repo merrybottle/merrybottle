@@ -1,5 +1,5 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { mediaMatch, Query, responsiveStyle } from './media';
+import { Query, responsiveStyle } from './media';
 
 export type Space = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 

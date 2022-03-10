@@ -16,15 +16,15 @@ import {
   MessageCircle,
 } from 'react-feather';
 import styled from 'styled-components';
-import sydneySvg from './sydney-opera-house.svg';
-import hkSvg from './hk.svg';
-import jpSvg from './jp.svg';
-import krSvg from './kr.svg';
+import sydneySvg from './assets/sydney-opera-house.svg';
+import hkSvg from './assets/hk.svg';
+import jpSvg from './assets/jp.svg';
+import krSvg from './assets/kr.svg';
 import { Inline } from '@components/inline';
 import { Highlight } from '@components/highlight';
 import { borderRadius } from '@styles/mixins';
-import spaceshipSvg from './spaceship.svg';
-import oneflareSvg from './oneflare.svg';
+import spaceshipSvg from './assets/spaceship.svg';
+import oneflareSvg from './assets/oneflare.svg';
 import Image from 'next/image';
 
 interface SlidesProps {
