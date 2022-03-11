@@ -25,7 +25,6 @@ import { Highlight } from '@components/highlight';
 import { borderRadius } from '@styles/mixins';
 import spaceshipSvg from './assets/spaceship.svg';
 import oneflareSvg from './assets/oneflare.svg';
-import Image from 'next/image';
 
 interface SlidesProps {
   step: Step;
@@ -49,12 +48,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
 
             <Stack space="xs" alignX="center">
               <div>
-                <Image
-                  src={sydneySvg.src}
-                  alt="Sydney"
-                  height={56}
-                  width={56}
-                />
+                <img src={sydneySvg.src} alt="Sydney" height={56} width={56} />
               </div>
 
               <Text variant="text" size="lg" color="dark" align="center">
@@ -93,15 +87,10 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Stack space="xs" alignX="center">
               <Inline space="sm">
                 <div>
-                  <Image
-                    src={hkSvg.src}
-                    alt="Hong Kong"
-                    height={48}
-                    width={48}
-                  />
+                  <img src={hkSvg.src} alt="Hong Kong" height={48} width={48} />
                 </div>
                 <div>
-                  <Image
+                  <img
                     src={krSvg.src}
                     alt="South Korea"
                     height={48}
@@ -109,7 +98,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                   />
                 </div>
                 <div>
-                  <Image src={jpSvg.src} alt="Japan" height={48} width={48} />
+                  <img src={jpSvg.src} alt="Japan" height={48} width={48} />
                 </div>
               </Inline>
 
@@ -394,7 +383,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     <Inline space="md" alignY="flex-start">
                       <Inline space="xs">
                         <div>
-                          <Image
+                          <img
                             src={spaceshipSvg.src}
                             alt="Spaceship"
                             height={32}
@@ -425,7 +414,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     <Inline space="md" alignY="flex-start">
                       <Inline space="xs">
                         <div>
-                          <Image
+                          <img
                             src={oneflareSvg.src}
                             alt="Oneflare"
                             height={32}

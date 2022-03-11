@@ -1,11 +1,12 @@
 {
   "name": "merrybottle",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export -o build",
     "typing": "tsc --noEmit",
     "lint": "next lint",
     "prepare": "husky install"
