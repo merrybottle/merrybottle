@@ -216,6 +216,7 @@ const StyledChatWindowBox = styled(Box).attrs({
   box-shadow: 0 0 12px 4px ${rgba('black', 0.2)};
   opacity: 1;
   transition: 0.5s ease-in;
+  overflow: auto;
 
   ${mediaMatch({
     xs: css`
