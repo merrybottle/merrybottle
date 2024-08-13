@@ -11,6 +11,7 @@ type Variant = Omit<Font, 'heading'>;
 type FontWeight = 'light' | 'regular' | 'bold';
 
 interface TextProps {
+  as?: 'p' | 'span';
   $size: SizeProps;
   $variant: Variant;
   $color?: Color;
@@ -92,18 +93,7 @@ const StyledP = styled.p<{
 
   ${({ $align: align = 'left' }) => textAlign(align)}
 
-  ${({ $variant: variant, $fontWeight: fontWeight }) => {
-    if (variant === 'meeting') {
-      switch (fontWeight) {
-        case 'bold':
-          return `font-weight: 600;`;
-        case 'light':
-        case 'regular':
-        default:
-          return `font-weight: 400;`;
-      }
-    }
-
+  ${({ $fontWeight: fontWeight }) => {
     switch (fontWeight) {
       case 'light':
         return `font-weight: 300;`;
@@ -116,12 +106,6 @@ const StyledP = styled.p<{
   }}
 
   strong {
-    ${({ $variant: variant }) => {
-      if (variant === 'meeting') {
-        return `font-weight: 600;`;
-      }
-
-      return `font-weight: 500;`;
-    }}
+    font-weight: 500;
   }
 `;

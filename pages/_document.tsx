@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content={getColor('dark')} />
           <link rel="icon" href="/favicon.ico" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Fredoka:wght@300;400;500&family=Open+Sans:wght@400;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Fredoka:wght@300;400;500&display=swap"
             rel="stylesheet"
           />
         </Head>

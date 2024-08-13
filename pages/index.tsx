@@ -5,11 +5,12 @@ import { MeetingTitle } from '@components/meeting-title';
 import { Presenter } from '@components/presenter';
 import { Text } from '@components/text';
 import { steps } from '@helpers/step';
-import { backgroundColor } from '@styles/color';
+import { backgroundColor, getColor } from '@styles/color';
 import { borderRadius } from '@styles/mixins';
-import { getSpace, paddingX, paddingY } from '@styles/space';
+import { paddingX, paddingY } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { darken } from 'polished';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -31,14 +32,11 @@ const Home: NextPage = () => {
           $minHeight="100vh"
         >
           <StyledStartButton onClick={() => setStepIndex(stepIndex + 1)}>
-            <Text
-              $variant="meeting"
-              $size="xl"
-              $color="white"
-              $fontWeight="bold"
-            >
-              Ready to join?
-            </Text>
+            <StyledStartButtonInner>
+              <Text $variant="meeting" $size="xl" $color="white" as="span">
+                Ready to join?
+              </Text>
+            </StyledStartButtonInner>
           </StyledStartButton>
         </Box>
       ) : (
@@ -108,35 +106,41 @@ const StyledContainer = styled(Box).attrs({
 `;
 
 const StyledStartButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  &::after {
+    content: '';
+    ${borderRadius('sm')}
+    background-color: ${darken(0.4, getColor('red'))};
+    border: 2px solid #ffffff;
+    position: absolute;
+    top: 10px;
+    bottom: -10px;
+    left: 12px;
+    right: 12px;
+    z-index: -1;
+    transition: 0.1s ease-in;
+  }
+`;
+
+const StyledStartButtonInner = styled.span`
   ${borderRadius('sm')}
   ${backgroundColor('red')}
-  ${paddingX('lg')}
-  ${paddingY('sm')}
+  ${paddingX('xl')}
+  ${paddingY('md')}
   cursor: pointer;
-  outline: none;
-  border: none;
-  position: relative;
+  display: inline-block;
+  border: 2px solid #ffffff;
+  transition: 0.1s ease-in;
 
-  ::after {
-    content: '';
-    ${backgroundColor('black')}
-    ${borderRadius('lg')}
-    position: absolute;
-    opacity: 0;
-    transition: 0.25s ease-in;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-  }
-
-  :hover::after {
-    opacity: 0.3;
-    top: -${getSpace('md')};
-    bottom: -${getSpace('md')};
-    left: -${getSpace('md')};
-    right: -${getSpace('md')};
+  &:hover {
+    background-color: ${darken(0.25, getColor('red'))};
+    transform: translateY(-4px);
   }
 `;
 
