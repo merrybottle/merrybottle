@@ -34,9 +34,13 @@ export const mediaMatch = (
 
 export const responsiveStyle = (
   property: string,
-  value: string | number | Partial<Record<Query, string | number>>,
+  value?: string | number | Partial<Record<Query, string | number>>,
   fn?: (value: string | number) => RuleSet<object> | string,
-): RuleSet<object> => {
+): RuleSet<object> | string => {
+  if (!value) {
+    return '';
+  }
+
   if (typeof value === 'string' || typeof value === 'number') {
     return css`
       ${property}: ${fn ? fn(value) : value};
