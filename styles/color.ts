@@ -1,4 +1,4 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css, RuleSet } from 'styled-components';
 import { mediaMatch, Query } from './media';
 
 export type Color =
@@ -28,15 +28,15 @@ export const getColor = (type: Color): string => colors[type];
 
 const colorStyle = (
   property: string,
-  color: Color | Partial<Record<Query, Color>>
-): FlattenSimpleInterpolation => {
+  color: Color | Partial<Record<Query, Color>>,
+): RuleSet<object> => {
   if (typeof color === 'string') {
     return css`
       ${property}: ${getColor(color)};
     `;
   }
 
-  const colorCss: Partial<Record<Query, FlattenSimpleInterpolation>> = {};
+  const colorCss: Partial<Record<Query, RuleSet<object>>> = {};
 
   Object.keys(color).forEach((media) => {
     const mediaSpace = color[media as Query];
@@ -50,9 +50,9 @@ const colorStyle = (
   return mediaMatch(colorCss);
 };
 
-export const backgroundColor = (type: Color): FlattenSimpleInterpolation =>
+export const backgroundColor = (type: Color): RuleSet<object> =>
   colorStyle('background-color', type);
-export const color = (type: Color): FlattenSimpleInterpolation =>
+export const color = (type: Color): RuleSet<object> =>
   colorStyle('color', type);
 
 export const rgba = (type: Color, alpha: number): string => {

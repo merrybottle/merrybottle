@@ -2,6 +2,7 @@ import { Color, color, rgba } from '@styles/color';
 import { Font, fontFamily } from '@styles/font';
 import { Query, responsiveStyle } from '@styles/media';
 import { textAlign } from '@styles/mixins';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 type Size = 'xxl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
@@ -10,21 +11,21 @@ type Variant = Omit<Font, 'heading'>;
 type FontWeight = 'light' | 'regular' | 'bold';
 
 interface TextProps {
-  size: SizeProps;
-  variant: Variant;
-  color?: Color;
-  fontWeight?: FontWeight;
-  opacity?: number;
-  align?: Parameters<typeof textAlign>[0];
+  $size: SizeProps;
+  $variant: Variant;
+  $color?: Color;
+  $fontWeight?: FontWeight;
+  $opacity?: number;
+  $align?: Parameters<typeof textAlign>[0];
 }
 
-export const Text: React.FC<TextProps> = ({
-  color: textColor,
-  size,
-  variant,
-  fontWeight,
-  opacity,
-  align,
+export const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
+  $color: textColor,
+  $size: size,
+  $variant: variant,
+  $fontWeight: fontWeight,
+  $opacity: opacity,
+  $align: align,
   ...props
 }) => {
   return (

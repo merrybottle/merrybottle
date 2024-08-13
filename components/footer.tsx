@@ -31,18 +31,22 @@ export const Footer: React.FC<FooterProps> = ({
 }) => {
   return (
     <StyledContainer>
-      <Box display="flex" alignItems="center" width="100%">
-        <Box display={{ xs: 'none', lg: 'block' }} flex={1 / 3}>
-          <Inline space="sm">
+      <Box $display="flex" $alignItems="center" $width="100%">
+        <Box $display={{ xs: 'none', lg: 'block' }} $flex={1 / 3}>
+          <Inline $space="sm">
             <Clock />
-            <Text variant="meeting" color="white" size="md" opacity={0.6}>
+            <Text $variant="meeting" $color="white" $size="md" $opacity={0.6}>
               |
             </Text>
             <MeetingTitle />
           </Inline>
         </Box>
 
-        <Box flex={{ xs: 1, lg: 1 / 3 }} display="flex" justifyContent="center">
+        <Box
+          $flex={{ xs: 1, lg: 1 / 3 }}
+          $display="flex"
+          $justifyContent="center"
+        >
           <Controls
             currentStepIndex={currentStepIndex}
             onBack={
@@ -60,9 +64,9 @@ export const Footer: React.FC<FooterProps> = ({
         </Box>
 
         <Box
-          display={{ xs: 'none', lg: 'flex' }}
-          flex={1 / 3}
-          justifyContent="flex-end"
+          $display={{ xs: 'none', lg: 'flex' }}
+          $flex={1 / 3}
+          $justifyContent="flex-end"
         >
           <Logout onStepIndexChange={onStepIndexChange} />
         </Box>
@@ -86,7 +90,7 @@ const Clock: React.FC = () => {
   }, []);
 
   return (
-    <Text variant="meeting" color="white" size="md">
+    <Text $variant="meeting" $color="white" $size="md">
       {formatMinDigits(date.getHours())}:{formatMinDigits(date.getMinutes())}
     </Text>
   );
@@ -107,7 +111,7 @@ const Controls: React.FC<ControlsProps> = ({
 }) => {
   const currentStep = steps[currentStepIndex];
   return (
-    <Inline space="sm">
+    <Inline $space="sm">
       <ControlButton isImportantAction={true} disabled={true} label="Nope">
         <MicOff />
       </ControlButton>
@@ -157,11 +161,11 @@ export const Logout: React.FC<LogoutProps> = ({ onStepIndexChange }) => {
 };
 
 const StyledContainer = styled(Box).attrs({
-  padding: 'md',
-  display: 'flex',
-  alignItems: 'center',
-  height: FOOTER_HEIGHT,
-  width: '100%',
+  $padding: 'md',
+  $display: 'flex',
+  $alignItems: 'center',
+  $height: FOOTER_HEIGHT,
+  $width: '100%',
 })`
   position: fixed;
   left: 0;

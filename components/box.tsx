@@ -36,203 +36,203 @@ import {
 import styled, { css } from 'styled-components';
 
 export const Box = styled.div<{
-  backgroundColor?: Color;
-  borderRadius?: SpaceProps;
-  color?: Color;
-  display?: Parameters<typeof display>[0];
-  flex?: Parameters<typeof flex>[0];
-  flexDirection?: Parameters<typeof flexDirection>[0];
-  flexWrap?: Parameters<typeof flexWrap>[0];
-  alignItems?: Parameters<typeof alignItems>[0];
-  justifyContent?: Parameters<typeof justifyContent>[0];
-  width?: Parameters<typeof width>[0];
-  maxWidth?: Parameters<typeof maxWidth>[0];
-  minWidth?: Parameters<typeof minWidth>[0];
-  height?: Parameters<typeof height>[0];
-  maxHeight?: Parameters<typeof maxHeight>[0];
-  minHeight?: Parameters<typeof minHeight>[0];
-  margin?: SpaceProps;
-  marginBottom?: SpaceProps;
-  marginLeft?: SpaceProps;
-  marginRight?: SpaceProps;
-  marginTop?: SpaceProps;
-  marginX?: SpaceProps;
-  marginY?: SpaceProps;
-  padding?: SpaceProps;
-  paddingBottom?: SpaceProps;
-  paddingLeft?: SpaceProps;
-  paddingRight?: SpaceProps;
-  paddingTop?: SpaceProps;
-  paddingX?: SpaceProps;
-  paddingY?: SpaceProps;
-  opacity?: Parameters<typeof opacity>[0];
-  overflow?: Parameters<typeof overflow>[0];
+  $backgroundColor?: Color;
+  $borderRadius?: SpaceProps;
+  $color?: Color;
+  $display?: Parameters<typeof display>[0];
+  $flex?: Parameters<typeof flex>[0];
+  $flexDirection?: Parameters<typeof flexDirection>[0];
+  $flexWrap?: Parameters<typeof flexWrap>[0];
+  $alignItems?: Parameters<typeof alignItems>[0];
+  $justifyContent?: Parameters<typeof justifyContent>[0];
+  $width?: Parameters<typeof width>[0];
+  $maxWidth?: Parameters<typeof maxWidth>[0];
+  $minWidth?: Parameters<typeof minWidth>[0];
+  $height?: Parameters<typeof height>[0];
+  $maxHeight?: Parameters<typeof maxHeight>[0];
+  $minHeight?: Parameters<typeof minHeight>[0];
+  $margin?: SpaceProps;
+  $marginBottom?: SpaceProps;
+  $marginLeft?: SpaceProps;
+  $marginRight?: SpaceProps;
+  $marginTop?: SpaceProps;
+  $marginX?: SpaceProps;
+  $marginY?: SpaceProps;
+  $padding?: SpaceProps;
+  $paddingBottom?: SpaceProps;
+  $paddingLeft?: SpaceProps;
+  $paddingRight?: SpaceProps;
+  $paddingTop?: SpaceProps;
+  $paddingX?: SpaceProps;
+  $paddingY?: SpaceProps;
+  $opacity?: Parameters<typeof opacity>[0];
+  $overflow?: Parameters<typeof overflow>[0];
 }>`
   box-sizing: border-box;
 
   ${(props) => {
     let styles = css``;
 
-    if (props.backgroundColor) {
+    if (props.$backgroundColor) {
       styles = css`
-        ${styles}${backgroundColor(props.backgroundColor)}
+        ${styles}${backgroundColor(props.$backgroundColor)}
       `;
     }
 
-    if (props.borderRadius) {
+    if (props.$borderRadius) {
       styles = css`
-        ${styles}${borderRadius(props.borderRadius)}
+        ${styles}${borderRadius(props.$borderRadius)}
       `;
     }
 
-    if (props.color) {
+    if (props.$color) {
       styles = css`
-        ${styles}${color(props.color)}
+        ${styles}${color(props.$color)}
       `;
     }
 
-    if (props.display) {
+    if (props.$display) {
       styles = css`
-        ${styles}${display(props.display)}
+        ${styles}${display(props.$display)}
       `;
     }
-    if (props.flex) {
+    if (props.$flex) {
       styles = css`
-        ${styles}${flex(props.flex)}
+        ${styles}${flex(props.$flex)}
       `;
     }
-    if (props.flexDirection) {
+    if (props.$flexDirection) {
       styles = css`
-        ${styles}${flexDirection(props.flexDirection)}
+        ${styles}${flexDirection(props.$flexDirection)}
       `;
     }
-    if (props.flexWrap) {
+    if (props.$flexWrap) {
       styles = css`
-        ${styles}${flexWrap(props.flexWrap)}
+        ${styles}${flexWrap(props.$flexWrap)}
       `;
     }
-    if (props.alignItems) {
+    if (props.$alignItems) {
       styles = css`
-        ${styles}${alignItems(props.alignItems)}
+        ${styles}${alignItems(props.$alignItems)}
       `;
     }
-    if (props.justifyContent) {
+    if (props.$justifyContent) {
       styles = css`
-        ${styles}${justifyContent(props.justifyContent)}
-      `;
-    }
-
-    if (props.width !== undefined) {
-      styles = css`
-        ${styles}${width(props.width)}
-      `;
-    }
-    if (props.maxWidth !== undefined) {
-      styles = css`
-        ${styles}${maxWidth(props.maxWidth)}
-      `;
-    }
-    if (props.minWidth !== undefined) {
-      styles = css`
-        ${styles}${minWidth(props.minWidth)}
-      `;
-    }
-    if (props.height !== undefined) {
-      styles = css`
-        ${styles}${height(props.height)}
-      `;
-    }
-    if (props.maxHeight !== undefined) {
-      styles = css`
-        ${styles}${maxHeight(props.maxHeight)}
-      `;
-    }
-    if (props.minHeight !== undefined) {
-      styles = css`
-        ${styles}${minHeight(props.minHeight)}
+        ${styles}${justifyContent(props.$justifyContent)}
       `;
     }
 
-    if (props.margin) {
+    if (props.$width !== undefined) {
       styles = css`
-        ${styles}${margin(props.margin)}
+        ${styles}${width(props.$width)}
       `;
     }
-    if (props.marginBottom) {
+    if (props.$maxWidth !== undefined) {
       styles = css`
-        ${styles}${marginBottom(props.marginBottom)}
+        ${styles}${maxWidth(props.$maxWidth)}
       `;
     }
-    if (props.marginLeft) {
+    if (props.$minWidth !== undefined) {
       styles = css`
-        ${styles}${marginLeft(props.marginLeft)}
+        ${styles}${minWidth(props.$minWidth)}
       `;
     }
-    if (props.marginRight) {
+    if (props.$height !== undefined) {
       styles = css`
-        ${styles}${marginRight(props.marginRight)}
+        ${styles}${height(props.$height)}
       `;
     }
-    if (props.marginTop) {
+    if (props.$maxHeight !== undefined) {
       styles = css`
-        ${styles}${marginTop(props.marginTop)}
+        ${styles}${maxHeight(props.$maxHeight)}
       `;
     }
-    if (props.marginX) {
+    if (props.$minHeight !== undefined) {
       styles = css`
-        ${styles}${marginX(props.marginX)}
-      `;
-    }
-    if (props.marginY) {
-      styles = css`
-        ${styles}${marginY(props.marginY)}
-      `;
-    }
-    if (props.padding) {
-      styles = css`
-        ${styles}${padding(props.padding)}
-      `;
-    }
-    if (props.paddingBottom) {
-      styles = css`
-        ${styles}${paddingBottom(props.paddingBottom)}
-      `;
-    }
-    if (props.paddingLeft) {
-      styles = css`
-        ${styles}${paddingLeft(props.paddingLeft)}
-      `;
-    }
-    if (props.paddingRight) {
-      styles = css`
-        ${styles}${paddingRight(props.paddingRight)}
-      `;
-    }
-    if (props.paddingTop) {
-      styles = css`
-        ${styles}${paddingTop(props.paddingTop)}
-      `;
-    }
-    if (props.paddingX) {
-      styles = css`
-        ${styles}${paddingX(props.paddingX)}
-      `;
-    }
-    if (props.paddingY) {
-      styles = css`
-        ${styles}${paddingY(props.paddingY)}
+        ${styles}${minHeight(props.$minHeight)}
       `;
     }
 
-    if (props.opacity) {
+    if (props.$margin) {
       styles = css`
-        ${styles}${opacity(props.opacity)}
+        ${styles}${margin(props.$margin)}
+      `;
+    }
+    if (props.$marginBottom) {
+      styles = css`
+        ${styles}${marginBottom(props.$marginBottom)}
+      `;
+    }
+    if (props.$marginLeft) {
+      styles = css`
+        ${styles}${marginLeft(props.$marginLeft)}
+      `;
+    }
+    if (props.$marginRight) {
+      styles = css`
+        ${styles}${marginRight(props.$marginRight)}
+      `;
+    }
+    if (props.$marginTop) {
+      styles = css`
+        ${styles}${marginTop(props.$marginTop)}
+      `;
+    }
+    if (props.$marginX) {
+      styles = css`
+        ${styles}${marginX(props.$marginX)}
+      `;
+    }
+    if (props.$marginY) {
+      styles = css`
+        ${styles}${marginY(props.$marginY)}
+      `;
+    }
+    if (props.$padding) {
+      styles = css`
+        ${styles}${padding(props.$padding)}
+      `;
+    }
+    if (props.$paddingBottom) {
+      styles = css`
+        ${styles}${paddingBottom(props.$paddingBottom)}
+      `;
+    }
+    if (props.$paddingLeft) {
+      styles = css`
+        ${styles}${paddingLeft(props.$paddingLeft)}
+      `;
+    }
+    if (props.$paddingRight) {
+      styles = css`
+        ${styles}${paddingRight(props.$paddingRight)}
+      `;
+    }
+    if (props.$paddingTop) {
+      styles = css`
+        ${styles}${paddingTop(props.$paddingTop)}
+      `;
+    }
+    if (props.$paddingX) {
+      styles = css`
+        ${styles}${paddingX(props.$paddingX)}
+      `;
+    }
+    if (props.$paddingY) {
+      styles = css`
+        ${styles}${paddingY(props.$paddingY)}
       `;
     }
 
-    if (props.overflow) {
+    if (props.$opacity) {
       styles = css`
-        ${styles}${overflow(props.overflow)}
+        ${styles}${opacity(props.$opacity)}
+      `;
+    }
+
+    if (props.$overflow) {
+      styles = css`
+        ${styles}${overflow(props.$overflow)}
       `;
     }
 

@@ -1,4 +1,4 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css, RuleSet } from 'styled-components';
 import { Query, responsiveStyle } from './media';
 
 export type Space = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
@@ -19,58 +19,56 @@ export const getSpace = (type: Space | string | number): string =>
 
 export type SpaceProps = Space | Partial<Record<Query, Space>>;
 
-export const padding = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const padding = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('padding', space, getSpace);
 };
-export const paddingTop = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const paddingTop = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('padding-top', space, getSpace);
 };
-export const paddingBottom = (
-  space: SpaceProps
-): FlattenSimpleInterpolation => {
+export const paddingBottom = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('padding-bottom', space, getSpace);
 };
-export const paddingLeft = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const paddingLeft = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('padding-left', space, getSpace);
 };
-export const paddingRight = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const paddingRight = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('padding-right', space, getSpace);
 };
-export const paddingX = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const paddingX = (space: SpaceProps): RuleSet<object> => {
   return css`
     ${responsiveStyle('padding-left', space, getSpace)}
     ${responsiveStyle('padding-right', space, getSpace)}
   `;
 };
-export const paddingY = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const paddingY = (space: SpaceProps): RuleSet<object> => {
   return css`
     ${responsiveStyle('padding-top', space, getSpace)}
     ${responsiveStyle('padding-bottom', space, getSpace)}
   `;
 };
 
-export const margin = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const margin = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('margin', space, getSpace);
 };
-export const marginTop = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginTop = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('margin-top', space, getSpace);
 };
-export const marginBottom = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginBottom = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('margin-bottom', space, getSpace);
 };
-export const marginLeft = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginLeft = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('margin-left', space, getSpace);
 };
-export const marginRight = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginRight = (space: SpaceProps): RuleSet<object> => {
   return responsiveStyle('margin-right', space, getSpace);
 };
-export const marginX = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginX = (space: SpaceProps): RuleSet<object> => {
   return css`
     ${responsiveStyle('margin-left', space, getSpace)}
     ${responsiveStyle('margin-right', space, getSpace)}
   `;
 };
-export const marginY = (space: SpaceProps): FlattenSimpleInterpolation => {
+export const marginY = (space: SpaceProps): RuleSet<object> => {
   return css`
     ${responsiveStyle('margin-top', space, getSpace)}
     ${responsiveStyle('margin-bottom', space, getSpace)}

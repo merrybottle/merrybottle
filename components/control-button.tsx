@@ -20,49 +20,63 @@ export const ControlButton: React.FC<ControlButtonProps> = ({
   ...props
 }) => {
   return (
-    <StyledControlButton
-      $isImportantAction={isImportantAction}
-      $needsAttention={needsAttention}
-      {...props}
-    >
+    <StyledControlButton $isImportantAction={isImportantAction} {...props}>
       {children}
-      <StyledControlButtonLabel>{label}</StyledControlButtonLabel>
+      <StyledControlButtonLabel
+        $variant="meeting"
+        $size="xs"
+        $needsAttention={needsAttention}
+      >
+        {label}
+      </StyledControlButtonLabel>
     </StyledControlButton>
   );
 };
 
+const wiggleAnimation = keyframes`
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-10deg) scale(1.15);
+  }
+  40% {
+    transform: rotate(15deg) scale(1.2) ;
+  }
+  60% {
+    transform: rotate(-5deg) scale(1.15);
+  }
+  80% {
+    transform: rotate(3deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+`;
+
 const StyledControlButtonLabel = styled(Text).attrs({
-  variant: 'meeting',
-  size: 'xs',
-  color: 'white',
-  fontWeight: 'bold',
-})`
+  $color: 'white',
+  $fontWeight: 'bold',
+})<{
+  $needsAttention?: boolean;
+}>`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   position: absolute;
   top: calc(100% + ${getSpace('xxs')});
-  opacity: 0;
+  opacity: ${({ $needsAttention: needsAttention }) => (needsAttention ? 1 : 0)};
   transition: 0.25s ease-in;
-`;
 
-const pulseAnimation = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  80% {
-    opacity: 0.3;
-    transform: scale(1.6);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2);
-  }
+  ${({ $needsAttention: needsAttention }) =>
+    needsAttention
+      ? css`
+          animation: ${wiggleAnimation} 1.2s ease-in 100;
+        `
+      : ''}
 `;
 
 const StyledControlButton = styled.button<{
   $isImportantAction?: boolean;
-  $needsAttention?: boolean;
 }>`
   ${({ $isImportantAction: isImportantAction }) =>
     isImportantAction
@@ -84,38 +98,9 @@ const StyledControlButton = styled.button<{
     cursor: not-allowed;
   }
 
-  ::after {
-    content: '';
-    ${backgroundColor('black')}
-    border-radius: 50%;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.25s ease-in;
-    transform-origin: center;
-    transform: scale(0);
-    z-index: -1;
-    ${({ $needsAttention: needsAttention }) =>
-      needsAttention
-        ? css`
-            animation: ${pulseAnimation} 1.2s ease-in 10;
-          `
-        : ''}
-  }
-
   :hover ${StyledControlButtonLabel} {
     opacity: 1;
   }
-
-  ${({ $needsAttention: needsAttention }) =>
-    needsAttention
-      ? css`
-          ${StyledControlButtonLabel} {
-            opacity: 1;
-          }
-        `
-      : ''}
 
   :not(:disabled):hover::after {
     opacity: 0.3;

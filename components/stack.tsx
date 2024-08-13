@@ -3,16 +3,16 @@ import { marginTop, SpaceProps } from '@styles/space';
 import styled from 'styled-components';
 
 interface StackProps {
-  space: SpaceProps;
-  alignX?: Parameters<typeof alignItems>[0];
+  $space: SpaceProps;
+  $alignX?: Parameters<typeof alignItems>[0];
 }
 
 export const Stack = styled.div<StackProps>`
   display: flex;
   flex-direction: column;
-  ${({ alignX }) => (alignX ? alignItems(alignX) : '')}
+  ${({ $alignX }) => ($alignX ? alignItems($alignX) : '')}
 
   > *:not(:first-child) {
-    ${({ space }) => marginTop(space)}
+    ${({ $space }) => marginTop($space)}
   }
 `;

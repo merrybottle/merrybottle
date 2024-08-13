@@ -25,13 +25,18 @@ const Home: NextPage = () => {
 
       {steps[stepIndex] === 'START' ? (
         <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="100vh"
+          $display="flex"
+          $alignItems="center"
+          $justifyContent="center"
+          $minHeight="100vh"
         >
           <StyledStartButton onClick={() => setStepIndex(stepIndex + 1)}>
-            <Text variant="meeting" size="xl" color="white" fontWeight="bold">
+            <Text
+              $variant="meeting"
+              $size="xl"
+              $color="white"
+              $fontWeight="bold"
+            >
               Ready to join?
             </Text>
           </StyledStartButton>
@@ -39,26 +44,26 @@ const Home: NextPage = () => {
       ) : (
         <StyledContainer>
           <Box
-            display={{ xs: 'flex', lg: 'none' }}
-            height={MEETING_TITLE_HEIGHT_XS}
-            paddingX="sm"
-            alignItems="center"
-            justifyContent="space-between"
+            $display={{ xs: 'flex', lg: 'none' }}
+            $height={MEETING_TITLE_HEIGHT_XS}
+            $paddingX="sm"
+            $alignItems="center"
+            $justifyContent="space-between"
           >
             <MeetingTitle />
             <Logout onStepIndexChange={setStepIndex} />
           </Box>
 
           <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            height={{
+            $display="flex"
+            $alignItems="center"
+            $justifyContent="center"
+            $height={{
               xs: `calc(100% - ${MEETING_TITLE_HEIGHT_XS}px)`,
               lg: '100%',
             }}
-            paddingX={{ xs: 'sm', lg: 'md' }}
-            paddingTop={{ lg: 'md' }}
+            $paddingX={{ xs: 'sm', lg: 'md' }}
+            $paddingTop={{ lg: 'md' }}
           >
             <StyledPresenterContainerBox>
               <Presenter
@@ -87,17 +92,17 @@ const Home: NextPage = () => {
 const MEETING_TITLE_HEIGHT_XS = 96;
 
 const StyledPresenterContainerBox = styled(Box).attrs({
-  width: '100%',
-  maxHeight: '100%',
+  $width: '100%',
+  $maxHeight: '100%',
 })`
   position: relative;
   height: 100%;
 `;
 
 const StyledContainer = styled(Box).attrs({
-  height: '100vh',
-  width: '100vw',
-  overflow: 'hidden',
+  $height: '100vh',
+  $width: '100vw',
+  $overflow: 'hidden',
 })`
   padding-bottom: ${FOOTER_HEIGHT}px;
 `;

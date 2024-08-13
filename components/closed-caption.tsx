@@ -24,14 +24,14 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
   }
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box $display="flex" $flexDirection="column" $alignItems="center">
       <StyledBackgroundBox key={step}>
-        <Box paddingX="xs" paddingY="xxs">
+        <Box $paddingX="xs" $paddingY="xxs">
           <Text
-            variant="meeting"
-            size={{ xs: 'lg', lg: 'xxl' }}
-            color="white"
-            align="center"
+            $variant="meeting"
+            $size={{ xs: 'lg', lg: 'xxl' }}
+            $color="white"
+            $align="center"
           >
             {copy}
           </Text>
@@ -39,7 +39,7 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
       </StyledBackgroundBox>
 
       {steps.indexOf(step) === steps.length - 1 && (
-        <Box marginTop="xs">
+        <Box $marginTop="xs">
           <ControlButton
             isImportantAction={true}
             label="Again"
@@ -63,7 +63,7 @@ const scrollAnimation = keyframes`
 `;
 
 const StyledBackgroundBox = styled(Box).attrs({
-  borderRadius: 'xs',
+  $borderRadius: 'xs',
 })<{
   $step?: Step;
   $prevStep?: Step;

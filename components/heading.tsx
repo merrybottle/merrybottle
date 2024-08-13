@@ -2,6 +2,7 @@ import { Color, color, rgba } from '@styles/color';
 import { Font, fontFamily } from '@styles/font';
 import { Query, responsiveStyle } from '@styles/media';
 import { textAlign } from '@styles/mixins';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 type Size = 'lg' | 'md' | 'sm';
@@ -10,19 +11,19 @@ type Variant = Omit<Font, 'text'>;
 
 interface HeadingProps {
   as: 'h1' | 'h2' | 'h3';
-  size: SizeProps;
-  variant: Variant;
-  color?: Color;
-  opacity?: number;
-  align?: Parameters<typeof textAlign>[0];
+  $size: SizeProps;
+  $variant: Variant;
+  $color?: Color;
+  $opacity?: number;
+  $align?: Parameters<typeof textAlign>[0];
 }
 
-export const Heading: React.FC<HeadingProps> = ({
-  color: textColor,
-  size,
-  variant,
-  opacity,
-  align,
+export const Heading: React.FC<React.PropsWithChildren<HeadingProps>> = ({
+  $color: textColor,
+  $size: size,
+  $variant: variant,
+  $opacity: opacity,
+  $align: align,
   ...props
 }) => {
   return (

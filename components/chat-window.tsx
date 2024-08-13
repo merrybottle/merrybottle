@@ -56,29 +56,29 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
       <StyledChatWindowBox $isOpen={isOpen}>
         {isSent ? (
           <Box
-            flex={1}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            $flex={1}
+            $display="flex"
+            $alignItems="center"
+            $justifyContent="center"
           >
-            <Stack space="xxl" alignX="center">
-              <Stack space="md">
+            <Stack $space="xxl" $alignX="center">
+              <Stack $space="md">
                 <Heading
                   as="h3"
-                  variant="meeting"
-                  size="lg"
-                  color="dark"
-                  align="center"
+                  $variant="meeting"
+                  $size="lg"
+                  $color="dark"
+                  $align="center"
                 >
                   🙇‍♀️
                 </Heading>
 
                 <Heading
-                  variant="meeting"
+                  $variant="meeting"
                   as="h3"
-                  size="md"
-                  color="dark"
-                  align="center"
+                  $size="md"
+                  $color="dark"
+                  $align="center"
                 >
                   Sent!
                   <br />
@@ -87,7 +87,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
               </Stack>
 
               <StyledPrimaryButton onClick={handleClose}>
-                <Inline space="sm">
+                <Inline $space="sm">
                   <ArrowLeft />
                   <span>Back</span>
                 </Inline>
@@ -96,31 +96,31 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
           </Box>
         ) : (
           <>
-            <Stack space="md">
+            <Stack $space="md">
               <Heading
                 as="h3"
-                variant="meeting"
-                size="sm"
-                color="dark"
-                align="center"
+                $variant="meeting"
+                $size="sm"
+                $color="dark"
+                $align="center"
               >
                 Leave a message
               </Heading>
 
-              <Text variant="meeting" size="md" color="dark" align="center">
+              <Text $variant="meeting" $size="md" $color="dark" $align="center">
                 I&apos;ll get back to you as soon as I can.
               </Text>
             </Stack>
 
-            <Box marginTop="lg">
-              <Stack space="md">
-                <Stack space="xs">
+            <Box $marginTop="lg">
+              <Stack $space="md">
+                <Stack $space="xs">
                   <label htmlFor="name">
                     <Text
-                      size="md"
-                      variant="meeting"
-                      color="black"
-                      fontWeight="bold"
+                      $size="md"
+                      $variant="meeting"
+                      $color="black"
+                      $fontWeight="bold"
                     >
                       Name
                     </Text>
@@ -135,13 +135,13 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
                   />
                 </Stack>
 
-                <Stack space="xs">
+                <Stack $space="xs">
                   <label htmlFor="email">
                     <Text
-                      size="md"
-                      variant="meeting"
-                      color="black"
-                      fontWeight="bold"
+                      $size="md"
+                      $variant="meeting"
+                      $color="black"
+                      $fontWeight="bold"
                     >
                       E-mail address
                     </Text>
@@ -158,19 +158,24 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
               </Stack>
             </Box>
 
-            <Box display="flex" flexDirection="column" flex={1} marginTop="md">
+            <Box
+              $display="flex"
+              $flexDirection="column"
+              $flex={1}
+              $marginTop="md"
+            >
               <label htmlFor="message">
                 <Text
-                  size="md"
-                  variant="meeting"
-                  color="black"
-                  fontWeight="bold"
+                  $size="md"
+                  $variant="meeting"
+                  $color="black"
+                  $fontWeight="bold"
                 >
                   Message
                 </Text>
               </label>
 
-              <Box marginTop="xs" flex={1}>
+              <Box $marginTop="xs" $flex={1}>
                 <StyledTextarea
                   id="message"
                   name="message"
@@ -181,8 +186,8 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
               </Box>
             </Box>
 
-            <Box marginTop="lg">
-              <Stack space="sm">
+            <Box $marginTop="lg">
+              <Stack $space="sm">
                 <StyledPrimaryButton type="submit" disabled={isSending}>
                   {isSending ? 'Just one moment' : 'Send'}
                 </StyledPrimaryButton>
@@ -203,11 +208,11 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose }) => {
 };
 
 const StyledChatWindowBox = styled(Box).attrs({
-  display: 'flex',
-  flexDirection: 'column',
-  borderRadius: 'sm',
-  backgroundColor: 'white',
-  padding: { xs: 'md', md: 'lg' },
+  $display: 'flex',
+  $flexDirection: 'column',
+  $borderRadius: 'sm',
+  $backgroundColor: 'white',
+  $padding: { xs: 'md', md: 'lg' },
 })<{ $isOpen: boolean }>`
   position: fixed;
   top: ${getSpace('sm')};

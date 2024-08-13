@@ -146,7 +146,7 @@ const StyledPresenter = styled.div<{
 `;
 
 const StyledMeContainer = styled(Box).attrs({
-  height: { md: '50%', lg: '85%' },
+  $height: { md: '50%', lg: '85%' },
 })`
   line-height: 0;
   aspect-ratio: 1 / 1;

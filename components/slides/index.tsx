@@ -35,29 +35,29 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
     <StyledContainer>
       {step === 'SLIDES_1' && (
         <Slide heading="About me">
-          <Stack space={{ xs: 'sm', md: 'xl' }} alignX="center">
-            <Stack space="xs" alignX="center">
+          <Stack $space={{ xs: 'sm', md: 'xl' }} $alignX="center">
+            <Stack $space="xs" $alignX="center">
               <Code stroke={getColor('dark')} height={32} width={32} />
 
-              <Text variant="text" size="lg" color="dark" align="center">
+              <Text $variant="text" $size="lg" $color="dark" $align="center">
                 <strong>Front-end developer</strong> with over{' '}
-                <Highlight backgroundColor="pink">10 years</Highlight>{' '}
+                <Highlight $backgroundColor="pink">10 years</Highlight>{' '}
                 experience
               </Text>
             </Stack>
 
-            <Stack space="xs" alignX="center">
+            <Stack $space="xs" $alignX="center">
               <div>
                 <img src={sydneySvg.src} alt="Sydney" height={56} width={56} />
               </div>
 
-              <Text variant="text" size="lg" color="dark" align="center">
+              <Text $variant="text" $size="lg" $color="dark" $align="center">
                 Based in{' '}
-                <Highlight backgroundColor="blue">Sydney, Australia</Highlight>
+                <Highlight $backgroundColor="blue">Sydney, Australia</Highlight>
               </Text>
             </Stack>
 
-            <Stack space="xs" alignX="center">
+            <Stack $space="xs" $alignX="center">
               <MessageCircle
                 stroke={getColor('dark')}
                 fill={rgba('yellow', 0.5)}
@@ -65,13 +65,13 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 width={32}
               />
 
-              <Text variant="text" size="lg" color="dark" align="center">
+              <Text $variant="text" $size="lg" $color="dark" $align="center">
                 Speaks English and Cantonese, writes English only and learning
                 Korean
               </Text>
             </Stack>
 
-            <Stack space="xs" alignX="center">
+            <Stack $space="xs" $alignX="center">
               <Heart
                 stroke={getColor('dark')}
                 fill={getColor('red')}
@@ -79,13 +79,13 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 width={32}
               />
 
-              <Text variant="text" size="lg" color="dark" align="center">
+              <Text $variant="text" $size="lg" $color="dark" $align="center">
                 Loving remote work
               </Text>
             </Stack>
 
-            <Stack space="xs" alignX="center">
-              <Inline space="sm">
+            <Stack $space="xs" $alignX="center">
+              <Inline $space="sm">
                 <div>
                   <img src={hkSvg.src} alt="Hong Kong" height={48} width={48} />
                 </div>
@@ -102,7 +102,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 </div>
               </Inline>
 
-              <Text variant="text" size="lg" color="dark" align="center">
+              <Text $variant="text" $size="lg" $color="dark" $align="center">
                 Travels annually to my favourite destinations
               </Text>
             </Stack>
@@ -113,140 +113,184 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
       {step === 'SLIDES_2' && (
         <Slide heading="Tech skills">
           <Box
-            display="inline-flex"
-            flexWrap="wrap"
-            alignItems="center"
-            justifyContent="center"
-            maxWidth={{ lg: 900 }}
+            $display="inline-flex"
+            $flexWrap="wrap"
+            $alignItems="center"
+            $justifyContent="center"
+            $maxWidth={{ lg: 900 }}
           >
-            <Highlight backgroundColor="pink" margin="xs">
+            <Highlight $backgroundColor="pink" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 React
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 React Native
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="yellow" margin="xs">
+            <Highlight $backgroundColor="yellow" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 HTML
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="blue" margin="xs">
+            <Highlight $backgroundColor="blue" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 CSS
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 JavaScript
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 CSS animations
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 SASS
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="pink" margin="xs">
+            <Highlight $backgroundColor="pink" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 Styled Components
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 SVG
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="blue" margin="xs">
+            <Highlight $backgroundColor="blue" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 TypeScript
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 NextJS
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 GatsbyJS
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 prismic.io
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="yellow" margin="xs">
+            <Highlight $backgroundColor="yellow" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 Design Systems
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 Jest
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 NodeJS
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 JQuery
               </Text>
             </Highlight>
@@ -256,39 +300,39 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
 
       {step === 'SLIDES_3' && (
         <Slide heading="Portfolio">
-          <Stack space="xxl" alignX="center">
-            <Stack space="md" alignX="center">
+          <Stack $space="xxl" $alignX="center">
+            <Stack $space="md" $alignX="center">
               <Heading
-                variant="heading"
-                size={{ xs: 'sm', lg: 'md' }}
+                $variant="heading"
+                $size={{ xs: 'sm', lg: 'md' }}
                 as="h2"
-                color="dark"
-                align="center"
+                $color="dark"
+                $align="center"
               >
                 Personal work
               </Heading>
 
               <Box
-                display="flex"
-                flexDirection={{ xs: 'column', lg: 'row' }}
-                alignItems="center"
-                justifyContent="center"
+                $display="flex"
+                $flexDirection={{ xs: 'column', lg: 'row' }}
+                $alignItems="center"
+                $justifyContent="center"
               >
-                <Box margin="xs">
+                <Box $margin="xs">
                   <StyledExternalLink
                     borderColor="blue"
                     href="https://github.com/merrybottle"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline space="md" alignY="flex-start">
-                      <Inline space="xs">
+                    <Inline $space="md" $alignY="flex-start">
+                      <Inline $space="xs">
                         <GitHub
                           stroke={getColor('blue')}
                           height={32}
                           width={32}
                         />
-                        <Text size="lg" variant="text" color="dark">
+                        <Text $size="lg" $variant="text" $color="dark">
                           GitHub
                         </Text>
                       </Inline>
@@ -302,21 +346,21 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                   </StyledExternalLink>
                 </Box>
 
-                <Box margin="xs">
+                <Box $margin="xs">
                   <StyledExternalLink
                     borderColor="pink"
                     href="https://codepen.io/merrybottle"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline space="md" alignY="flex-start">
-                      <Inline space="xs">
+                    <Inline $space="md" $alignY="flex-start">
+                      <Inline $space="xs">
                         <Codepen
                           stroke={getColor('pink')}
                           height={32}
                           width={32}
                         />
-                        <Text size="lg" variant="text" color="dark">
+                        <Text $size="lg" $variant="text" $color="dark">
                           CodePen
                         </Text>
                       </Inline>
@@ -331,22 +375,22 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 </Box>
               </Box>
 
-              <Box display="flex" flexDirection={{ xs: 'column', lg: 'row' }}>
-                <Box margin="xs">
+              <Box $display="flex" $flexDirection={{ xs: 'column', lg: 'row' }}>
+                <Box $margin="xs">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Close button" src="https://codepen.io/merrybottle/embed/PdwXYO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/PdwXYO">Close button</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
                     }}
                   />
                 </Box>
-                <Box margin="xs">
+                <Box $margin="xs">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Hamburger menu + close button animation" src="https://codepen.io/merrybottle/embed/MZZEqM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/MZZEqM">Hamburger menu + close button animation</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
                     }}
                   />
                 </Box>
-                <Box margin="xs">
+                <Box $margin="xs">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Money transfer: number input form" src="https://codepen.io/merrybottle/embed/KKPaqZX?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/KKPaqZX">Money transfer: number input form</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
@@ -356,32 +400,32 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
               </Box>
             </Stack>
 
-            <Stack space="md" alignX="center">
+            <Stack $space="md" $alignX="center">
               <Heading
-                variant="heading"
-                size={{ xs: 'sm', lg: 'md' }}
+                $variant="heading"
+                $size={{ xs: 'sm', lg: 'md' }}
                 as="h2"
-                color="dark"
-                align="center"
+                $color="dark"
+                $align="center"
               >
                 Most recent professional work
               </Heading>
 
               <Box
-                display="flex"
-                flexDirection={{ xs: 'column', lg: 'row' }}
-                alignItems="center"
-                justifyContent="center"
+                $display="flex"
+                $flexDirection={{ xs: 'column', lg: 'row' }}
+                $alignItems="center"
+                $justifyContent="center"
               >
-                <Box margin="xs">
+                <Box $margin="xs">
                   <StyledExternalLink
                     borderColor="spaceship"
                     href="https://www.spaceship.com.au"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline space="md" alignY="flex-start">
-                      <Inline space="xs">
+                    <Inline $space="md" $alignY="flex-start">
+                      <Inline $space="xs">
                         <div>
                           <img
                             src={spaceshipSvg.src}
@@ -390,7 +434,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                             width={32}
                           />
                         </div>
-                        <Text size="lg" variant="text" color="dark">
+                        <Text $size="lg" $variant="text" $color="dark">
                           Spaceship
                         </Text>
                       </Inline>
@@ -404,15 +448,15 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                   </StyledExternalLink>
                 </Box>
 
-                <Box margin="xs">
+                <Box $margin="xs">
                   <StyledExternalLink
                     borderColor="oneflare"
                     href="https://www.oneflare.com.au"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline space="md" alignY="flex-start">
-                      <Inline space="xs">
+                    <Inline $space="md" $alignY="flex-start">
+                      <Inline $space="xs">
                         <div>
                           <img
                             src={oneflareSvg.src}
@@ -421,7 +465,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                             width={32}
                           />
                         </div>
-                        <Text size="lg" variant="text" color="dark">
+                        <Text $size="lg" $variant="text" $color="dark">
                           Oneflare
                         </Text>
                       </Inline>
@@ -443,53 +487,61 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
       {step === 'SLIDES_4' && (
         <Slide heading="Irrelevant skills">
           <Box
-            display="inline-flex"
-            flexWrap="wrap"
-            alignItems="center"
-            justifyContent="center"
-            maxWidth={{ lg: 400 }}
+            $display="inline-flex"
+            $flexWrap="wrap"
+            $alignItems="center"
+            $justifyContent="center"
+            $maxWidth={{ lg: 400 }}
           >
-            <Highlight backgroundColor="pink" margin="xs">
+            <Highlight $backgroundColor="pink" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 Baking
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="blue" margin="xs">
+            <Highlight $backgroundColor="blue" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 Making jewellery
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="yellow" margin="xs">
+            <Highlight $backgroundColor="yellow" $margin="xs">
               <Text
-                variant="text"
-                size={{ xs: 'lg', xl: 'xl' }}
-                color="dark"
-                fontWeight="bold"
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+                $fontWeight="bold"
               >
                 Crochet
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 Sudoku
               </Text>
             </Highlight>
 
-            <Highlight backgroundColor="white" margin="xs">
-              <Text variant="text" size={{ xs: 'lg', xl: 'xl' }} color="dark">
+            <Highlight $backgroundColor="white" $margin="xs">
+              <Text
+                $variant="text"
+                $size={{ xs: 'lg', xl: 'xl' }}
+                $color="dark"
+              >
                 Eating heaps of desserts
               </Text>
             </Highlight>
@@ -505,10 +557,10 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Inline space="md" alignY="flex-start">
-              <Inline space="xs">
+            <Inline $space="md" $alignY="flex-start">
+              <Inline $space="xs">
                 <Linkedin stroke={getColor('blue')} height={32} width={32} />
-                <Text size="lg" variant="text" color="dark">
+                <Text $size="lg" $variant="text" $color="dark">
                   LinkedIn
                 </Text>
               </Inline>
@@ -530,34 +582,37 @@ interface SlideProps {
   heading: string;
 }
 
-const Slide: React.FC<SlideProps> = ({ children, heading }) => {
+const Slide: React.FC<React.PropsWithChildren<SlideProps>> = ({
+  children,
+  heading,
+}) => {
   return (
     <>
       <Heading
         as="h1"
-        size={{ xs: 'md', lg: 'lg' }}
-        color="dark"
-        variant="heading"
-        align="center"
+        $size={{ xs: 'md', lg: 'lg' }}
+        $color="dark"
+        $variant="heading"
+        $align="center"
       >
         {heading.toUpperCase()}
       </Heading>
 
       <Box
-        borderRadius="xxs"
-        height={getSpace('xxs')}
-        backgroundColor="dark"
-        opacity={0.75}
-        marginY="xs"
+        $borderRadius="xxs"
+        $height={getSpace('xxs')}
+        $backgroundColor="dark"
+        $opacity={0.75}
+        $marginY="xs"
       />
 
-      <Box flex={1} overflow="auto" paddingY="md">
+      <Box $flex={1} $overflow="auto" $paddingY="md">
         <Box
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent={{ lg: 'center' }}
-          minHeight="100%"
+          $display="flex"
+          $flexDirection="column"
+          $alignItems="center"
+          $justifyContent={{ lg: 'center' }}
+          $minHeight="100%"
         >
           {children}
         </Box>
@@ -567,12 +622,12 @@ const Slide: React.FC<SlideProps> = ({ children, heading }) => {
 };
 
 const StyledContainer = styled(Box).attrs({
-  display: 'flex',
-  flexDirection: 'column',
-  height: '100%',
-  width: '100%',
-  paddingX: { xs: 'md', lg: 'xl' },
-  paddingY: 'xxl',
+  $display: 'flex',
+  $flexDirection: 'column',
+  $height: '100%',
+  $width: '100%',
+  $paddingX: { xs: 'md', lg: 'xl' },
+  $paddingY: 'xxl',
 })`
   position: relative;
 
@@ -620,7 +675,8 @@ const StyledExternalLink = styled.a<{ borderColor: Color }>`
   }
 
   :hover {
-    box-shadow: 0 0 0 4px ${({ borderColor }) => rgba(borderColor, 0.2)},
+    box-shadow:
+      0 0 0 4px ${({ borderColor }) => rgba(borderColor, 0.2)},
       inset 0 0 0 4px ${({ borderColor }) => rgba(borderColor, 0.2)};
     border: 4px solid ${({ borderColor }) => rgba(borderColor, 1)};
   }

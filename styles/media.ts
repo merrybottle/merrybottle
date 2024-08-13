@@ -1,4 +1,4 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
+import { css, RuleSet } from 'styled-components';
 
 export type Query = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
@@ -11,9 +11,9 @@ export const queries: Record<Query, string> = {
 };
 
 export const mediaMatch = (
-  media: Partial<Record<Query, FlattenSimpleInterpolation>>
-): FlattenSimpleInterpolation => {
-  let style: FlattenSimpleInterpolation = css``;
+  media: Partial<Record<Query, RuleSet<object>>>,
+): RuleSet<object> => {
+  let style: RuleSet<object> = css``;
 
   Object.keys(queries).forEach((q) => {
     const query = q as Query;
@@ -35,15 +35,15 @@ export const mediaMatch = (
 export const responsiveStyle = (
   property: string,
   value: string | number | Partial<Record<Query, string | number>>,
-  fn?: (value: string | number) => FlattenSimpleInterpolation | string
-): FlattenSimpleInterpolation => {
+  fn?: (value: string | number) => RuleSet<object> | string,
+): RuleSet<object> => {
   if (typeof value === 'string' || typeof value === 'number') {
     return css`
       ${property}: ${fn ? fn(value) : value};
     `;
   }
 
-  const responsiveCss: Partial<Record<Query, FlattenSimpleInterpolation>> = {};
+  const responsiveCss: Partial<Record<Query, RuleSet<object>>> = {};
 
   Object.keys(value).forEach((media) => {
     const mediaStyle = value[media as Query];
