@@ -111,6 +111,14 @@ export const overflow = (
   return responsiveStyle('overflow', value);
 };
 
+export const position = (
+  value:
+    | Omit<CSSProperties['position'], 'undefined'>
+    | Partial<Record<Query, CSSProperties['position']>>,
+) => {
+  return responsiveStyle('position', value);
+};
+
 export const textAlign = (
   value:
     | Omit<CSSProperties['textAlign'], 'undefined'>

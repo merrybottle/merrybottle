@@ -13,7 +13,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
 
 const GlobalStyle = createGlobalStyle`
   body {
-    ${backgroundColor('dark')}
+    ${backgroundColor('background')}
     margin: 0;
     padding: 0;
   }

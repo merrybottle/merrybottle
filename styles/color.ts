@@ -5,6 +5,7 @@ export type Color =
   | 'black'
   | 'white'
   | 'dark'
+  | 'background'
   | 'pink'
   | 'yellow'
   | 'blue'
@@ -15,11 +16,12 @@ export type Color =
 export const colors: Record<Color, string> = {
   black: '#000000',
   white: '#ffffff',
-  dark: '#373b43',
-  pink: '#efa9ae',
+  dark: '#2a2b2a',
+  background: '#f8f7f9',
+  pink: '#fab3b3',
   yellow: '#ffb400',
   blue: '#7ebdc3',
-  red: '#f25f5c',
+  red: '#ef6461',
   spaceship: '#600ce8',
   oneflare: '#0c8688',
 };

@@ -36,9 +36,9 @@ export const responsiveStyle = (
   property: string,
   value?: string | number | Partial<Record<Query, string | number>>,
   fn?: (value: string | number) => RuleSet<object> | string,
-): RuleSet<object> | string => {
+): RuleSet<object> => {
   if (!value) {
-    return '';
+    return css``;
   }
 
   if (typeof value === 'string' || typeof value === 'number') {

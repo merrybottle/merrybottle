@@ -1,9 +1,19 @@
 import { css, RuleSet } from 'styled-components';
 import { Query, responsiveStyle } from './media';
 
-export type Space = 'none' | 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type Space =
+  | 'auto'
+  | 'none'
+  | 'xxs'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | 'xxl';
 
 export const spaces: Record<Space, string> = {
+  auto: 'auto',
   none: '0px',
   xxs: '4px',
   xs: '8px',

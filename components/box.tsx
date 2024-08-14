@@ -14,6 +14,7 @@ import {
   minWidth,
   opacity,
   overflow,
+  position,
   width,
 } from '@styles/mixins';
 import {
@@ -67,6 +68,7 @@ export const Box = styled.div<{
   $paddingY?: SpaceProps;
   $opacity?: Parameters<typeof opacity>[0];
   $overflow?: Parameters<typeof overflow>[0];
+  $position?: Parameters<typeof position>[0];
 }>`
   box-sizing: border-box;
 
@@ -233,6 +235,12 @@ export const Box = styled.div<{
     if (props.$overflow) {
       styles = css`
         ${styles}${overflow(props.$overflow)}
+      `;
+    }
+
+    if (props.$position) {
+      styles = css`
+        ${styles}${position(props.$position)}
       `;
     }
 
