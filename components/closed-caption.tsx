@@ -26,7 +26,7 @@ export const ClosedCaption: React.FC<ClosedCaptionProps> = ({
   return (
     <Box $display="flex" $flexDirection="column" $alignItems="center">
       <StyledBackgroundBox key={step}>
-        <Box $paddingX="xs" $paddingY="xxs">
+        <Box $paddingX="sm" $paddingY="xxs">
           <Text
             $variant="meeting"
             $size={{ xs: 'lg', lg: 'xxl' }}
@@ -68,7 +68,7 @@ const StyledBackgroundBox = styled(Box).attrs({
   $step?: Step;
   $prevStep?: Step;
 }>`
-  background-color: ${rgba('dark', 0.7)};
+  background-color: ${rgba('dark', 0.5)};
 
   ${mediaMatch({
     lg: css`

@@ -1,9 +1,10 @@
-import { backgroundColor, color, rgba } from '@styles/color';
+import { backgroundColor, color, getColor, rgba } from '@styles/color';
 import { borderRadius, height, width } from '@styles/mixins';
 import { getSpace } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Text } from './text';
+import { darken } from 'polished';
 
 interface ControlButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -22,12 +23,16 @@ export const ControlButton: React.FC<ControlButtonProps> = ({
   return (
     <StyledControlButton $isImportantAction={isImportantAction} {...props}>
       {children}
-      <StyledControlButtonLabel
-        $variant="meeting"
-        $size="xs"
-        $needsAttention={needsAttention}
-      >
-        {label}
+      <StyledControlButtonLabel $needsAttention={needsAttention}>
+        <Text
+          $variant="meeting"
+          $size="xs"
+          $color="dark"
+          $fontWeight="bold"
+          $align="center"
+        >
+          {label}
+        </Text>
       </StyledControlButtonLabel>
     </StyledControlButton>
   );
@@ -54,10 +59,7 @@ const wiggleAnimation = keyframes`
   }
 `;
 
-const StyledControlButtonLabel = styled(Text).attrs({
-  $color: 'white',
-  $fontWeight: 'bold',
-})<{
+const StyledControlButtonLabel = styled.span<{
   $needsAttention?: boolean;
 }>`
   letter-spacing: 0.1em;
@@ -70,7 +72,7 @@ const StyledControlButtonLabel = styled(Text).attrs({
   ${({ $needsAttention: needsAttention }) =>
     needsAttention
       ? css`
-          animation: ${wiggleAnimation} 1.2s ease-in 100;
+          animation: ${wiggleAnimation} 1.2s ease-in 5s 3;
         `
       : ''}
 `;
@@ -80,30 +82,32 @@ const StyledControlButton = styled.button<{
 }>`
   ${({ $isImportantAction: isImportantAction }) =>
     isImportantAction
-      ? backgroundColor('red')
-      : `background-color: ${rgba('white', 0.1)};`}
-  ${color('white')}
+      ? backgroundColor('pink')
+      : `background-color: transparent;`}
+  ${color('dark')}
   ${borderRadius('md')}
   ${height(getSpace('xl'))}
   ${width(getSpace('xl'))}
-  border: none;
+  border: 2px solid ${getColor('dark')};
   outline: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: 0.25s ease-in;
 
-  :disabled {
+  &:disabled {
     cursor: not-allowed;
   }
 
-  :hover ${StyledControlButtonLabel} {
-    opacity: 1;
+  &:not(:disabled):hover {
+    background-color: ${({ $isImportantAction: isImportantAction }) =>
+      isImportantAction ? darken(0.05, getColor('pink')) : getColor('yellow')};
   }
 
-  :not(:disabled):hover::after {
-    opacity: 0.3;
-    transform: scale(2);
+  &:not(:disabled):hover ${StyledControlButtonLabel} {
+    opacity: 1;
+    transform: scale(1.2);
   }
 `;

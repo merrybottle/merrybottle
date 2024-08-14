@@ -3,14 +3,15 @@ import { ClosedCaption } from '@components/closed-caption';
 import { Slides } from '@components/slides';
 import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
-import { backgroundColor } from '@styles/color';
+import { backgroundColor, getColor, rgba } from '@styles/color';
 import { mediaMatch } from '@styles/media';
 import { borderRadius, minHeight, minWidth } from '@styles/mixins';
-import { getSpace } from '@styles/space';
+import { getSpace, padding } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Me } from './me';
-import skyscrapersImg from './assets/skyscrapers.jpg';
+import backgroundImg from './assets/background.jpg';
+import { mix } from 'polished';
 
 interface PresenterProps {
   currentStepIndex: number;
@@ -30,11 +31,13 @@ export const Presenter: React.FC<PresenterProps> = ({
           <Slides step={currentStep} />
         )}
 
-        <StyledPresenter step={currentStep}>
-          <StyledMeContainer>
-            <Me step={currentStep} />
-          </StyledMeContainer>
-        </StyledPresenter>
+        <Box $position="relative" $height="100%">
+          <StyledPresenter step={currentStep}>
+            <StyledMeContainer>
+              <Me step={currentStep} />
+            </StyledMeContainer>
+          </StyledPresenter>
+        </Box>
       </StyledWindow>
 
       <StyledClosedCaptionContainer>
@@ -49,18 +52,37 @@ export const Presenter: React.FC<PresenterProps> = ({
 
 const expandWindowAnimation = keyframes`
   0% {
-    height: ${getSpace('xs')};
+    height: 0;
     width: 0;
+    border-color: ${rgba('dark', 0)};
   }
 
   40%, 60% {
     height: ${getSpace('xs')};
     width: 100%;
+    border-color: ${rgba('dark', 1)};
   }
 
   100% {
     height: 100%;
     width: 100%;
+    border-color: ${rgba('dark', 1)};
+  }
+`;
+
+const expandWindowShadowAnimation = keyframes`
+  0% {
+    top: 16px;
+    bottom: 0px;
+    opacity: 0;
+    border-color: ${rgba('dark', 0)};
+  }
+
+  100% {
+    top: 16px;
+    bottom: -16px;
+    opacity: 1;
+    border-color: ${rgba('dark', 1)};
   }
 `;
 
@@ -76,18 +98,31 @@ const StyledContainer = styled.div`
 `;
 
 const StyledWindow = styled.div`
-  animation: ${expandWindowAnimation} 1s linear 0.3s forwards;
-  ${backgroundColor('white')}
-  ${borderRadius('xs')}
+  animation: ${expandWindowAnimation} 1.1s linear 0.5s forwards;
+  ${backgroundColor('background')}
+  ${borderRadius('md')}
+  ${padding('sm')}
+  box-sizing: border-box;
+  border: 3px solid ${rgba('dark', 0)};
   overflow: hidden;
-  height: ${getSpace('xs')};
-  width: 0;
+
+  &::after {
+    animation: ${expandWindowShadowAnimation} 0.5s linear 1.6s forwards;
+    content: '';
+    ${borderRadius('sm')}
+    background-color: ${mix(0.6, getColor('background'), getColor('yellow'))};
+    border: 3px solid ${rgba('dark', 0)};
+    opacity: 0;
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    z-index: -1;
+  }
 `;
 
 const StyledPresenter = styled.div<{
   step: Step;
 }>`
-  ${borderRadius('xs')}
   animation: ${fadeInAnimation} 0.5s linear 1.5s forwards;
   opacity: 0;
   position: absolute;
@@ -104,15 +139,16 @@ const StyledPresenter = styled.div<{
 
   ::before {
     content: '';
-    background: url('${skyscrapersImg.src}') no-repeat;
+    background: url('${backgroundImg.src}') no-repeat;
     background-size: cover;
     background-position: center;
+    ${borderRadius('sm')}
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    filter: grayscale(0.6);
+    filter: brightness(1.3) contrast(0.7) opacity(0.9);
     z-index: -1;
   }
 
@@ -146,7 +182,7 @@ const StyledPresenter = styled.div<{
 `;
 
 const StyledMeContainer = styled(Box).attrs({
-  $height: { md: '50%', lg: '85%' },
+  $height: { xs: '80%', lg: '85%' },
 })`
   line-height: 0;
   aspect-ratio: 1 / 1;
@@ -159,13 +195,11 @@ const StyledClosedCaptionContainer = styled.div`
 
   ${mediaMatch({
     xs: css`
-      top: ${getSpace('md')};
+      top: ${getSpace('lg')};
     `,
     lg: css`
       top: auto;
-      bottom: ${getSpace('sm')};
+      bottom: ${getSpace('lg')};
     `,
   })}
 `;
-
-// <a href='https://www.freepik.com/vectors/background'>Background vector created by vectorpocket - www.freepik.com</a>
