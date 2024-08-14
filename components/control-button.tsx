@@ -1,4 +1,4 @@
-import { backgroundColor, color, getColor, rgba } from '@styles/color';
+import { backgroundColor, color, getColor } from '@styles/color';
 import { borderRadius, height, width } from '@styles/mixins';
 import { getSpace } from '@styles/space';
 import React from 'react';
