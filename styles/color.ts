@@ -20,7 +20,7 @@ export const colors: Record<Color, string> = {
   background: '#f8f7f9',
   pink: '#fab3b3',
   yellow: '#f8c537',
-  blue: '#7ebdc3',
+  blue: '#99cad6',
   red: '#ef6461',
   spaceship: '#600ce8',
   oneflare: '#0c8688',

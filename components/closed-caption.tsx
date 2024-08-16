@@ -63,7 +63,7 @@ const scrollAnimation = keyframes`
 `;
 
 const StyledBackgroundBox = styled(Box).attrs({
-  $borderRadius: 'xs',
+  $borderRadius: 'sm',
 })<{
   $step?: Step;
   $prevStep?: Step;

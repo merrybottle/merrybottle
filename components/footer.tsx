@@ -24,13 +24,13 @@ export const FOOTER_HEIGHT = 120;
 interface FooterProps {
   currentStepIndex: number;
   onStepIndexChange: (stepIndex: number) => void;
-  onOpenChatWindow: () => void;
+  onToggleChatWindow: (open: boolean) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   currentStepIndex,
   onStepIndexChange,
-  onOpenChatWindow,
+  onToggleChatWindow,
 }) => {
   return (
     <>
@@ -41,9 +41,9 @@ export const Footer: React.FC<FooterProps> = ({
           <Box
             $display="flex"
             $alignItems="center"
-            $flex={{ xs: 1, lg: 2 / 3 }}
+            $flex={{ xs: 1, lg: 3 / 4 }}
           >
-            <Box $display={{ xs: 'none', lg: 'block' }} $flex={1 / 2}>
+            <Box $display={{ xs: 'none', lg: 'block' }} $flex={1 / 3}>
               <Inline $space="sm">
                 <Clock />
                 <Text
@@ -59,30 +59,34 @@ export const Footer: React.FC<FooterProps> = ({
             </Box>
 
             <Box
-              $flex={{ xs: 1, lg: 1 / 2 }}
+              $flex={{ xs: 1, lg: 2 / 3 }}
               $display="flex"
               $justifyContent="center"
             >
               <Controls
                 currentStepIndex={currentStepIndex}
-                onBack={
-                  currentStepIndex > 1
-                    ? () => onStepIndexChange(currentStepIndex - 1)
-                    : undefined
-                }
+                onBack={() => {
+                  if (currentStepIndex > 2) {
+                    onStepIndexChange(currentStepIndex - 1);
+                  } else {
+                    onStepIndexChange(0);
+                  }
+
+                  onToggleChatWindow(false);
+                }}
                 onNext={
                   currentStepIndex < steps.length - 1
                     ? () => onStepIndexChange(currentStepIndex + 1)
                     : undefined
                 }
-                onOpenChatWindow={onOpenChatWindow}
+                onOpenChatWindow={() => onToggleChatWindow(true)}
               />
             </Box>
           </Box>
 
           <Box
             $display={{ xs: 'none', lg: 'flex' }}
-            $flex={1 / 3}
+            $flex={1 / 4}
             $justifyContent="flex-end"
           >
             <Logout onStepIndexChange={onStepIndexChange} />
@@ -162,7 +166,7 @@ const Controls: React.FC<ControlsProps> = ({
       <StyledBounceIn $delay={0.4}>
         <ControlButton
           onClick={onOpenChatWindow}
-          label="Chat"
+          label="Message"
           needsAttention={currentStep === 'END_3'}
         >
           <MessageCircle />

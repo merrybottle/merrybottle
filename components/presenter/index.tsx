@@ -5,7 +5,14 @@ import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
 import { backgroundColor, getColor, rgba } from '@styles/color';
 import { mediaMatch } from '@styles/media';
-import { borderRadius, minHeight, minWidth } from '@styles/mixins';
+import {
+  borderRadius,
+  display,
+  maxHeight,
+  maxWidth,
+  minHeight,
+  minWidth,
+} from '@styles/mixins';
 import { getSpace, padding } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
@@ -27,11 +34,16 @@ export const Presenter: React.FC<PresenterProps> = ({
   return (
     <StyledContainer>
       <StyledWindow>
-        {currentStepIndex >= steps.indexOf('INTRO_8') && (
-          <Slides step={currentStep} />
-        )}
+        <Box
+          $position="relative"
+          $height="100%"
+          $borderRadius="sm"
+          $overflow="hidden"
+        >
+          {currentStepIndex >= steps.indexOf('INTRO_8') && (
+            <Slides step={currentStep} />
+          )}
 
-        <Box $position="relative" $height="100%">
           <StyledPresenter step={currentStep}>
             <StyledMeContainer>
               <Me step={currentStep} />
@@ -104,7 +116,6 @@ const StyledWindow = styled.div`
   ${padding('sm')}
   box-sizing: border-box;
   border: 3px solid ${rgba('dark', 0)};
-  overflow: hidden;
 
   &::after {
     animation: ${expandWindowShadowAnimation} 0.5s linear 1.6s forwards;
@@ -137,7 +148,7 @@ const StyledPresenter = styled.div<{
   left: 0;
   overflow: hidden;
 
-  ::before {
+  &::before {
     content: '';
     background: url('${backgroundImg.src}') no-repeat;
     background-size: cover;
@@ -155,25 +166,18 @@ const StyledPresenter = styled.div<{
   ${({ step }) => {
     if (step.includes('SLIDES')) {
       return css`
+        ${display({ xs: 'none', md: 'flex' })}
         border-radius: 50%;
         height: 15vw;
         width: 15vw;
-        ${minHeight({ xs: 120, md: 150, lg: 200 })}
-        ${minWidth({ xs: 120, md: 150, lg: 200 })}
+        ${minHeight({ md: 150, lg: 200 })}
+        ${minWidth({ md: 150, lg: 200 })}
+        ${maxHeight({ md: 200, lg: 300 })}
+        ${maxWidth({ md: 200, lg: 300 })}
         overflow: hidden;
-
-        ${mediaMatch({
-          xs: css`
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateY(-70%);
-          `,
-          md: css`
-            top: calc(100% - ${getSpace('xs')});
-            left: ${getSpace('xs')};
-            transform: translateY(-100%);
-          `,
-        })}
+        top: calc(100% - ${getSpace('xs')});
+        left: ${getSpace('xs')};
+        transform: translateY(-100%);
       `;
     }
 

@@ -1,7 +1,7 @@
 import { Box } from '@components/box';
-import { ChatWindow } from '@components/chat-window';
 import { Footer, FOOTER_HEIGHT, Logout } from '@components/footer';
 import { MeetingTitle } from '@components/meeting-title';
+import { MessageWindow, MessageWindowRef } from '@components/message-window';
 import { Presenter } from '@components/presenter';
 import { Text } from '@components/text';
 import { steps } from '@helpers/step';
@@ -12,12 +12,12 @@ import { getSpace, paddingX, paddingY } from '@styles/space';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { darken, mix } from 'polished';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 const Home: NextPage = () => {
+  const messageWindowRef = useRef<MessageWindowRef>(null);
   const [stepIndex, setStepIndex] = useState<number>(0);
-  const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -95,13 +95,16 @@ const Home: NextPage = () => {
             <Footer
               currentStepIndex={stepIndex}
               onStepIndexChange={setStepIndex}
-              onOpenChatWindow={() => setIsChatOpen(true)}
+              onToggleChatWindow={(open) => {
+                if (open) {
+                  messageWindowRef?.current?.open();
+                } else {
+                  messageWindowRef?.current?.close();
+                }
+              }}
             />
 
-            <ChatWindow
-              isOpen={isChatOpen}
-              onClose={() => setIsChatOpen(false)}
-            />
+            <MessageWindow ref={messageWindowRef} />
           </StyledContainer>
         )}
       </Box>

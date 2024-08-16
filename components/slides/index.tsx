@@ -40,8 +40,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
               <Code stroke={getColor('dark')} height={32} width={32} />
 
               <Text $variant="text" $size="lg" $color="dark" $align="center">
-                <strong>Front-end developer</strong> with over{' '}
-                <Highlight $backgroundColor="pink">10 years</Highlight>{' '}
+                <strong>Front-end engineer</strong> with over{' '}
+                <Highlight $backgroundColor="pink">13 years</Highlight>{' '}
                 experience
               </Text>
             </Stack>
@@ -66,8 +66,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
               />
 
               <Text $variant="text" $size="lg" $color="dark" $align="center">
-                Speaks English and Cantonese, writes English only and learning
-                Korean
+                Speaks English and Cantonese, writes English only
               </Text>
             </Stack>
 
@@ -320,7 +319,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
               >
                 <Box $margin="xs">
                   <StyledExternalLink
-                    borderColor="blue"
+                    $borderColor="blue"
                     href="https://github.com/merrybottle"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -348,7 +347,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
 
                 <Box $margin="xs">
                   <StyledExternalLink
-                    borderColor="pink"
+                    $borderColor="pink"
                     href="https://codepen.io/merrybottle"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -419,7 +418,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
               >
                 <Box $margin="xs">
                   <StyledExternalLink
-                    borderColor="spaceship"
+                    $borderColor="spaceship"
                     href="https://www.spaceship.com.au"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -450,7 +449,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
 
                 <Box $margin="xs">
                   <StyledExternalLink
-                    borderColor="oneflare"
+                    $borderColor="oneflare"
                     href="https://www.oneflare.com.au"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -552,7 +551,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
       {step === 'SLIDES_5' && (
         <Slide heading="Where to find me">
           <StyledExternalLink
-            borderColor="blue"
+            $borderColor="blue"
             href="https://www.linkedin.com/in/merrybottle"
             target="_blank"
             rel="noreferrer noopener"
@@ -631,35 +630,35 @@ const StyledContainer = styled(Box).attrs({
 })`
   position: relative;
 
-  ::before,
-  ::after {
+  &::before,
+  &::after {
     content: '';
     background: repeating-linear-gradient(
       -40deg,
-      ${rgba('blue', 0.5)},
-      ${rgba('blue', 0.5)} 32px,
+      ${rgba('blue', 0.6)},
+      ${rgba('blue', 0.6)} 32px,
       ${rgba('yellow', 0.3)} 32px,
       ${rgba('yellow', 0.3)} 64px,
-      ${rgba('pink', 0.5)} 64px,
-      ${rgba('pink', 0.5)} 96px
+      ${rgba('pink', 0.6)} 64px,
+      ${rgba('pink', 0.6)} 96px
     );
     display: block;
-    height: ${getSpace('xl')};
+    height: ${getSpace('md')};
     width: 100%;
     position: absolute;
     left: 0;
   }
 
-  ::before {
+  &::before {
     top: 0;
   }
 
-  ::after {
+  &::after {
     bottom: 0;
   }
 `;
 
-const StyledExternalLink = styled.a<{ borderColor: Color }>`
+const StyledExternalLink = styled.a<{ $borderColor: Color }>`
   transition: 0.2s ease-in;
 
   &,
@@ -669,15 +668,15 @@ const StyledExternalLink = styled.a<{ borderColor: Color }>`
     ${paddingX('sm')}
     ${paddingY('xs')}
     display: inline-block;
-    border: 4px solid ${({ borderColor }) => rgba(borderColor, 0.6)};
+    border: 4px solid ${({ $borderColor }) => rgba($borderColor, 0.6)};
     line-height: 0;
     text-decoration: none;
   }
 
-  :hover {
+  &:hover {
     box-shadow:
-      0 0 0 4px ${({ borderColor }) => rgba(borderColor, 0.2)},
-      inset 0 0 0 4px ${({ borderColor }) => rgba(borderColor, 0.2)};
-    border: 4px solid ${({ borderColor }) => rgba(borderColor, 1)};
+      0 0 0 4px ${({ $borderColor }) => rgba($borderColor, 0.2)},
+      inset 0 0 0 4px ${({ $borderColor }) => rgba($borderColor, 0.2)};
+    border: 4px solid ${({ $borderColor }) => rgba($borderColor, 1)};
   }
 `;

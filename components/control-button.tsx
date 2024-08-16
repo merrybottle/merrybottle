@@ -72,7 +72,7 @@ const StyledControlButtonLabel = styled.span<{
   ${({ $needsAttention: needsAttention }) =>
     needsAttention
       ? css`
-          animation: ${wiggleAnimation} 1.2s ease-in 5s 3;
+          animation: ${wiggleAnimation} 1.2s ease-in 3s 3;
         `
       : ''}
 `;
@@ -108,6 +108,6 @@ const StyledControlButton = styled.button<{
 
   &:not(:disabled):hover ${StyledControlButtonLabel} {
     opacity: 1;
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 `;
