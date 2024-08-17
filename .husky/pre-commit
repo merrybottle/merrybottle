@@ -1,4 +1,4 @@
 yarn lint-staged
 yarn build
 git add build/*
-git commit -m "App build"
+git commit --no-verify -m "App build"
