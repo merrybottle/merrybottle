@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/merrybot/public_html/merrybottle/
+    - export DEPLOYPATH=/home/merrybot/public_html/
     - /bin/cp -R -a build/. $DEPLOYPATH
