@@ -14,15 +14,15 @@
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/_app',
         function () {
-          return r(6814);
+          return r(9583);
         },
       ]);
     },
-    6814: function (e, t, r) {
+    9583: function (e, t, r) {
       'use strict';
       r.r(t);
       var n = r(5893),
-        o = r(9754);
+        o = r(8128);
       let s = (0, r(508).vJ)(
         ['body{', ' margin:0;padding:0;}'],
         (0, o.Cz)('background'),
@@ -34,7 +34,7 @@
         });
       };
     },
-    9754: function (e, t, r) {
+    8128: function (e, t, r) {
       'use strict';
       r.d(t, {
         $_: function () {
@@ -51,7 +51,7 @@
         },
       });
       var n = r(508),
-        o = r(2371);
+        o = r(2699);
       let s = {
           black: '#000000',
           white: '#ffffff',
@@ -103,7 +103,7 @@
             .concat(t, ')');
         };
     },
-    2371: function (e, t, r) {
+    2699: function (e, t, r) {
       'use strict';
       r.d(t, {
         gh: function () {
@@ -1813,15 +1813,15 @@
         );
       }
       var e2 = new eQ(),
-        e4 = e5(),
-        e3 = s.createContext({
+        e3 = e5(),
+        e4 = s.createContext({
           shouldForwardProp: void 0,
           styleSheet: e2,
-          stylis: e4,
+          stylis: e3,
         }),
-        e6 = (e3.Consumer, s.createContext(void 0));
+        e6 = (e4.Consumer, s.createContext(void 0));
       function e9() {
-        return (0, s.useContext)(e3);
+        return (0, s.useContext)(e4);
       }
       function e8(e) {
         var t = (0, s.useState)(e.stylisPlugins),
@@ -1872,7 +1872,7 @@
           [e.shouldForwardProp, i, c],
         );
         return s.createElement(
-          e3.Provider,
+          e4.Provider,
           { value: u },
           s.createElement(e6.Provider, { value: c }, e.children),
         );
@@ -1881,7 +1881,7 @@
         function e(e, t) {
           var r = this;
           (this.inject = function (e, t) {
-            void 0 === t && (t = e4);
+            void 0 === t && (t = e3);
             var n = r.name + t.hash;
             e.hasNameForId(r.id, n) ||
               e.insertRules(r.id, n, t(r.rules, n, '@keyframes'));
@@ -1895,7 +1895,7 @@
         }
         return (
           (e.prototype.getName = function (e) {
-            return void 0 === e && (e = e4), this.name + e.hash;
+            return void 0 === e && (e = e3), this.name + e.hash;
           }),
           e
         );
@@ -2381,7 +2381,7 @@
       return e((e.s = t));
     };
     e.O(0, [774, 179], function () {
-      return t(6840), t(9090);
+      return t(6840), t(6036);
     }),
       (_N_E = e.O());
   },

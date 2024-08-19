@@ -5,11 +5,11 @@
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/',
         function () {
-          return r(4010);
+          return r(5012);
         },
       ]);
     },
-    4010: function (e, t, r) {
+    5012: function (e, t, r) {
       'use strict';
       r.r(t),
         r.d(t, {
@@ -18,8 +18,8 @@
           },
         });
       var i = r(5893),
-        n = r(9754),
-        o = r(2371),
+        n = r(8128),
+        o = r(2699),
         s = r(508);
       let a = {
           auto: 'auto',

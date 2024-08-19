@@ -5,7 +5,7 @@
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/_error',
         function () {
-          return u(6971);
+          return u(3387);
         },
       ]);
     },
