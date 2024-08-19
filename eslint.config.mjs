@@ -36,6 +36,6 @@ export default fixupConfigRules([
     },
   },
   {
-    ignores: ['package.json', 'yarn.lock'],
+    ignores: ['package.json', 'yarn.lock', 'out'],
   },
 ]);
