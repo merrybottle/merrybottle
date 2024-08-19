@@ -53,8 +53,8 @@
         $ = (e) => (0, o.gh)('margin', e, l),
         f = (e) => (0, o.gh)('margin-top', e, l),
         u = (e) => (0, o.gh)('margin-bottom', e, l),
-        j = (e) => (0, o.gh)('margin-left', e, l),
-        b = (e) => (0, o.gh)('margin-right', e, l),
+        b = (e) => (0, o.gh)('margin-left', e, l),
+        j = (e) => (0, o.gh)('margin-right', e, l),
         k = (e) =>
           (0, s.iv)(
             ['', ' ', ''],
@@ -120,9 +120,9 @@
               e.$marginBottom &&
                 (t = (0, s.iv)(['', '', ''], t, u(e.$marginBottom))),
               e.$marginLeft &&
-                (t = (0, s.iv)(['', '', ''], t, j(e.$marginLeft))),
+                (t = (0, s.iv)(['', '', ''], t, b(e.$marginLeft))),
               e.$marginRight &&
-                (t = (0, s.iv)(['', '', ''], t, b(e.$marginRight))),
+                (t = (0, s.iv)(['', '', ''], t, j(e.$marginRight))),
               e.$marginTop && (t = (0, s.iv)(['', '', ''], t, f(e.$marginTop))),
               e.$marginX && (t = (0, s.iv)(['', '', ''], t, k(e.$marginX))),
               e.$marginY && (t = (0, s.iv)(['', '', ''], t, v(e.$marginY))),
@@ -371,7 +371,7 @@
           },
           (e) => {
             let { $space: t } = e;
-            return j(t);
+            return b(t);
           },
         );
       var eg = r(5124);
@@ -448,7 +448,7 @@
                       $display: { xs: 'none', lg: 'flex' },
                       $flex: 1 / 4,
                       $justifyContent: 'flex-end',
-                      children: (0, i.jsx)(ej, { onStepIndexChange: r }),
+                      children: (0, i.jsx)(eb, { onStepIndexChange: r }),
                     }),
                   ],
                 }),
@@ -536,7 +536,7 @@
             ],
           });
         },
-        ej = (e) => {
+        eb = (e) => {
           let { onStepIndexChange: t } = e;
           return (0, i.jsx)(el, {
             isImportantAction: !0,
@@ -545,7 +545,7 @@
             children: (0, i.jsx)(eC, { children: (0, i.jsx)(K.Z, {}) }),
           });
         },
-        eb = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
+        ej = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
         ek = (0, s.F4)([
           '0%{transform:translateY(200px);}28%{transform:translateY(-100px);}65%{transform:translateY(20px);}80%{transform:translateY(-10px);}100%{transform:translateY(0);}',
         ]),
@@ -568,7 +568,7 @@
             ';border-bottom:none;',
             ' background-color:#fef9ec;border-bottom-left-radius:0;border-bottom-right-radius:0;position:absolute;left:0;right:0;',
           ],
-          eb,
+          ej,
           (0, n.Lq)('dark'),
           w('md'),
         ),
@@ -1506,9 +1506,11 @@
                                   children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
+                                    as: 'span',
                                     children: [
                                       (0, i.jsxs)(eh, {
                                         $space: 'xs',
+                                        as: 'span',
                                         children: [
                                           (0, i.jsx)(e8.Z, {
                                             stroke: (0, n.Lq)('blue'),
@@ -1542,9 +1544,11 @@
                                   children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
+                                    as: 'span',
                                     children: [
                                       (0, i.jsxs)(eh, {
                                         $space: 'xs',
+                                        as: 'span',
                                         children: [
                                           (0, i.jsx)(e9.Z, {
                                             stroke: (0, n.Lq)('pink'),
@@ -1633,9 +1637,11 @@
                                   children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
+                                    as: 'span',
                                     children: [
                                       (0, i.jsxs)(eh, {
                                         $space: 'xs',
+                                        as: 'span',
                                         children: [
                                           (0, i.jsx)('div', {
                                             children: (0, i.jsx)('img', {
@@ -1672,9 +1678,11 @@
                                   children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
+                                    as: 'span',
                                     children: [
                                       (0, i.jsxs)(eh, {
                                         $space: 'xs',
+                                        as: 'span',
                                         children: [
                                           (0, i.jsx)('div', {
                                             children: (0, i.jsx)('img', {
@@ -1785,9 +1793,11 @@
                     children: (0, i.jsxs)(eh, {
                       $space: 'md',
                       $alignY: 'flex-start',
+                      as: 'span',
                       children: [
                         (0, i.jsxs)(eh, {
                           $space: 'xs',
+                          as: 'span',
                           children: [
                             (0, i.jsx)(e7.Z, {
                               stroke: (0, n.Lq)('blue'),
@@ -1858,7 +1868,7 @@
             $paddingX: { xs: 'md', lg: 'xl' },
             $paddingY: { xs: 'lg', sm: 'xl', md: 'xxl' },
           })
-          .withConfig({ componentId: 'sc-efe4e2cf-0' })(
+          .withConfig({ componentId: 'sc-cb2ba5b-0' })(
           [
             "position:relative;&::before,&::after{content:'';background:repeating-linear-gradient( -40deg,",
             ',',
@@ -1877,7 +1887,7 @@
           (0, n.m4)('pink', 0.6),
           l('md'),
         ),
-        tl = s.ZP.a.withConfig({ componentId: 'sc-efe4e2cf-1' })(
+        tl = s.ZP.a.withConfig({ componentId: 'sc-cb2ba5b-1' })(
           [
             'transition:0.2s ease-in;&,&:active,&:visited{',
             ' ',
@@ -2437,13 +2447,13 @@
           .withConfig({ componentId: 'sc-144283ae-0' })([
           'position:relative;height:100%;',
         ]),
-        tj = (0, s.ZP)(E)
+        tb = (0, s.ZP)(E)
           .attrs({ $height: '100vh', $overflow: 'hidden' })
           .withConfig({ componentId: 'sc-144283ae-1' })(
           ['padding-bottom:', 'px;'],
           120,
         ),
-        tb = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
+        tj = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
           [
             "background:none;border:none;outline:none;position:absolute;padding:0;margin:0;width:max-content;transition:0.45s 0.3s ease-in;left:50%;top:50%;transform:translate(-50%,-50%);&::after{content:'';",
             ' background-color:',
@@ -2529,7 +2539,7 @@
                   $alignItems: 'center',
                   $justifyContent: 'center',
                   $minHeight: '100vh',
-                  children: (0, i.jsx)(tb, {
+                  children: (0, i.jsx)(tj, {
                     $showJoin: 'START' === W[t],
                     onClick: () => {
                       'START' === W[t]
@@ -2550,7 +2560,7 @@
                     }),
                   }),
                 })
-              : (0, i.jsxs)(tj, {
+              : (0, i.jsxs)(tb, {
                   children: [
                     (0, i.jsxs)(tv, {
                       $display: { xs: 'flex', lg: 'none' },
@@ -2561,7 +2571,7 @@
                       $marginY: { xs: 'sm', lg: 'none' },
                       children: [
                         (0, i.jsx)(ep, {}),
-                        (0, i.jsx)(ej, { onStepIndexChange: r }),
+                        (0, i.jsx)(eb, { onStepIndexChange: r }),
                       ],
                     }),
                     (0, i.jsx)(E, {
