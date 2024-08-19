@@ -5,14 +5,7 @@ import { Step, steps } from '@helpers/step';
 import { fadeInAnimation } from '@styles/animation';
 import { backgroundColor, getColor, rgba } from '@styles/color';
 import { mediaMatch } from '@styles/media';
-import {
-  borderRadius,
-  display,
-  maxHeight,
-  maxWidth,
-  minHeight,
-  minWidth,
-} from '@styles/mixins';
+import { borderRadius, height, width } from '@styles/mixins';
 import { getSpace, padding } from '@styles/space';
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
@@ -166,18 +159,12 @@ const StyledPresenter = styled.div<{
   ${({ step }) => {
     if (step.includes('SLIDES')) {
       return css`
-        ${display({ xs: 'none', md: 'flex' })}
         border-radius: 50%;
-        height: 15vw;
-        width: 15vw;
-        ${minHeight({ md: 150, lg: 200 })}
-        ${minWidth({ md: 150, lg: 200 })}
-        ${maxHeight({ md: 200, lg: 300 })}
-        ${maxWidth({ md: 200, lg: 300 })}
+        ${height({ xs: 100, md: 150, lg: 200 })}
+        ${width({ xs: 100, md: 150, lg: 200 })}
         overflow: hidden;
         top: calc(100% - ${getSpace('xs')});
         left: ${getSpace('xs')};
-        transform: translateY(-100%);
       `;
     }
 

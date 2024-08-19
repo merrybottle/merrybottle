@@ -5,7 +5,7 @@ import { textAlign } from '@styles/mixins';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-type Size = 'lg' | 'md' | 'sm';
+type Size = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
 type SizeProps = Size | Partial<Record<Query, Size>>;
 type Variant = Omit<Font, 'text'>;
 
@@ -42,12 +42,16 @@ const fontSizes: Record<Size, string> = {
   lg: '48px',
   md: '32px',
   sm: '28px',
+  xs: '20px',
+  xxs: '16px',
 };
 
 const lineHeights: Record<Size, string> = {
   lg: '64px',
   md: '46px',
   sm: '42px',
+  xs: '24px',
+  xxs: '18px',
 };
 
 const getFontSize = (type: Size | string | number): string =>
@@ -76,7 +80,7 @@ const StyledHeading = styled.h1<{
   }}
 
   ${({ $size: size }) => responsiveStyle('font-size', size, getFontSize)}
-  ${({ $size: size }) => responsiveStyle('lineHeights', size, getLineHeight)}
+  ${({ $size: size }) => responsiveStyle('line-height', size, getLineHeight)}
 
   ${({ $variant: variant }) => fontFamily(variant as Font)}
 

@@ -303,7 +303,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Stack $space="md" $alignX="center">
               <Heading
                 $variant="heading"
-                $size={{ xs: 'sm', lg: 'md' }}
+                $size={{ xs: 'xxs', lg: 'md' }}
                 as="h2"
                 $color="dark"
                 $align="center"
@@ -402,7 +402,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             <Stack $space="md" $alignX="center">
               <Heading
                 $variant="heading"
-                $size={{ xs: 'sm', lg: 'md' }}
+                $size={{ xs: 'xxs', lg: 'md' }}
                 as="h2"
                 $color="dark"
                 $align="center"
@@ -589,7 +589,7 @@ const Slide: React.FC<React.PropsWithChildren<SlideProps>> = ({
     <>
       <Heading
         as="h1"
-        $size={{ xs: 'md', lg: 'lg' }}
+        $size={{ xs: 'xs', md: 'md', lg: 'lg' }}
         $color="dark"
         $variant="heading"
         $align="center"
@@ -626,7 +626,7 @@ const StyledContainer = styled(Box).attrs({
   $height: '100%',
   $width: '100%',
   $paddingX: { xs: 'md', lg: 'xl' },
-  $paddingY: 'xxl',
+  $paddingY: { xs: 'lg', sm: 'xl', md: 'xxl' },
 })`
   position: relative;
 

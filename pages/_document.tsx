@@ -37,8 +37,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
-        <Head>
+      <Html lang="en">
+        <Head title="you.are@merrybottle.com">
           <meta name="description" content="Online presentation" />
           <meta name="theme-color" content={getColor('dark')} />
           <link rel="icon" href="/favicon.ico" />

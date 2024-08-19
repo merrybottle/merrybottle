@@ -10,7 +10,6 @@ import { mediaMatch } from '@styles/media';
 import { borderRadius, height, width } from '@styles/mixins';
 import { getSpace, paddingX, paddingY } from '@styles/space';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { darken, mix } from 'polished';
 import { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
@@ -20,95 +19,89 @@ const Home: NextPage = () => {
   const [stepIndex, setStepIndex] = useState<number>(0);
 
   return (
-    <>
-      <Head>
-        <title>you.are@merrybottle.com</title>
-      </Head>
+    <Box
+      $maxWidth={{ xl: 1200 }}
+      $marginX={{ xs: 'sm', xl: 'auto' }}
+      $position="relative"
+      $overflow="hidden"
+    >
+      {steps[stepIndex] === 'START' || steps[stepIndex] === 'JOIN_MEETING' ? (
+        <Box
+          $display="flex"
+          $alignItems="center"
+          $justifyContent="center"
+          $minHeight="100vh"
+        >
+          <StyledJoinButton
+            $showJoin={steps[stepIndex] === 'START'}
+            onClick={() => {
+              if (steps[stepIndex] === 'START') {
+                setStepIndex(stepIndex + 1);
 
-      <Box
-        $maxWidth={{ xl: 1200 }}
-        $marginX={{ xs: 'sm', xl: 'auto' }}
-        $position="relative"
-        $overflow="hidden"
-      >
-        {steps[stepIndex] === 'START' || steps[stepIndex] === 'JOIN_MEETING' ? (
+                setTimeout(() => {
+                  setStepIndex(stepIndex + 2);
+                }, 900);
+              } else {
+                setStepIndex(0);
+              }
+            }}
+          >
+            <StyledJoinButtonInner>
+              <Text $variant="meeting" $size="xl" $color="dark" as="span">
+                Ready to join?
+              </Text>
+            </StyledJoinButtonInner>
+          </StyledJoinButton>
+        </Box>
+      ) : (
+        <StyledContainer>
+          <StyledMobileHeaderBox
+            $display={{ xs: 'flex', lg: 'none' }}
+            $height={MEETING_TITLE_HEIGHT_XS}
+            $alignItems="center"
+            $justifyContent="space-between"
+            $padding="sm"
+            $marginY={{ xs: 'sm', lg: 'none' }}
+          >
+            <MeetingTitle />
+            <Logout onStepIndexChange={setStepIndex} />
+          </StyledMobileHeaderBox>
+
           <Box
             $display="flex"
             $alignItems="center"
             $justifyContent="center"
-            $minHeight="100vh"
+            $height={{
+              xs: `calc(100% - ${MEETING_TITLE_HEIGHT_XS}px - (${getSpace('sm')} * 2))`,
+              lg: '100%',
+            }}
+            $paddingTop={{ lg: 'md' }}
+            $paddingBottom={{ xs: 'lg', lg: 'xl' }}
           >
-            <StyledJoinButton
-              $showJoin={steps[stepIndex] === 'START'}
-              onClick={() => {
-                if (steps[stepIndex] === 'START') {
-                  setStepIndex(stepIndex + 1);
-
-                  setTimeout(() => {
-                    setStepIndex(stepIndex + 2);
-                  }, 900);
-                } else {
-                  setStepIndex(0);
-                }
-              }}
-            >
-              <StyledJoinButtonInner>
-                <Text $variant="meeting" $size="xl" $color="dark" as="span">
-                  Ready to join?
-                </Text>
-              </StyledJoinButtonInner>
-            </StyledJoinButton>
+            <StyledPresenterContainerBox>
+              <Presenter
+                currentStepIndex={stepIndex}
+                onStepIndexChange={setStepIndex}
+              />
+            </StyledPresenterContainerBox>
           </Box>
-        ) : (
-          <StyledContainer>
-            <StyledMobileHeaderBox
-              $display={{ xs: 'flex', lg: 'none' }}
-              $height={MEETING_TITLE_HEIGHT_XS}
-              $alignItems="center"
-              $justifyContent="space-between"
-              $padding="sm"
-              $marginY={{ xs: 'sm', lg: 'none' }}
-            >
-              <MeetingTitle />
-              <Logout onStepIndexChange={setStepIndex} />
-            </StyledMobileHeaderBox>
 
-            <Box
-              $display="flex"
-              $alignItems="center"
-              $justifyContent="center"
-              $height={{
-                xs: `calc(100% - ${MEETING_TITLE_HEIGHT_XS}px - (${getSpace('sm')} * 2))`,
-                lg: '100%',
-              }}
-              $paddingTop={{ lg: 'md' }}
-              $paddingBottom={{ xs: 'lg', lg: 'xl' }}
-            >
-              <StyledPresenterContainerBox>
-                <Presenter
-                  currentStepIndex={stepIndex}
-                  onStepIndexChange={setStepIndex}
-                />
-              </StyledPresenterContainerBox>
-            </Box>
+          <Footer
+            currentStepIndex={stepIndex}
+            onStepIndexChange={setStepIndex}
+            onToggleChatWindow={(open) => {
+              if (open) {
+                messageWindowRef?.current?.open();
+              } else {
+                messageWindowRef?.current?.close();
+              }
+            }}
+          />
 
-            <Footer
-              currentStepIndex={stepIndex}
-              onStepIndexChange={setStepIndex}
-              onToggleChatWindow={(open) => {
-                if (open) {
-                  messageWindowRef?.current?.open();
-                } else {
-                  messageWindowRef?.current?.close();
-                }
-              }}
-            />
-
-            <MessageWindow ref={messageWindowRef} />
-          </StyledContainer>
-        )}
-      </Box>
-    </>
+          <MessageWindow ref={messageWindowRef} />
+        </StyledContainer>
+      )}
+    </Box>
   );
 };
 
