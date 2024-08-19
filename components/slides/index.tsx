@@ -324,8 +324,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline $space="md" $alignY="flex-start">
-                      <Inline $space="xs">
+                    <Inline $space="md" $alignY="flex-start" as="span">
+                      <Inline $space="xs" as="span">
                         <GitHub
                           stroke={getColor('blue')}
                           height={32}
@@ -352,8 +352,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline $space="md" $alignY="flex-start">
-                      <Inline $space="xs">
+                    <Inline $space="md" $alignY="flex-start" as="span">
+                      <Inline $space="xs" as="span">
                         <Codepen
                           stroke={getColor('pink')}
                           height={32}
@@ -423,8 +423,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline $space="md" $alignY="flex-start">
-                      <Inline $space="xs">
+                    <Inline $space="md" $alignY="flex-start" as="span">
+                      <Inline $space="xs" as="span">
                         <div>
                           <img
                             src={spaceshipSvg.src}
@@ -454,8 +454,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Inline $space="md" $alignY="flex-start">
-                      <Inline $space="xs">
+                    <Inline $space="md" $alignY="flex-start" as="span">
+                      <Inline $space="xs" as="span">
                         <div>
                           <img
                             src={oneflareSvg.src}
@@ -556,8 +556,8 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            <Inline $space="md" $alignY="flex-start">
-              <Inline $space="xs">
+            <Inline $space="md" $alignY="flex-start" as="span">
+              <Inline $space="xs" as="span">
                 <Linkedin stroke={getColor('blue')} height={32} width={32} />
                 <Text $size="lg" $variant="text" $color="dark">
                   LinkedIn
