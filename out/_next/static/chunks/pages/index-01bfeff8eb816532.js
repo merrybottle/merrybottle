@@ -37,8 +37,8 @@
         c = (e) => (0, o.gh)('padding-top', e, l),
         x = (e) => (0, o.gh)('padding-bottom', e, l),
         h = (e) => (0, o.gh)('padding-left', e, l),
-        g = (e) => (0, o.gh)('padding-right', e, l),
-        p = (e) =>
+        p = (e) => (0, o.gh)('padding-right', e, l),
+        g = (e) =>
           (0, s.iv)(
             ['', ' ', ''],
             (0, o.gh)('padding-left', e, l),
@@ -53,8 +53,8 @@
         $ = (e) => (0, o.gh)('margin', e, l),
         f = (e) => (0, o.gh)('margin-top', e, l),
         u = (e) => (0, o.gh)('margin-bottom', e, l),
-        b = (e) => (0, o.gh)('margin-left', e, l),
-        j = (e) => (0, o.gh)('margin-right', e, l),
+        j = (e) => (0, o.gh)('margin-left', e, l),
+        b = (e) => (0, o.gh)('margin-right', e, l),
         k = (e) =>
           (0, s.iv)(
             ['', ' ', ''],
@@ -120,9 +120,9 @@
               e.$marginBottom &&
                 (t = (0, s.iv)(['', '', ''], t, u(e.$marginBottom))),
               e.$marginLeft &&
-                (t = (0, s.iv)(['', '', ''], t, b(e.$marginLeft))),
+                (t = (0, s.iv)(['', '', ''], t, j(e.$marginLeft))),
               e.$marginRight &&
-                (t = (0, s.iv)(['', '', ''], t, j(e.$marginRight))),
+                (t = (0, s.iv)(['', '', ''], t, b(e.$marginRight))),
               e.$marginTop && (t = (0, s.iv)(['', '', ''], t, f(e.$marginTop))),
               e.$marginX && (t = (0, s.iv)(['', '', ''], t, k(e.$marginX))),
               e.$marginY && (t = (0, s.iv)(['', '', ''], t, v(e.$marginY))),
@@ -132,10 +132,10 @@
               e.$paddingLeft &&
                 (t = (0, s.iv)(['', '', ''], t, h(e.$paddingLeft))),
               e.$paddingRight &&
-                (t = (0, s.iv)(['', '', ''], t, g(e.$paddingRight))),
+                (t = (0, s.iv)(['', '', ''], t, p(e.$paddingRight))),
               e.$paddingTop &&
                 (t = (0, s.iv)(['', '', ''], t, c(e.$paddingTop))),
-              e.$paddingX && (t = (0, s.iv)(['', '', ''], t, p(e.$paddingX))),
+              e.$paddingX && (t = (0, s.iv)(['', '', ''], t, g(e.$paddingX))),
               e.$paddingY && (t = (0, s.iv)(['', '', ''], t, m(e.$paddingY))),
               e.$opacity && (t = (0, s.iv)(['', '', ''], t, D(e.$opacity))),
               e.$overflow && (t = (0, s.iv)(['', '', ''], t, R(e.$overflow))),
@@ -302,6 +302,7 @@
                   $color: 'dark',
                   $fontWeight: 'bold',
                   $align: 'center',
+                  as: 'span',
                   children: t,
                 }),
               }),
@@ -311,7 +312,7 @@
         ed = (0, s.F4)([
           '0%{transform:rotate(0deg) scale(1);}20%{transform:rotate(-10deg) scale(1.15);}40%{transform:rotate(15deg) scale(1.2);}60%{transform:rotate(-5deg) scale(1.15);}80%{transform:rotate(3deg) scale(1);}100%{transform:rotate(0deg) scale(1);}',
         ]),
-        ec = s.ZP.span.withConfig({ componentId: 'sc-bf50aca4-0' })(
+        ec = s.ZP.span.withConfig({ componentId: 'sc-c643a1b4-0' })(
           [
             'letter-spacing:0.1em;text-transform:uppercase;position:absolute;top:calc(100% + ',
             ');opacity:',
@@ -330,7 +331,7 @@
               : '';
           },
         ),
-        ex = s.ZP.button.withConfig({ componentId: 'sc-bf50aca4-1' })(
+        ex = s.ZP.button.withConfig({ componentId: 'sc-c643a1b4-1' })(
           [
             '',
             ' ',
@@ -371,11 +372,11 @@
           },
           (e) => {
             let { $space: t } = e;
-            return b(t);
+            return j(t);
           },
         );
-      var eg = r(5124);
-      let ep = () =>
+      var ep = r(5124);
+      let eg = () =>
           (0, i.jsx)(et, {
             $variant: 'meeting',
             $color: 'dark',
@@ -386,7 +387,7 @@
               as: 'span',
               children: [
                 (0, i.jsx)('span', { children: '1:1 Intro' }),
-                (0, i.jsx)(eg.Z, {}),
+                (0, i.jsx)(ep.Z, {}),
               ],
             }),
           }),
@@ -425,7 +426,7 @@
                                 $opacity: 0.6,
                                 children: '|',
                               }),
-                              (0, i.jsx)(ep, {}),
+                              (0, i.jsx)(eg, {}),
                             ],
                           }),
                         }),
@@ -448,7 +449,7 @@
                       $display: { xs: 'none', lg: 'flex' },
                       $flex: 1 / 4,
                       $justifyContent: 'flex-end',
-                      children: (0, i.jsx)(eb, { onStepIndexChange: r }),
+                      children: (0, i.jsx)(ej, { onStepIndexChange: r }),
                     }),
                   ],
                 }),
@@ -536,7 +537,7 @@
             ],
           });
         },
-        eb = (e) => {
+        ej = (e) => {
           let { onStepIndexChange: t } = e;
           return (0, i.jsx)(el, {
             isImportantAction: !0,
@@ -545,7 +546,7 @@
             children: (0, i.jsx)(eC, { children: (0, i.jsx)(K.Z, {}) }),
           });
         },
-        ej = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
+        eb = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
         ek = (0, s.F4)([
           '0%{transform:translateY(200px);}28%{transform:translateY(-100px);}65%{transform:translateY(20px);}80%{transform:translateY(-10px);}100%{transform:translateY(0);}',
         ]),
@@ -568,7 +569,7 @@
             ';border-bottom:none;',
             ' background-color:#fef9ec;border-bottom-left-radius:0;border-bottom-right-radius:0;position:absolute;left:0;right:0;',
           ],
-          ej,
+          eb,
           (0, n.Lq)('dark'),
           w('md'),
         ),
@@ -993,7 +994,7 @@
           ee('meeting'),
           (0, n.$_)('dark'),
           m('sm'),
-          p('sm'),
+          g('sm'),
           (0, n.Lq)('dark'),
           (0, n.m4)('dark', 0.4),
           (0, n.m4)('blue', 0.1),
@@ -1032,7 +1033,7 @@
           ],
           w('sm'),
           (0, n.Cz)('pink'),
-          p('md'),
+          g('md'),
           m('xs'),
           (0, n.Lq)('dark'),
           eJ,
@@ -1300,6 +1301,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'React',
                         }),
                       }),
@@ -1310,6 +1312,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'React Native',
                         }),
                       }),
@@ -1321,6 +1324,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'HTML',
                         }),
                       }),
@@ -1332,6 +1336,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'CSS',
                         }),
                       }),
@@ -1342,6 +1347,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'JavaScript',
                         }),
                       }),
@@ -1352,6 +1358,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'CSS animations',
                         }),
                       }),
@@ -1362,6 +1369,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'SASS',
                         }),
                       }),
@@ -1373,6 +1381,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'Styled Components',
                         }),
                       }),
@@ -1383,6 +1392,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'SVG',
                         }),
                       }),
@@ -1394,6 +1404,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'TypeScript',
                         }),
                       }),
@@ -1404,6 +1415,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'NextJS',
                         }),
                       }),
@@ -1414,6 +1426,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'GatsbyJS',
                         }),
                       }),
@@ -1424,6 +1437,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'prismic.io',
                         }),
                       }),
@@ -1435,6 +1449,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'Design Systems',
                         }),
                       }),
@@ -1445,6 +1460,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'Jest',
                         }),
                       }),
@@ -1455,6 +1471,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'NodeJS',
                         }),
                       }),
@@ -1465,6 +1482,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'JQuery',
                         }),
                       }),
@@ -1734,6 +1752,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'Baking',
                         }),
                       }),
@@ -1745,6 +1764,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'Making jewellery',
                         }),
                       }),
@@ -1756,6 +1776,7 @@
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
                           $fontWeight: 'bold',
+                          as: 'span',
                           children: 'Crochet',
                         }),
                       }),
@@ -1766,6 +1787,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'Sudoku',
                         }),
                       }),
@@ -1776,6 +1798,7 @@
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
+                          as: 'span',
                           children: 'Eating heaps of desserts',
                         }),
                       }),
@@ -1868,7 +1891,7 @@
             $paddingX: { xs: 'md', lg: 'xl' },
             $paddingY: { xs: 'lg', sm: 'xl', md: 'xxl' },
           })
-          .withConfig({ componentId: 'sc-cb2ba5b-0' })(
+          .withConfig({ componentId: 'sc-75534214-0' })(
           [
             "position:relative;&::before,&::after{content:'';background:repeating-linear-gradient( -40deg,",
             ',',
@@ -1887,7 +1910,7 @@
           (0, n.m4)('pink', 0.6),
           l('md'),
         ),
-        tl = s.ZP.a.withConfig({ componentId: 'sc-cb2ba5b-1' })(
+        tl = s.ZP.a.withConfig({ componentId: 'sc-75534214-1' })(
           [
             'transition:0.2s ease-in;&,&:active,&:visited{',
             ' ',
@@ -1899,7 +1922,7 @@
             ';}',
           ],
           w('sm'),
-          p('sm'),
+          g('sm'),
           m('xs'),
           (e) => {
             let { $borderColor: t } = e;
@@ -2322,9 +2345,9 @@
         tc = (e) => {
           let { currentStepIndex: t, onStepIndexChange: r } = e,
             n = W[t];
-          return (0, i.jsxs)(tg, {
+          return (0, i.jsxs)(tp, {
             children: [
-              (0, i.jsx)(tp, {
+              (0, i.jsx)(tg, {
                 children: (0, i.jsxs)(E, {
                   $position: 'relative',
                   $height: '100%',
@@ -2369,10 +2392,10 @@
           (0, n.m4)('dark', 0),
           (0, n.m4)('dark', 1),
         ),
-        tg = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-0' })([
+        tp = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-0' })([
           'position:absolute;top:0;left:0;height:100%;width:100%;display:flex;align-items:center;justify-content:center;',
         ]),
-        tp = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-1' })(
+        tg = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-1' })(
           [
             'animation:',
             ' 1.1s linear 0.5s forwards;',
@@ -2447,13 +2470,13 @@
           .withConfig({ componentId: 'sc-144283ae-0' })([
           'position:relative;height:100%;',
         ]),
-        tb = (0, s.ZP)(E)
+        tj = (0, s.ZP)(E)
           .attrs({ $height: '100vh', $overflow: 'hidden' })
           .withConfig({ componentId: 'sc-144283ae-1' })(
           ['padding-bottom:', 'px;'],
           120,
         ),
-        tj = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
+        tb = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
           [
             "background:none;border:none;outline:none;position:absolute;padding:0;margin:0;width:max-content;transition:0.45s 0.3s ease-in;left:50%;top:50%;transform:translate(-50%,-50%);&::after{content:'';",
             ' background-color:',
@@ -2510,7 +2533,7 @@
           ],
           w('sm'),
           (0, n.Cz)('pink'),
-          p('xl'),
+          g('xl'),
           m('md'),
           (0, n.Lq)('dark'),
           (0, ea._j)(0.05, (0, n.Lq)('pink')),
@@ -2539,7 +2562,7 @@
                   $alignItems: 'center',
                   $justifyContent: 'center',
                   $minHeight: '100vh',
-                  children: (0, i.jsx)(tj, {
+                  children: (0, i.jsx)(tb, {
                     $showJoin: 'START' === W[t],
                     onClick: () => {
                       'START' === W[t]
@@ -2560,7 +2583,7 @@
                     }),
                   }),
                 })
-              : (0, i.jsxs)(tb, {
+              : (0, i.jsxs)(tj, {
                   children: [
                     (0, i.jsxs)(tv, {
                       $display: { xs: 'flex', lg: 'none' },
@@ -2570,8 +2593,8 @@
                       $padding: 'sm',
                       $marginY: { xs: 'sm', lg: 'none' },
                       children: [
-                        (0, i.jsx)(ep, {}),
-                        (0, i.jsx)(eb, { onStepIndexChange: r }),
+                        (0, i.jsx)(eg, {}),
+                        (0, i.jsx)(ej, { onStepIndexChange: r }),
                       ],
                     }),
                     (0, i.jsx)(E, {

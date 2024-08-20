@@ -124,6 +124,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 React
               </Text>
@@ -134,6 +135,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 React Native
               </Text>
@@ -145,6 +147,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 HTML
               </Text>
@@ -156,6 +159,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 CSS
               </Text>
@@ -166,6 +170,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 JavaScript
               </Text>
@@ -176,6 +181,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 CSS animations
               </Text>
@@ -186,6 +192,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 SASS
               </Text>
@@ -197,6 +204,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 Styled Components
               </Text>
@@ -207,6 +215,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 SVG
               </Text>
@@ -218,6 +227,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 TypeScript
               </Text>
@@ -228,6 +238,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 NextJS
               </Text>
@@ -238,6 +249,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 GatsbyJS
               </Text>
@@ -248,6 +260,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 prismic.io
               </Text>
@@ -259,6 +272,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 Design Systems
               </Text>
@@ -269,6 +283,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 Jest
               </Text>
@@ -279,6 +294,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 NodeJS
               </Text>
@@ -289,6 +305,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 JQuery
               </Text>
@@ -498,6 +515,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 Baking
               </Text>
@@ -509,6 +527,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 Making jewellery
               </Text>
@@ -520,6 +539,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
                 $fontWeight="bold"
+                as="span"
               >
                 Crochet
               </Text>
@@ -530,6 +550,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 Sudoku
               </Text>
@@ -540,6 +561,7 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 $variant="text"
                 $size={{ xs: 'lg', xl: 'xl' }}
                 $color="dark"
+                as="span"
               >
                 Eating heaps of desserts
               </Text>

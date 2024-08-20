@@ -30,6 +30,7 @@ export const ControlButton: React.FC<ControlButtonProps> = ({
           $color="dark"
           $fontWeight="bold"
           $align="center"
+          as="span"
         >
           {label}
         </Text>
