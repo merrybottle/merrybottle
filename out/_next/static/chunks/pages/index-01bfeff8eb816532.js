@@ -5,16 +5,16 @@
       (window.__NEXT_P = window.__NEXT_P || []).push([
         '/',
         function () {
-          return r(7582);
+          return r(5012);
         },
       ]);
     },
-    7582: function (e, t, r) {
+    5012: function (e, t, r) {
       'use strict';
       r.r(t),
         r.d(t, {
           default: function () {
-            return tv;
+            return tw;
           },
         });
       var i = r(5893),
@@ -81,9 +81,9 @@
         P = (e) => (0, o.gh)('height', e, S),
         F = (e) => (0, o.gh)('min-height', e, S),
         N = (e) => (0, o.gh)('max-height', e, S),
-        R = (e) => (0, o.gh)('opacity', e),
-        A = (e) => (0, o.gh)('overflow', e),
-        D = (e) => (0, o.gh)('position', e),
+        D = (e) => (0, o.gh)('opacity', e),
+        R = (e) => (0, o.gh)('overflow', e),
+        A = (e) => (0, o.gh)('position', e),
         O = (e) => (0, o.gh)('text-align', e),
         E = s.ZP.div.withConfig({ componentId: 'sc-c066f7db-0' })(
           ['box-sizing:border-box;', ''],
@@ -137,14 +137,19 @@
                 (t = (0, s.iv)(['', '', ''], t, c(e.$paddingTop))),
               e.$paddingX && (t = (0, s.iv)(['', '', ''], t, g(e.$paddingX))),
               e.$paddingY && (t = (0, s.iv)(['', '', ''], t, m(e.$paddingY))),
-              e.$opacity && (t = (0, s.iv)(['', '', ''], t, R(e.$opacity))),
-              e.$overflow && (t = (0, s.iv)(['', '', ''], t, A(e.$overflow))),
-              e.$position && (t = (0, s.iv)(['', '', ''], t, D(e.$position))),
+              e.$opacity && (t = (0, s.iv)(['', '', ''], t, D(e.$opacity))),
+              e.$overflow && (t = (0, s.iv)(['', '', ''], t, R(e.$overflow))),
+              e.$position && (t = (0, s.iv)(['', '', ''], t, A(e.$position))),
               t
             );
           },
         ),
-        q = [
+        q = function (e) {
+          let t =
+            arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 2;
+          return e.toLocaleString('en-UK', { minimumIntegerDigits: t });
+        },
+        W = [
           'START',
           'JOIN_MEETING',
           'INTRO_1',
@@ -165,7 +170,7 @@
           'END_3',
           'END_4',
         ],
-        W = {
+        B = {
           INTRO_1: 'Hi there! \uD83D\uDC4B',
           INTRO_2: 'Thanks for joining me here today.',
           INTRO_3: 'My name is Mary',
@@ -179,21 +184,21 @@
           END_3: 'feel free to drop me a message.',
           END_4: 'Otherwise, see you next time! \uD83D\uDC4B',
         };
-      var B = r(7294),
-        Y = r(7248),
-        X = r(6817),
+      var Y = r(7294),
+        X = r(7248),
+        H = r(6817),
         G = r(2758),
-        H = r(5720),
-        J = r(245),
-        U = r(4868);
-      let K = {
+        J = r(5720),
+        U = r(245),
+        K = r(4868);
+      let V = {
           meeting: "'Fredoka', sans-serif",
           heading: "'Merriweather', serif",
           text: "'Fredoka', sans-serif",
         },
-        V = (e) => K[e],
-        Q = (e) => 'font-family: '.concat(V(e), ';'),
-        ee = (e) => {
+        Q = (e) => V[e],
+        ee = (e) => 'font-family: '.concat(Q(e), ';'),
+        et = (e) => {
           let {
             $color: t,
             $size: r,
@@ -203,7 +208,7 @@
             $align: a,
             ...l
           } = e;
-          return (0, i.jsx)(eo, {
+          return (0, i.jsx)(es, {
             $color: t,
             $opacity: s,
             $size: r,
@@ -213,7 +218,7 @@
             ...l,
           });
         },
-        et = {
+        er = {
           xxl: '48px',
           xl: '28px',
           lg: '20px',
@@ -221,7 +226,7 @@
           sm: '14px',
           xs: '12px',
         },
-        er = {
+        ei = {
           xxl: '64px',
           xl: '36px',
           lg: '30px',
@@ -229,9 +234,9 @@
           sm: '22px',
           xs: '18px',
         },
-        ei = (e) => et[e],
         en = (e) => er[e],
-        eo = s.ZP.p.withConfig({ componentId: 'sc-cb013ad-0' })(
+        eo = (e) => ei[e],
+        es = s.ZP.p.withConfig({ componentId: 'sc-cb013ad-0' })(
           [
             'margin:0;padding:0;',
             ' ',
@@ -249,15 +254,15 @@
           },
           (e) => {
             let { $size: t } = e;
-            return (0, o.gh)('font-size', t, ei);
+            return (0, o.gh)('font-size', t, en);
           },
           (e) => {
             let { $size: t } = e;
-            return (0, o.gh)('line-height', t, en);
+            return (0, o.gh)('line-height', t, eo);
           },
           (e) => {
             let { $variant: t } = e;
-            return Q(t);
+            return ee(t);
           },
           (e) => {
             let { $align: t = 'left' } = e;
@@ -275,8 +280,8 @@
             }
           },
         );
-      var es = r(6637);
-      let ea = (e) => {
+      var ea = r(6637);
+      let el = (e) => {
           let {
             label: t,
             isImportantAction: r,
@@ -284,14 +289,14 @@
             children: o,
             ...s
           } = e;
-          return (0, i.jsxs)(ec, {
+          return (0, i.jsxs)(ex, {
             $isImportantAction: r,
             ...s,
             children: [
               o,
-              (0, i.jsx)(ed, {
+              (0, i.jsx)(ec, {
                 $needsAttention: n,
-                children: (0, i.jsx)(ee, {
+                children: (0, i.jsx)(et, {
                   $variant: 'meeting',
                   $size: 'xs',
                   $color: 'dark',
@@ -304,10 +309,10 @@
             ],
           });
         },
-        el = (0, s.F4)([
+        ed = (0, s.F4)([
           '0%{transform:rotate(0deg) scale(1);}20%{transform:rotate(-10deg) scale(1.15);}40%{transform:rotate(15deg) scale(1.2);}60%{transform:rotate(-5deg) scale(1.15);}80%{transform:rotate(3deg) scale(1);}100%{transform:rotate(0deg) scale(1);}',
         ]),
-        ed = s.ZP.span.withConfig({ componentId: 'sc-c643a1b4-0' })(
+        ec = s.ZP.span.withConfig({ componentId: 'sc-c643a1b4-0' })(
           [
             'letter-spacing:0.1em;text-transform:uppercase;position:absolute;top:calc(100% + ',
             ');opacity:',
@@ -322,11 +327,11 @@
           (e) => {
             let { $needsAttention: t } = e;
             return t
-              ? (0, s.iv)(['animation:', ' 1.2s ease-in 3s 3;'], el)
+              ? (0, s.iv)(['animation:', ' 1.2s ease-in 3s 3;'], ed)
               : '';
           },
         ),
-        ec = s.ZP.button.withConfig({ componentId: 'sc-c643a1b4-1' })(
+        ex = s.ZP.button.withConfig({ componentId: 'sc-c643a1b4-1' })(
           [
             '',
             ' ',
@@ -350,12 +355,12 @@
           (e) => {
             let { $isImportantAction: t } = e;
             return t
-              ? (0, es._j)(0.05, (0, n.Lq)('pink'))
+              ? (0, ea._j)(0.05, (0, n.Lq)('pink'))
               : (0, n.Lq)('yellow');
           },
-          ed,
+          ec,
         ),
-        ex = s.ZP.div.withConfig({ componentId: 'sc-2e8b6bae-0' })(
+        eh = s.ZP.div.withConfig({ componentId: 'sc-2e8b6bae-0' })(
           [
             'display:inline-flex;flex-wrap:wrap;',
             ' > *:not(:first-child){',
@@ -370,24 +375,24 @@
             return j(t);
           },
         );
-      var eh = r(5124);
-      let ep = () =>
-          (0, i.jsx)(ee, {
+      var ep = r(5124);
+      let eg = () =>
+          (0, i.jsx)(et, {
             $variant: 'meeting',
             $color: 'dark',
             $size: 'md',
-            children: (0, i.jsxs)(ex, {
+            children: (0, i.jsxs)(eh, {
               $space: 'xs',
               $alignY: 'center',
               as: 'span',
               children: [
                 (0, i.jsx)('span', { children: '1:1 Intro' }),
-                (0, i.jsx)(eh.Z, {}),
+                (0, i.jsx)(ep.Z, {}),
               ],
             }),
           }),
-        eg = (0, s.F4)(['from{opacity:0;}to{opacity:1;}']),
-        em = (e) => {
+        em = (0, s.F4)(['from{opacity:0;}to{opacity:1;}']),
+        e$ = (e) => {
           let {
             currentStepIndex: t,
             onStepIndexChange: r,
@@ -395,8 +400,8 @@
           } = e;
           return (0, i.jsxs)(i.Fragment, {
             children: [
-              (0, i.jsx)(ev, {}),
-              (0, i.jsx)(ek, {
+              (0, i.jsx)(ew, {}),
+              (0, i.jsx)(ev, {
                 children: (0, i.jsxs)(E, {
                   $display: 'flex',
                   $alignItems: 'center',
@@ -410,18 +415,18 @@
                         (0, i.jsx)(E, {
                           $display: { xs: 'none', lg: 'block' },
                           $flex: 1 / 3,
-                          children: (0, i.jsxs)(ex, {
+                          children: (0, i.jsxs)(eh, {
                             $space: 'sm',
                             children: [
-                              (0, i.jsx)(e$, {}),
-                              (0, i.jsx)(ee, {
+                              (0, i.jsx)(ef, {}),
+                              (0, i.jsx)(et, {
                                 $variant: 'meeting',
                                 $color: 'dark',
                                 $size: 'md',
                                 $opacity: 0.6,
                                 children: '|',
                               }),
-                              (0, i.jsx)(ep, {}),
+                              (0, i.jsx)(eg, {}),
                             ],
                           }),
                         }),
@@ -429,12 +434,12 @@
                           $flex: { xs: 1, lg: 2 / 3 },
                           $display: 'flex',
                           $justifyContent: 'center',
-                          children: (0, i.jsx)(ef, {
+                          children: (0, i.jsx)(eu, {
                             currentStepIndex: t,
                             onBack: () => {
                               t > 2 ? r(t - 1) : r(0), n(!1);
                             },
-                            onNext: t < q.length - 1 ? () => r(t + 1) : void 0,
+                            onNext: t < W.length - 1 ? () => r(t + 1) : void 0,
                             onOpenChatWindow: () => n(!0),
                           }),
                         }),
@@ -444,7 +449,7 @@
                       $display: { xs: 'none', lg: 'flex' },
                       $flex: 1 / 4,
                       $justifyContent: 'flex-end',
-                      children: (0, i.jsx)(eu, { onStepIndexChange: r }),
+                      children: (0, i.jsx)(ej, { onStepIndexChange: r }),
                     }),
                   ],
                 }),
@@ -452,129 +457,142 @@
             ],
           });
         },
-        e$ = () =>
-          (0, i.jsx)(ee, {
-            $variant: 'meeting',
-            $color: 'dark',
-            $size: 'md',
-            children: 'Time',
-          }),
-        ef = (e) => {
+        ef = () => {
+          let [e, t] = (0, Y.useState)(new Date()),
+            r = () => {
+              t(new Date());
+            };
+          return (
+            (0, Y.useEffect)(() => {
+              let e = setInterval(r, 2e4);
+              return () => {
+                clearInterval(e);
+              };
+            }, []),
+            (0, i.jsxs)(et, {
+              $variant: 'meeting',
+              $color: 'dark',
+              $size: 'md',
+              children: [q(e.getHours()), ':', q(e.getMinutes())],
+            })
+          );
+        },
+        eu = (e) => {
           let {
               currentStepIndex: t,
               onBack: r,
               onNext: n,
               onOpenChatWindow: o,
             } = e,
-            s = q[t];
-          return (0, i.jsxs)(ex, {
+            s = W[t];
+          return (0, i.jsxs)(eh, {
             $space: 'sm',
             children: [
-              (0, i.jsx)(ew, {
+              (0, i.jsx)(ey, {
                 $delay: 0,
-                children: (0, i.jsx)(ea, {
-                  isImportantAction: !0,
-                  disabled: !0,
-                  label: 'Nope',
-                  children: (0, i.jsx)(Y.Z, {}),
-                }),
-              }),
-              (0, i.jsx)(ew, {
-                $delay: 0.1,
-                children: (0, i.jsx)(ea, {
+                children: (0, i.jsx)(el, {
                   isImportantAction: !0,
                   disabled: !0,
                   label: 'Nope',
                   children: (0, i.jsx)(X.Z, {}),
                 }),
               }),
-              (0, i.jsx)(ew, {
+              (0, i.jsx)(ey, {
+                $delay: 0.1,
+                children: (0, i.jsx)(el, {
+                  isImportantAction: !0,
+                  disabled: !0,
+                  label: 'Nope',
+                  children: (0, i.jsx)(H.Z, {}),
+                }),
+              }),
+              (0, i.jsx)(ey, {
                 $delay: 0.2,
-                children: (0, i.jsx)(ea, {
+                children: (0, i.jsx)(el, {
                   onClick: r,
                   disabled: !r,
                   label: 'Back',
                   children: (0, i.jsx)(G.Z, {}),
                 }),
               }),
-              (0, i.jsx)(ew, {
+              (0, i.jsx)(ey, {
                 $delay: 0.3,
-                children: (0, i.jsx)(ea, {
+                children: (0, i.jsx)(el, {
                   onClick: n,
                   disabled: !n,
                   label: 'Next',
                   needsAttention: 'INTRO_1' === s,
-                  children: (0, i.jsx)(H.Z, {}),
+                  children: (0, i.jsx)(J.Z, {}),
                 }),
               }),
-              (0, i.jsx)(ew, {
+              (0, i.jsx)(ey, {
                 $delay: 0.4,
-                children: (0, i.jsx)(ea, {
+                children: (0, i.jsx)(el, {
                   onClick: o,
                   label: 'Message',
                   needsAttention: 'END_3' === s,
-                  children: (0, i.jsx)(J.Z, {}),
+                  children: (0, i.jsx)(U.Z, {}),
                 }),
               }),
             ],
           });
         },
-        eu = (e) => {
+        ej = (e) => {
           let { onStepIndexChange: t } = e;
-          return (0, i.jsx)(ea, {
+          return (0, i.jsx)(el, {
             isImportantAction: !0,
             onClick: () => t(0),
             label: 'Exit',
-            children: (0, i.jsx)(ey, { children: (0, i.jsx)(U.Z, {}) }),
+            children: (0, i.jsx)(eC, { children: (0, i.jsx)(K.Z, {}) }),
           });
         },
-        ej = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
-        eb = (0, s.F4)([
+        eb = (0, s.F4)(['from{bottom:-', 'px;}to{bottom:0;}'], 120),
+        ek = (0, s.F4)([
           '0%{transform:translateY(200px);}28%{transform:translateY(-100px);}65%{transform:translateY(20px);}80%{transform:translateY(-10px);}100%{transform:translateY(0);}',
         ]),
-        ek = (0, s.ZP)(E)
+        ev = (0, s.ZP)(E)
           .attrs({
             $padding: { xs: 'sm', lg: 'md' },
             $display: 'flex',
             $alignItems: 'center',
             $height: 120,
           })
-          .withConfig({ componentId: 'sc-cc0254d2-0' })([
+          .withConfig({ componentId: 'sc-5258e137-0' })([
           'position:absolute;left:0;right:0;',
         ]),
-        ev = (0, s.ZP)(E)
+        ew = (0, s.ZP)(E)
           .attrs({ $height: 120 })
-          .withConfig({ componentId: 'sc-cc0254d2-1' })(
+          .withConfig({ componentId: 'sc-5258e137-1' })(
           [
             'animation:',
             ' 0.3s ease-in;border:3px solid ',
             ';border-bottom:none;',
             ' background-color:#fef9ec;border-bottom-left-radius:0;border-bottom-right-radius:0;position:absolute;left:0;right:0;',
           ],
-          ej,
+          eb,
           (0, n.Lq)('dark'),
           w('md'),
         ),
-        ew = s.ZP.div.withConfig({ componentId: 'sc-cc0254d2-2' })(
+        ey = s.ZP.div.withConfig({ componentId: 'sc-5258e137-2' })(
           [
             'animation:',
             ' 1.3s ease-out ',
             's forwards;transform:translateY(200px);',
           ],
-          eb,
+          ek,
           (e) => {
             let { $delay: t } = e;
             return t;
           },
         ),
-        ey = s.ZP.div.withConfig({ componentId: 'sc-cc0254d2-3' })(
+        eC = s.ZP.div.withConfig({ componentId: 'sc-5258e137-3' })(
           ['animation:', ' 0.2s ease-in;'],
-          eg,
+          em,
         );
-      var eC = r(8268),
-        eL = r(2774),
-        eM = r(1414);
-      let eI = (e) => {
+      var eL = r(8268),
+        eM = r(2774),
+        eI = r(1414);
+      let e_ = (e) => {
           let {
             $color: t,
             $size: r,
@@ -583,7 +601,7 @@
             $align: s,
             ...a
           } = e;
-          return (0, i.jsx)(eT, {
+          return (0, i.jsx)(eP, {
             $color: t,
             $opacity: o,
             $size: r,
@@ -592,11 +610,11 @@
             ...a,
           });
         },
-        e_ = { lg: '48px', md: '32px', sm: '28px', xs: '20px', xxs: '16px' },
-        eS = { lg: '64px', md: '46px', sm: '42px', xs: '24px', xxs: '18px' },
-        ez = (e) => e_[e],
+        eS = { lg: '48px', md: '32px', sm: '28px', xs: '20px', xxs: '16px' },
+        ez = { lg: '64px', md: '46px', sm: '42px', xs: '24px', xxs: '18px' },
         eZ = (e) => eS[e],
-        eT = s.ZP.h1.withConfig({ componentId: 'sc-45e39ea9-0' })(
+        eT = (e) => ez[e],
+        eP = s.ZP.h1.withConfig({ componentId: 'sc-45e39ea9-0' })(
           ['margin:0;padding:0;', ' ', ' ', ' ', ' ', ' ', ''],
           (e) => {
             let { $color: t = 'dark', $opacity: r } = e;
@@ -606,15 +624,15 @@
           },
           (e) => {
             let { $size: t } = e;
-            return (0, o.gh)('font-size', t, ez);
+            return (0, o.gh)('font-size', t, eZ);
           },
           (e) => {
             let { $size: t } = e;
-            return (0, o.gh)('line-height', t, eZ);
+            return (0, o.gh)('line-height', t, eT);
           },
           (e) => {
             let { $variant: t } = e;
-            return Q(t);
+            return ee(t);
           },
           (e) => {
             let { $align: t = 'left' } = e;
@@ -627,7 +645,7 @@
               : (0, s.iv)(['font-weight:900;letter-spacing:0.05em;']);
           },
         ),
-        eP = s.ZP.div.withConfig({ componentId: 'sc-da7cadeb-0' })(
+        eF = s.ZP.div.withConfig({ componentId: 'sc-da7cadeb-0' })(
           [
             'display:flex;flex-direction:column;',
             ' > *:not(:first-child){',
@@ -642,11 +660,11 @@
             return f(t);
           },
         ),
-        eF = B.forwardRef(function (e, t) {
-          let r = (0, B.useRef)(null),
-            o = (0, B.useRef)(null),
-            [s, a] = (0, B.useState)(!1),
-            [l, d] = (0, B.useState)(!1),
+        eN = Y.forwardRef(function (e, t) {
+          let r = (0, Y.useRef)(null),
+            o = (0, Y.useRef)(null),
+            [s, a] = (0, Y.useState)(!1),
+            [l, d] = (0, Y.useState)(!1),
             c = () => {
               var e;
               null == r ||
@@ -657,7 +675,7 @@
                 d(!1);
             };
           return (
-            (0, B.useImperativeHandle)(t, () => ({
+            (0, Y.useImperativeHandle)(t, () => ({
               open: () => {
                 var e;
                 null == r ||
@@ -667,7 +685,7 @@
               },
               close: c,
             })),
-            (0, i.jsx)(eO, {
+            (0, i.jsx)(eE, {
               ref: r,
               onCancel: c,
               children: (0, i.jsx)('form', {
@@ -704,13 +722,13 @@
                   $height: '100%',
                   $padding: { xs: 'md', md: 'lg' },
                   children: [
-                    (0, i.jsx)(eU, {
-                      children: (0, i.jsx)(ea, {
+                    (0, i.jsx)(eK, {
+                      children: (0, i.jsx)(el, {
                         onClick: c,
                         disabled: s,
                         label: 'Close',
                         type: 'button',
-                        children: (0, i.jsx)(eC.Z, {}),
+                        children: (0, i.jsx)(eL.Z, {}),
                       }),
                     }),
                     (0, i.jsxs)(E, {
@@ -722,13 +740,13 @@
                         (0, i.jsx)(E, {
                           $display: 'flex',
                           $justifyContent: 'center',
-                          children: (0, i.jsx)(eL.Z, {
+                          children: (0, i.jsx)(eM.Z, {
                             color: (0, n.Lq)('dark'),
                             size: 56,
                             strokeWidth: 1.5,
                           }),
                         }),
-                        (0, i.jsx)(eI, {
+                        (0, i.jsx)(e_, {
                           as: 'h3',
                           $variant: 'meeting',
                           $size: 'sm',
@@ -738,15 +756,15 @@
                         }),
                         (0, i.jsx)(E, {
                           $marginTop: 'lg',
-                          children: (0, i.jsxs)(eP, {
+                          children: (0, i.jsxs)(eF, {
                             $space: 'md',
                             children: [
-                              (0, i.jsxs)(eP, {
+                              (0, i.jsxs)(eF, {
                                 $space: 'xxs',
                                 children: [
                                   (0, i.jsx)('label', {
                                     htmlFor: 'name',
-                                    children: (0, i.jsx)(ee, {
+                                    children: (0, i.jsx)(et, {
                                       $size: 'md',
                                       $variant: 'meeting',
                                       $color: 'black',
@@ -754,7 +772,7 @@
                                       children: 'Name',
                                     }),
                                   }),
-                                  (0, i.jsx)(eX, {
+                                  (0, i.jsx)(eH, {
                                     type: 'text',
                                     id: 'name',
                                     name: 'name',
@@ -764,12 +782,12 @@
                                   }),
                                 ],
                               }),
-                              (0, i.jsxs)(eP, {
+                              (0, i.jsxs)(eF, {
                                 $space: 'xxs',
                                 children: [
                                   (0, i.jsx)('label', {
                                     htmlFor: 'email',
-                                    children: (0, i.jsx)(ee, {
+                                    children: (0, i.jsx)(et, {
                                       $size: 'md',
                                       $variant: 'meeting',
                                       $color: 'black',
@@ -777,7 +795,7 @@
                                       children: 'E-mail address',
                                     }),
                                   }),
-                                  (0, i.jsx)(eX, {
+                                  (0, i.jsx)(eH, {
                                     type: 'email',
                                     id: 'email',
                                     name: 'email',
@@ -798,7 +816,7 @@
                           children: [
                             (0, i.jsx)('label', {
                               htmlFor: 'message',
-                              children: (0, i.jsx)(ee, {
+                              children: (0, i.jsx)(et, {
                                 $size: 'md',
                                 $variant: 'meeting',
                                 $color: 'black',
@@ -824,19 +842,19 @@
                           $justifyContent: 'center',
                           $marginTop: 'lg',
                           $marginBottom: 'md',
-                          children: (0, i.jsx)(eH, {
+                          children: (0, i.jsx)(eJ, {
                             type: 'submit',
                             disabled: s,
                             'aria-label': 'Send',
-                            children: (0, i.jsx)(eJ, {
+                            children: (0, i.jsx)(eU, {
                               children: s
                                 ? (0, i.jsx)(E, {
                                     $height: 36,
-                                    children: (0, i.jsx)(eB, {
-                                      children: (0, i.jsx)(eM.Z, {}),
+                                    children: (0, i.jsx)(eY, {
+                                      children: (0, i.jsx)(eI.Z, {}),
                                     }),
                                   })
-                                : (0, i.jsx)(ee, {
+                                : (0, i.jsx)(et, {
                                     $variant: 'meeting',
                                     $size: 'xl',
                                     $color: 'dark',
@@ -849,18 +867,18 @@
                       ],
                     }),
                     l &&
-                      (0, i.jsxs)(eq, {
+                      (0, i.jsxs)(eW, {
                         children: [
                           (0, i.jsx)(E, {
                             $display: 'flex',
                             $justifyContent: 'center',
-                            children: (0, i.jsx)(eM.Z, {
+                            children: (0, i.jsx)(eI.Z, {
                               color: (0, n.Lq)('dark'),
                               size: 56,
                               strokeWidth: 1.5,
                             }),
                           }),
-                          (0, i.jsx)(eI, {
+                          (0, i.jsx)(e_, {
                             $variant: 'meeting',
                             as: 'h3',
                             $size: 'md',
@@ -876,7 +894,7 @@
             })
           );
         }),
-        eN = (0, s.F4)([
+        eD = (0, s.F4)([
           'from{transform:translateX(-50%) translateY(110%);}to{transform:translateX(-50%) translateY(0%);}',
         ]),
         eR = (0, s.F4)([
@@ -891,7 +909,7 @@
           (0, n.m4)('white', 0),
           (0, n.m4)('white', 0.3),
         ),
-        eD = (0, s.F4)(
+        eO = (0, s.F4)(
           [
             'from{background-color:',
             ';backdrop-filter:blur(3px);}to{background-color:',
@@ -900,7 +918,7 @@
           (0, n.m4)('white', 0.3),
           (0, n.m4)('white', 0),
         ),
-        eO = s.ZP.dialog.withConfig({ componentId: 'sc-cd1a19fb-0' })(
+        eE = s.ZP.dialog.withConfig({ componentId: 'sc-cd1a19fb-0' })(
           [
             'animation:',
             ' 0.3s ease-in forwards;',
@@ -919,7 +937,7 @@
           eR,
           w('lg'),
           (0, n.Cz)('white'),
-          (0, es.$n)(0.2, (0, n.Lq)('blue')),
+          (0, ea.$n)(0.2, (0, n.Lq)('blue')),
           (0, n.Lq)('dark'),
           (0, n.m4)('black', 0.2),
           l('sm'),
@@ -927,13 +945,13 @@
             xs: (0, s.iv)(['top:', ';'], l('sm')),
             md: (0, s.iv)(['top:', ';'], l('xl')),
           }),
-          eN,
           eD,
+          eO,
           (0, n.m4)('white', 0),
           eA,
         ),
-        eE = (0, s.F4)(['from{transform:scale(0);}to{transform:scale(1);}']),
-        eq = s.ZP.div.withConfig({ componentId: 'sc-cd1a19fb-1' })(
+        eq = (0, s.F4)(['from{transform:scale(0);}to{transform:scale(1);}']),
+        eW = s.ZP.div.withConfig({ componentId: 'sc-cd1a19fb-1' })(
           [
             'animation:',
             ' 0.2s ease-in forwards;background-color:',
@@ -942,23 +960,23 @@
             ';box-shadow:0 0 12px 4px ',
             ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:-1;}',
           ],
-          eE,
+          eq,
           (0, n.m4)('white', 0.3),
           (0, n.Cz)('white'),
           (0, n.Lq)('dark'),
           (0, n.m4)('black', 0.2),
         ),
-        eW = (0, s.F4)([
+        eB = (0, s.F4)([
           '0%{left:4px;opacity:0;}10%{opacity:1;}80%{opacity:1;}90%{left:calc(100% - 28px);opacity:0;}100%{opacity:0;}',
         ]),
-        eB = s.ZP.span.withConfig({ componentId: 'sc-cd1a19fb-2' })(
+        eY = s.ZP.span.withConfig({ componentId: 'sc-cd1a19fb-2' })(
           [
             'animation:',
             ' 3s ease-in infinite;display:flex;align-items:center;position:absolute;left:4px;height:36px;transform:rotate(45deg);',
           ],
-          eW,
+          eB,
         ),
-        eY = (0, s.iv)(
+        eX = (0, s.iv)(
           [
             '',
             ' ',
@@ -973,7 +991,7 @@
             ';cursor:not-allowed;}',
           ],
           w('sm'),
-          Q('meeting'),
+          ee('meeting'),
           (0, n.$_)('dark'),
           m('sm'),
           g('sm'),
@@ -983,15 +1001,15 @@
           (0, n.m4)('dark', 0.05),
           (0, n.m4)('dark', 0.1),
         ),
-        eX = s.ZP.input.withConfig({ componentId: 'sc-cd1a19fb-3' })(
+        eH = s.ZP.input.withConfig({ componentId: 'sc-cd1a19fb-3' })(
           ['', ''],
-          eY,
+          eX,
         ),
         eG = s.ZP.textarea.withConfig({ componentId: 'sc-cd1a19fb-4' })(
           ['', ' height:100%;resize:none;'],
-          eY,
+          eX,
         ),
-        eH = s.ZP.button.withConfig({ componentId: 'sc-cd1a19fb-5' })(
+        eJ = s.ZP.button.withConfig({ componentId: 'sc-cd1a19fb-5' })(
           [
             "background:none;border:none;outline:none;padding:0;margin:0;width:200px;min-width:max-content;position:relative;transition:0.45s 0.3s ease-in;&::after{content:'';",
             ' background-color:',
@@ -999,10 +1017,10 @@
             ';position:absolute;top:8px;bottom:-8px;left:16px;right:16px;z-index:-1;transition:0.1s ease-in;}',
           ],
           w('sm'),
-          (0, es.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('pink')),
+          (0, ea.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('pink')),
           (0, n.Lq)('dark'),
         ),
-        eJ = s.ZP.span.withConfig({ componentId: 'sc-cd1a19fb-6' })(
+        eU = s.ZP.span.withConfig({ componentId: 'sc-cd1a19fb-6' })(
           [
             '',
             ' ',
@@ -1018,20 +1036,20 @@
           g('md'),
           m('xs'),
           (0, n.Lq)('dark'),
-          eH,
-          (0, es._j)(0.05, (0, n.Lq)('pink')),
+          eJ,
+          (0, ea._j)(0.05, (0, n.Lq)('pink')),
         ),
-        eU = (0, s.ZP)(E)
+        eK = (0, s.ZP)(E)
           .attrs({ $position: 'absolute' })
           .withConfig({ componentId: 'sc-cd1a19fb-7' })(
           ['top:', ';right:', ';'],
           l('sm'),
           l('sm'),
         );
-      var eK = r(51);
-      let eV = (e) => {
+      var eV = r(51);
+      let eQ = (e) => {
           let { step: t, onRestart: r } = e,
-            n = W[t];
+            n = B[t];
           return n
             ? (0, i.jsxs)(E, {
                 $display: 'flex',
@@ -1039,12 +1057,12 @@
                 $alignItems: 'center',
                 children: [
                   (0, i.jsx)(
-                    e0,
+                    e1,
                     {
                       children: (0, i.jsx)(E, {
                         $paddingX: 'sm',
                         $paddingY: 'xxs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'meeting',
                           $size: { xs: 'lg', lg: 'xxl' },
                           $color: 'white',
@@ -1055,22 +1073,22 @@
                     },
                     t,
                   ),
-                  q.indexOf(t) === q.length - 1 &&
+                  W.indexOf(t) === W.length - 1 &&
                     (0, i.jsx)(E, {
                       $marginTop: 'xs',
-                      children: (0, i.jsx)(ea, {
+                      children: (0, i.jsx)(el, {
                         isImportantAction: !0,
                         label: 'Again',
                         onClick: r,
-                        children: (0, i.jsx)(eK.Z, {}),
+                        children: (0, i.jsx)(eV.Z, {}),
                       }),
                     }),
                 ],
               })
             : null;
         },
-        eQ = (0, s.F4)(['0%{max-width:0px;}100%{max-width:3000px;}']),
-        e0 = (0, s.ZP)(E)
+        e0 = (0, s.F4)(['0%{max-width:0px;}100%{max-width:3000px;}']),
+        e1 = (0, s.ZP)(E)
           .attrs({ $borderRadius: 'sm' })
           .withConfig({ componentId: 'sc-46ee4eca-0' })(
           ['background-color:', ';', ''],
@@ -1081,21 +1099,21 @@
                 'white-space:nowrap;overflow:hidden;animation:',
                 ' 4s ease-in forwards;',
               ],
-              eQ,
+              e0,
             ),
           }),
         );
-      var e1 = r(2006),
-        e2 = r(7811),
-        e5 = r(6702),
-        e8 = r(9046),
-        e3 = r(7327),
-        e9 = r(9318),
-        e7 = { src: '/_next/static/media/sydney-opera-house.42558573.svg' },
-        e4 = { src: '/_next/static/media/hk.f0b91905.svg' },
-        e6 = { src: '/_next/static/media/jp.d11e2922.svg' },
-        te = { src: '/_next/static/media/kr.6358a3d4.svg' };
-      let tt = (0, s.ZP)(E)
+      var e2 = r(2006),
+        e5 = r(7811),
+        e8 = r(6702),
+        e3 = r(9046),
+        e9 = r(7327),
+        e7 = r(9318),
+        e4 = { src: '/_next/static/media/sydney-opera-house.42558573.svg' },
+        e6 = { src: '/_next/static/media/hk.f0b91905.svg' },
+        te = { src: '/_next/static/media/jp.d11e2922.svg' },
+        tt = { src: '/_next/static/media/kr.6358a3d4.svg' };
+      let tr = (0, s.ZP)(E)
         .attrs({
           as: 'span',
           $borderRadius: 'xs',
@@ -1109,29 +1127,29 @@
           return (0, n.m4)(t, 0.2);
         },
       );
-      var tr = { src: '/_next/static/media/spaceship.2c814fc4.svg' },
-        ti = { src: '/_next/static/media/oneflare.1313ca4a.svg' };
-      let tn = (e) => {
+      var ti = { src: '/_next/static/media/spaceship.2c814fc4.svg' },
+        tn = { src: '/_next/static/media/oneflare.1313ca4a.svg' };
+      let to = (e) => {
           let { step: t } = e;
-          return (0, i.jsxs)(ts, {
+          return (0, i.jsxs)(ta, {
             children: [
               'SLIDES_1' === t &&
-                (0, i.jsx)(to, {
+                (0, i.jsx)(ts, {
                   heading: 'About me',
-                  children: (0, i.jsxs)(eP, {
+                  children: (0, i.jsxs)(eF, {
                     $space: { xs: 'sm', md: 'xl' },
                     $alignX: 'center',
                     children: [
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'xs',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsx)(e1.Z, {
+                          (0, i.jsx)(e2.Z, {
                             stroke: (0, n.Lq)('dark'),
                             height: 32,
                             width: 32,
                           }),
-                          (0, i.jsxs)(ee, {
+                          (0, i.jsxs)(et, {
                             $variant: 'text',
                             $size: 'lg',
                             $color: 'dark',
@@ -1142,7 +1160,7 @@
                               }),
                               ' with over',
                               ' ',
-                              (0, i.jsx)(tt, {
+                              (0, i.jsx)(tr, {
                                 $backgroundColor: 'pink',
                                 children: '13 years',
                               }),
@@ -1152,19 +1170,19 @@
                           }),
                         ],
                       }),
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'xs',
                         $alignX: 'center',
                         children: [
                           (0, i.jsx)('div', {
                             children: (0, i.jsx)('img', {
-                              src: e7.src,
+                              src: e4.src,
                               alt: 'Sydney',
                               height: 56,
                               width: 56,
                             }),
                           }),
-                          (0, i.jsxs)(ee, {
+                          (0, i.jsxs)(et, {
                             $variant: 'text',
                             $size: 'lg',
                             $color: 'dark',
@@ -1172,7 +1190,7 @@
                             children: [
                               'Based in',
                               ' ',
-                              (0, i.jsx)(tt, {
+                              (0, i.jsx)(tr, {
                                 $backgroundColor: 'blue',
                                 children: 'Sydney, Australia',
                               }),
@@ -1180,17 +1198,17 @@
                           }),
                         ],
                       }),
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'xs',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsx)(J.Z, {
+                          (0, i.jsx)(U.Z, {
                             stroke: (0, n.Lq)('dark'),
                             fill: (0, n.m4)('yellow', 0.5),
                             height: 32,
                             width: 32,
                           }),
-                          (0, i.jsx)(ee, {
+                          (0, i.jsx)(et, {
                             $variant: 'text',
                             $size: 'lg',
                             $color: 'dark',
@@ -1200,17 +1218,17 @@
                           }),
                         ],
                       }),
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'xs',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsx)(e2.Z, {
+                          (0, i.jsx)(e5.Z, {
                             stroke: (0, n.Lq)('dark'),
                             fill: (0, n.Lq)('red'),
                             height: 32,
                             width: 32,
                           }),
-                          (0, i.jsx)(ee, {
+                          (0, i.jsx)(et, {
                             $variant: 'text',
                             $size: 'lg',
                             $color: 'dark',
@@ -1219,16 +1237,16 @@
                           }),
                         ],
                       }),
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'xs',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsxs)(ex, {
+                          (0, i.jsxs)(eh, {
                             $space: 'sm',
                             children: [
                               (0, i.jsx)('div', {
                                 children: (0, i.jsx)('img', {
-                                  src: e4.src,
+                                  src: e6.src,
                                   alt: 'Hong Kong',
                                   height: 48,
                                   width: 48,
@@ -1236,7 +1254,7 @@
                               }),
                               (0, i.jsx)('div', {
                                 children: (0, i.jsx)('img', {
-                                  src: te.src,
+                                  src: tt.src,
                                   alt: 'South Korea',
                                   height: 48,
                                   width: 48,
@@ -1244,7 +1262,7 @@
                               }),
                               (0, i.jsx)('div', {
                                 children: (0, i.jsx)('img', {
-                                  src: e6.src,
+                                  src: te.src,
                                   alt: 'Japan',
                                   height: 48,
                                   width: 48,
@@ -1252,7 +1270,7 @@
                               }),
                             ],
                           }),
-                          (0, i.jsx)(ee, {
+                          (0, i.jsx)(et, {
                             $variant: 'text',
                             $size: 'lg',
                             $color: 'dark',
@@ -1266,7 +1284,7 @@
                   }),
                 }),
               'SLIDES_2' === t &&
-                (0, i.jsx)(to, {
+                (0, i.jsx)(ts, {
                   heading: 'Tech skills',
                   children: (0, i.jsxs)(E, {
                     $display: 'inline-flex',
@@ -1275,10 +1293,10 @@
                     $justifyContent: 'center',
                     $maxWidth: { lg: 900 },
                     children: [
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'pink',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1287,10 +1305,10 @@
                           children: 'React',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1298,10 +1316,10 @@
                           children: 'React Native',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'yellow',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1310,10 +1328,10 @@
                           children: 'HTML',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'blue',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1322,10 +1340,10 @@
                           children: 'CSS',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1333,10 +1351,10 @@
                           children: 'JavaScript',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1344,10 +1362,10 @@
                           children: 'CSS animations',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1355,10 +1373,10 @@
                           children: 'SASS',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'pink',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1367,10 +1385,10 @@
                           children: 'Styled Components',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1378,10 +1396,10 @@
                           children: 'SVG',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'blue',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1390,10 +1408,10 @@
                           children: 'TypeScript',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1401,10 +1419,10 @@
                           children: 'NextJS',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1412,10 +1430,10 @@
                           children: 'GatsbyJS',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1423,10 +1441,10 @@
                           children: 'prismic.io',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'yellow',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1435,10 +1453,10 @@
                           children: 'Design Systems',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1446,10 +1464,10 @@
                           children: 'Jest',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1457,10 +1475,10 @@
                           children: 'NodeJS',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1472,17 +1490,17 @@
                   }),
                 }),
               'SLIDES_3' === t &&
-                (0, i.jsx)(to, {
+                (0, i.jsx)(ts, {
                   heading: 'Portfolio',
-                  children: (0, i.jsxs)(eP, {
+                  children: (0, i.jsxs)(eF, {
                     $space: 'xxl',
                     $alignX: 'center',
                     children: [
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'md',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsx)(eI, {
+                          (0, i.jsx)(e_, {
                             $variant: 'heading',
                             $size: { xs: 'xxs', lg: 'md' },
                             as: 'h2',
@@ -1498,26 +1516,26 @@
                             children: [
                               (0, i.jsx)(E, {
                                 $margin: 'xs',
-                                children: (0, i.jsx)(ta, {
+                                children: (0, i.jsx)(tl, {
                                   $borderColor: 'blue',
                                   href: 'https://github.com/merrybottle',
                                   target: '_blank',
                                   rel: 'noreferrer noopener',
-                                  children: (0, i.jsxs)(ex, {
+                                  children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
                                     as: 'span',
                                     children: [
-                                      (0, i.jsxs)(ex, {
+                                      (0, i.jsxs)(eh, {
                                         $space: 'xs',
                                         as: 'span',
                                         children: [
-                                          (0, i.jsx)(e5.Z, {
+                                          (0, i.jsx)(e8.Z, {
                                             stroke: (0, n.Lq)('blue'),
                                             height: 32,
                                             width: 32,
                                           }),
-                                          (0, i.jsx)(ee, {
+                                          (0, i.jsx)(et, {
                                             $size: 'lg',
                                             $variant: 'text',
                                             $color: 'dark',
@@ -1525,7 +1543,7 @@
                                           }),
                                         ],
                                       }),
-                                      (0, i.jsx)(e8.Z, {
+                                      (0, i.jsx)(e3.Z, {
                                         stroke: (0, n.m4)('dark', 0.75),
                                         height: 16,
                                         width: 16,
@@ -1536,26 +1554,26 @@
                               }),
                               (0, i.jsx)(E, {
                                 $margin: 'xs',
-                                children: (0, i.jsx)(ta, {
+                                children: (0, i.jsx)(tl, {
                                   $borderColor: 'pink',
                                   href: 'https://codepen.io/merrybottle',
                                   target: '_blank',
                                   rel: 'noreferrer noopener',
-                                  children: (0, i.jsxs)(ex, {
+                                  children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
                                     as: 'span',
                                     children: [
-                                      (0, i.jsxs)(ex, {
+                                      (0, i.jsxs)(eh, {
                                         $space: 'xs',
                                         as: 'span',
                                         children: [
-                                          (0, i.jsx)(e3.Z, {
+                                          (0, i.jsx)(e9.Z, {
                                             stroke: (0, n.Lq)('pink'),
                                             height: 32,
                                             width: 32,
                                           }),
-                                          (0, i.jsx)(ee, {
+                                          (0, i.jsx)(et, {
                                             $size: 'lg',
                                             $variant: 'text',
                                             $color: 'dark',
@@ -1563,7 +1581,7 @@
                                           }),
                                         ],
                                       }),
-                                      (0, i.jsx)(e8.Z, {
+                                      (0, i.jsx)(e3.Z, {
                                         stroke: (0, n.m4)('dark', 0.75),
                                         height: 16,
                                         width: 16,
@@ -1609,11 +1627,11 @@
                           }),
                         ],
                       }),
-                      (0, i.jsxs)(eP, {
+                      (0, i.jsxs)(eF, {
                         $space: 'md',
                         $alignX: 'center',
                         children: [
-                          (0, i.jsx)(eI, {
+                          (0, i.jsx)(e_, {
                             $variant: 'heading',
                             $size: { xs: 'xxs', lg: 'md' },
                             as: 'h2',
@@ -1629,29 +1647,29 @@
                             children: [
                               (0, i.jsx)(E, {
                                 $margin: 'xs',
-                                children: (0, i.jsx)(ta, {
+                                children: (0, i.jsx)(tl, {
                                   $borderColor: 'spaceship',
                                   href: 'https://www.spaceship.com.au',
                                   target: '_blank',
                                   rel: 'noreferrer noopener',
-                                  children: (0, i.jsxs)(ex, {
+                                  children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
                                     as: 'span',
                                     children: [
-                                      (0, i.jsxs)(ex, {
+                                      (0, i.jsxs)(eh, {
                                         $space: 'xs',
                                         as: 'span',
                                         children: [
                                           (0, i.jsx)('div', {
                                             children: (0, i.jsx)('img', {
-                                              src: tr.src,
+                                              src: ti.src,
                                               alt: 'Spaceship',
                                               height: 32,
                                               width: 32,
                                             }),
                                           }),
-                                          (0, i.jsx)(ee, {
+                                          (0, i.jsx)(et, {
                                             $size: 'lg',
                                             $variant: 'text',
                                             $color: 'dark',
@@ -1659,7 +1677,7 @@
                                           }),
                                         ],
                                       }),
-                                      (0, i.jsx)(e8.Z, {
+                                      (0, i.jsx)(e3.Z, {
                                         stroke: (0, n.m4)('dark', 0.75),
                                         height: 16,
                                         width: 16,
@@ -1670,29 +1688,29 @@
                               }),
                               (0, i.jsx)(E, {
                                 $margin: 'xs',
-                                children: (0, i.jsx)(ta, {
+                                children: (0, i.jsx)(tl, {
                                   $borderColor: 'oneflare',
                                   href: 'https://www.oneflare.com.au',
                                   target: '_blank',
                                   rel: 'noreferrer noopener',
-                                  children: (0, i.jsxs)(ex, {
+                                  children: (0, i.jsxs)(eh, {
                                     $space: 'md',
                                     $alignY: 'flex-start',
                                     as: 'span',
                                     children: [
-                                      (0, i.jsxs)(ex, {
+                                      (0, i.jsxs)(eh, {
                                         $space: 'xs',
                                         as: 'span',
                                         children: [
                                           (0, i.jsx)('div', {
                                             children: (0, i.jsx)('img', {
-                                              src: ti.src,
+                                              src: tn.src,
                                               alt: 'Oneflare',
                                               height: 32,
                                               width: 32,
                                             }),
                                           }),
-                                          (0, i.jsx)(ee, {
+                                          (0, i.jsx)(et, {
                                             $size: 'lg',
                                             $variant: 'text',
                                             $color: 'dark',
@@ -1700,7 +1718,7 @@
                                           }),
                                         ],
                                       }),
-                                      (0, i.jsx)(e8.Z, {
+                                      (0, i.jsx)(e3.Z, {
                                         stroke: (0, n.m4)('dark', 0.75),
                                         height: 16,
                                         width: 16,
@@ -1717,7 +1735,7 @@
                   }),
                 }),
               'SLIDES_4' === t &&
-                (0, i.jsx)(to, {
+                (0, i.jsx)(ts, {
                   heading: 'Irrelevant skills',
                   children: (0, i.jsxs)(E, {
                     $display: 'inline-flex',
@@ -1726,10 +1744,10 @@
                     $justifyContent: 'center',
                     $maxWidth: { lg: 400 },
                     children: [
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'pink',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1738,10 +1756,10 @@
                           children: 'Baking',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'blue',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1750,10 +1768,10 @@
                           children: 'Making jewellery',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'yellow',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1762,10 +1780,10 @@
                           children: 'Crochet',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1773,10 +1791,10 @@
                           children: 'Sudoku',
                         }),
                       }),
-                      (0, i.jsx)(tt, {
+                      (0, i.jsx)(tr, {
                         $backgroundColor: 'white',
                         $margin: 'xs',
-                        children: (0, i.jsx)(ee, {
+                        children: (0, i.jsx)(et, {
                           $variant: 'text',
                           $size: { xs: 'lg', xl: 'xl' },
                           $color: 'dark',
@@ -1788,28 +1806,28 @@
                   }),
                 }),
               'SLIDES_5' === t &&
-                (0, i.jsx)(to, {
+                (0, i.jsx)(ts, {
                   heading: 'Where to find me',
-                  children: (0, i.jsx)(ta, {
+                  children: (0, i.jsx)(tl, {
                     $borderColor: 'blue',
                     href: 'https://www.linkedin.com/in/merrybottle',
                     target: '_blank',
                     rel: 'noreferrer noopener',
-                    children: (0, i.jsxs)(ex, {
+                    children: (0, i.jsxs)(eh, {
                       $space: 'md',
                       $alignY: 'flex-start',
                       as: 'span',
                       children: [
-                        (0, i.jsxs)(ex, {
+                        (0, i.jsxs)(eh, {
                           $space: 'xs',
                           as: 'span',
                           children: [
-                            (0, i.jsx)(e9.Z, {
+                            (0, i.jsx)(e7.Z, {
                               stroke: (0, n.Lq)('blue'),
                               height: 32,
                               width: 32,
                             }),
-                            (0, i.jsx)(ee, {
+                            (0, i.jsx)(et, {
                               $size: 'lg',
                               $variant: 'text',
                               $color: 'dark',
@@ -1817,7 +1835,7 @@
                             }),
                           ],
                         }),
-                        (0, i.jsx)(e8.Z, {
+                        (0, i.jsx)(e3.Z, {
                           stroke: (0, n.m4)('dark', 0.75),
                           height: 16,
                           width: 16,
@@ -1829,11 +1847,11 @@
             ],
           });
         },
-        to = (e) => {
+        ts = (e) => {
           let { children: t, heading: r } = e;
           return (0, i.jsxs)(i.Fragment, {
             children: [
-              (0, i.jsx)(eI, {
+              (0, i.jsx)(e_, {
                 as: 'h1',
                 $size: { xs: 'xs', md: 'md', lg: 'lg' },
                 $color: 'dark',
@@ -1864,7 +1882,7 @@
             ],
           });
         },
-        ts = (0, s.ZP)(E)
+        ta = (0, s.ZP)(E)
           .attrs({
             $display: 'flex',
             $flexDirection: 'column',
@@ -1892,7 +1910,7 @@
           (0, n.m4)('pink', 0.6),
           l('md'),
         ),
-        ta = s.ZP.a.withConfig({ componentId: 'sc-75534214-1' })(
+        tl = s.ZP.a.withConfig({ componentId: 'sc-75534214-1' })(
           [
             'transition:0.2s ease-in;&,&:active,&:visited{',
             ' ',
@@ -1923,21 +1941,21 @@
             return (0, n.m4)(t, 1);
           },
         ),
-        tl = (e) => {
+        td = (e) => {
           var t, r;
           let { step: n } = e,
-            o = (0, B.useRef)(null),
+            o = (0, Y.useRef)(null),
             s =
               null !==
                 (r =
-                  null === (t = W[n]) || void 0 === t
+                  null === (t = B[n]) || void 0 === t
                     ? void 0
                     : t.split(' ').length) && void 0 !== r
                 ? r
                 : 0,
             a = 'INTRO_1' === n || 'END_1' === n ? 3 : 0;
           return (
-            (0, B.useEffect)(() => {
+            (0, Y.useEffect)(() => {
               if (n && s > 0) {
                 var e;
                 null === (e = o.current) || void 0 === e || e.beginElement();
@@ -2324,35 +2342,35 @@
             })
           );
         },
-        td = (e) => {
+        tc = (e) => {
           let { currentStepIndex: t, onStepIndexChange: r } = e,
-            n = q[t];
-          return (0, i.jsxs)(th, {
+            n = W[t];
+          return (0, i.jsxs)(tp, {
             children: [
-              (0, i.jsx)(tp, {
+              (0, i.jsx)(tg, {
                 children: (0, i.jsxs)(E, {
                   $position: 'relative',
                   $height: '100%',
                   $borderRadius: 'sm',
                   $overflow: 'hidden',
                   children: [
-                    t >= q.indexOf('INTRO_8') && (0, i.jsx)(tn, { step: n }),
-                    (0, i.jsx)(tg, {
+                    t >= W.indexOf('INTRO_8') && (0, i.jsx)(to, { step: n }),
+                    (0, i.jsx)(tm, {
                       step: n,
-                      children: (0, i.jsx)(tm, {
-                        children: (0, i.jsx)(tl, { step: n }),
+                      children: (0, i.jsx)(t$, {
+                        children: (0, i.jsx)(td, { step: n }),
                       }),
                     }),
                   ],
                 }),
               }),
-              (0, i.jsx)(t$, {
-                children: (0, i.jsx)(eV, { step: n, onRestart: () => r(0) }),
+              (0, i.jsx)(tf, {
+                children: (0, i.jsx)(eQ, { step: n, onRestart: () => r(0) }),
               }),
             ],
           });
         },
-        tc = (0, s.F4)(
+        tx = (0, s.F4)(
           [
             '0%{height:0;width:0;border-color:',
             ';}40%,60%{height:',
@@ -2365,7 +2383,7 @@
           (0, n.m4)('dark', 1),
           (0, n.m4)('dark', 1),
         ),
-        tx = (0, s.F4)(
+        th = (0, s.F4)(
           [
             '0%{top:16px;bottom:0px;opacity:0;border-color:',
             ';}100%{top:16px;bottom:-16px;opacity:1;border-color:',
@@ -2374,10 +2392,10 @@
           (0, n.m4)('dark', 0),
           (0, n.m4)('dark', 1),
         ),
-        th = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-0' })([
+        tp = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-0' })([
           'position:absolute;top:0;left:0;height:100%;width:100%;display:flex;align-items:center;justify-content:center;',
         ]),
-        tp = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-1' })(
+        tg = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-1' })(
           [
             'animation:',
             ' 1.1s linear 0.5s forwards;',
@@ -2390,17 +2408,17 @@
             ';border:3px solid ',
             ';opacity:0;position:absolute;left:24px;right:24px;z-index:-1;}',
           ],
-          tc,
+          tx,
           (0, n.Cz)('background'),
           w('md'),
           d('sm'),
           (0, n.m4)('dark', 0),
-          tx,
+          th,
           w('sm'),
-          (0, es.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('yellow')),
+          (0, ea.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('yellow')),
           (0, n.m4)('dark', 0),
         ),
-        tg = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-2' })(
+        tm = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-2' })(
           [
             'animation:',
             " 0.5s linear 1.5s forwards;opacity:0;position:absolute;height:100%;width:100%;display:flex;align-items:flex-end;justify-content:center;transition:0.5s ease-in;top:100%;transform:translateY(-100%);left:0;overflow:hidden;&::before{content:'';background:url('",
@@ -2408,7 +2426,7 @@
             ' position:absolute;height:100%;width:100%;top:0;left:0;filter:brightness(1.3) contrast(0.7) opacity(0.9);z-index:-1;}',
             '',
           ],
-          eg,
+          em,
           '/_next/static/media/background.eb66a129.jpg',
           w('sm'),
           (e) => {
@@ -2430,35 +2448,35 @@
               : '';
           },
         ),
-        tm = (0, s.ZP)(E)
+        t$ = (0, s.ZP)(E)
           .attrs({ $height: { xs: '80%', lg: '85%' } })
           .withConfig({ componentId: 'sc-62d668f3-3' })([
           'line-height:0;aspect-ratio:1 / 1;',
         ]),
-        t$ = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-4' })(
+        tf = s.ZP.div.withConfig({ componentId: 'sc-62d668f3-4' })(
           [
             'animation:',
             ' 0.2s linear 2.5s forwards;opacity:0;position:absolute;',
             '',
           ],
-          eg,
+          em,
           (0, o.uq)({
             xs: (0, s.iv)(['top:', ';'], l('lg')),
             lg: (0, s.iv)(['top:auto;bottom:', ';'], l('lg')),
           }),
         ),
-        tf = (0, s.ZP)(E)
+        tu = (0, s.ZP)(E)
           .attrs({ $width: '100%' })
           .withConfig({ componentId: 'sc-144283ae-0' })([
           'position:relative;height:100%;',
         ]),
-        tu = (0, s.ZP)(E)
+        tj = (0, s.ZP)(E)
           .attrs({ $height: '100vh', $overflow: 'hidden' })
           .withConfig({ componentId: 'sc-144283ae-1' })(
           ['padding-bottom:', 'px;'],
           120,
         ),
-        tj = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
+        tb = s.ZP.button.withConfig({ componentId: 'sc-144283ae-2' })(
           [
             "background:none;border:none;outline:none;position:absolute;padding:0;margin:0;width:max-content;transition:0.45s 0.3s ease-in;left:50%;top:50%;transform:translate(-50%,-50%);&::after{content:'';",
             ' background-color:',
@@ -2467,7 +2485,7 @@
             '',
           ],
           w('sm'),
-          (0, es.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('pink')),
+          (0, ea.CD)(0.6, (0, n.Lq)('background'), (0, n.Lq)('pink')),
           (0, n.Lq)('dark'),
           (e) => {
             let { $showJoin: t } = e;
@@ -2495,15 +2513,15 @@
                       60,
                     ),
                   }),
-                  tb,
+                  tk,
                   w('lg'),
                   P(l('xl')),
                   z(l('xl')),
-                  tb,
+                  tk,
                 );
           },
         ),
-        tb = s.ZP.span.withConfig({ componentId: 'sc-144283ae-3' })(
+        tk = s.ZP.span.withConfig({ componentId: 'sc-144283ae-3' })(
           [
             '',
             ' ',
@@ -2518,9 +2536,9 @@
           g('xl'),
           m('md'),
           (0, n.Lq)('dark'),
-          (0, es._j)(0.05, (0, n.Lq)('pink')),
+          (0, ea._j)(0.05, (0, n.Lq)('pink')),
         ),
-        tk = (0, s.ZP)(E).withConfig({ componentId: 'sc-144283ae-4' })(
+        tv = (0, s.ZP)(E).withConfig({ componentId: 'sc-144283ae-4' })(
           [
             'border:3px solid ',
             ';',
@@ -2529,33 +2547,33 @@
           (0, n.Lq)('dark'),
           w('md'),
         );
-      var tv = () => {
-        let e = (0, B.useRef)(null),
-          [t, r] = (0, B.useState)(0);
+      var tw = () => {
+        let e = (0, Y.useRef)(null),
+          [t, r] = (0, Y.useState)(0);
         return (0, i.jsx)(E, {
           $maxWidth: { xl: 1200 },
           $marginX: { xs: 'sm', xl: 'auto' },
           $position: 'relative',
           $overflow: 'hidden',
           children:
-            'START' === q[t] || 'JOIN_MEETING' === q[t]
+            'START' === W[t] || 'JOIN_MEETING' === W[t]
               ? (0, i.jsx)(E, {
                   $display: 'flex',
                   $alignItems: 'center',
                   $justifyContent: 'center',
                   $minHeight: '100vh',
-                  children: (0, i.jsx)(tj, {
-                    $showJoin: 'START' === q[t],
+                  children: (0, i.jsx)(tb, {
+                    $showJoin: 'START' === W[t],
                     onClick: () => {
-                      'START' === q[t]
+                      'START' === W[t]
                         ? (r(t + 1),
                           setTimeout(() => {
                             r(t + 2);
                           }, 900))
                         : r(0);
                     },
-                    children: (0, i.jsx)(tb, {
-                      children: (0, i.jsx)(ee, {
+                    children: (0, i.jsx)(tk, {
+                      children: (0, i.jsx)(et, {
                         $variant: 'meeting',
                         $size: 'xl',
                         $color: 'dark',
@@ -2565,9 +2583,9 @@
                     }),
                   }),
                 })
-              : (0, i.jsxs)(tu, {
+              : (0, i.jsxs)(tj, {
                   children: [
-                    (0, i.jsxs)(tk, {
+                    (0, i.jsxs)(tv, {
                       $display: { xs: 'flex', lg: 'none' },
                       $height: 80,
                       $alignItems: 'center',
@@ -2575,8 +2593,8 @@
                       $padding: 'sm',
                       $marginY: { xs: 'sm', lg: 'none' },
                       children: [
-                        (0, i.jsx)(ep, {}),
-                        (0, i.jsx)(eu, { onStepIndexChange: r }),
+                        (0, i.jsx)(eg, {}),
+                        (0, i.jsx)(ej, { onStepIndexChange: r }),
                       ],
                     }),
                     (0, i.jsx)(E, {
@@ -2591,14 +2609,14 @@
                       },
                       $paddingTop: { lg: 'md' },
                       $paddingBottom: { xs: 'lg', lg: 'xl' },
-                      children: (0, i.jsx)(tf, {
-                        children: (0, i.jsx)(td, {
+                      children: (0, i.jsx)(tu, {
+                        children: (0, i.jsx)(tc, {
                           currentStepIndex: t,
                           onStepIndexChange: r,
                         }),
                       }),
                     }),
-                    (0, i.jsx)(em, {
+                    (0, i.jsx)(e$, {
                       currentStepIndex: t,
                       onStepIndexChange: r,
                       onToggleChatWindow: (t) => {
@@ -2614,7 +2632,7 @@
                             i.close();
                       },
                     }),
-                    (0, i.jsx)(eF, { ref: e }),
+                    (0, i.jsx)(eN, { ref: e }),
                   ],
                 }),
         });

@@ -1,5 +1,6 @@
+import { formatMinDigits } from '@helpers/format';
 import { steps } from '@helpers/step';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   CameraOff,
   LogOut,
@@ -97,9 +98,22 @@ export const Footer: React.FC<FooterProps> = ({
 };
 
 const Clock: React.FC = () => {
+  const [date, setDate] = useState(new Date());
+
+  const refreshClock = () => {
+    setDate(new Date());
+  };
+
+  useEffect(() => {
+    const timer = setInterval(refreshClock, 20000); // 20s
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <Text $variant="meeting" $color="dark" $size="md">
-      Time
+      {formatMinDigits(date.getHours())}:{formatMinDigits(date.getMinutes())}
     </Text>
   );
 };
