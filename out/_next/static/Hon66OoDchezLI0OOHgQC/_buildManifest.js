@@ -2,7 +2,7 @@
   __rewrites: { afterFiles: [], beforeFiles: [], fallback: [] },
   '/': [
     'static/chunks/325-f7b7509199b31931.js',
-    'static/chunks/pages/index-01bfeff8eb816532.js',
+    'static/chunks/pages/index-1577b5acb15f577d.js',
   ],
   '/_error': ['static/chunks/pages/_error-1be831200e60c5c0.js'],
   sortedPages: ['/', '/_app', '/_error'],

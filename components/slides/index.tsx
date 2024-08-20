@@ -391,29 +391,10 @@ export const Slides: React.FC<SlidesProps> = ({ step }) => {
                 </Box>
               </Box>
 
-              <Box $display="flex" $flexDirection={{ xs: 'column', lg: 'row' }}>
-                <Box $margin="xs">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Close button" src="https://codepen.io/merrybottle/embed/PdwXYO?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/PdwXYO">Close button</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
-                    }}
-                  />
-                </Box>
-                <Box $margin="xs">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Hamburger menu + close button animation" src="https://codepen.io/merrybottle/embed/MZZEqM?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/MZZEqM">Hamburger menu + close button animation</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
-                    }}
-                  />
-                </Box>
-                <Box $margin="xs">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: `<iframe height="200" style="width: 100%;" scrolling="no" title="Money transfer: number input form" src="https://codepen.io/merrybottle/embed/KKPaqZX?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">See the Pen <a href="https://codepen.io/merrybottle/pen/KKPaqZX">Money transfer: number input form</a> by merrybottle (<a href="https://codepen.io/merrybottle">@merrybottle</a>)on <a href="https://codepen.io">CodePen</a>.</iframe>`,
-                    }}
-                  />
-                </Box>
-              </Box>
+              <Box
+                $display="flex"
+                $flexDirection={{ xs: 'column', lg: 'row' }}
+              ></Box>
             </Stack>
 
             <Stack $space="md" $alignX="center">
